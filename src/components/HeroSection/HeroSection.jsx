@@ -51,8 +51,8 @@ const HeroSection = () => {
 
       <hr className="w-full h-[2px] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
 
-      <div className="md:grid md:grid-cols-2 w-full gap-8">
-        <div>
+      <div className="md:flex justify-between w-full gap-16">
+        <div className="md:w-[60%]">
           <div className="mb-4">
             <h2 className="font-bold text-xl">WELCOME</h2>
             <p>To The Official Home of Mr. Snow-It-All</p>
@@ -75,15 +75,15 @@ const HeroSection = () => {
 
           <p>
             <span className="font-bold">Call Mr. Snow-It-All</span> today and
-            let us give you a hand! 905 922 4888
+            let us give you a hand! <span className="text-2xl font-bold">905 922 4888</span>
           </p>
         </div>
         <div>
           <a
             href="#"
-            class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+            class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
           >
-            <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <div class="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             <p>Oshawa, Ontario, Canada</p>
             <Image src={sunGif} width={'100px'} height={'100px'} alt=""/>
             {temperature ? <p>{`${temperature} °C`}</p> : <p>Loading...</p>}
@@ -98,14 +98,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="flex">
-        <h4>image</h4>
-        <h4>weather</h4>
-      </div>
-
 <div className="md:grid lg:grid-cols-4 md:grid-cols-2 gap-8">
 {heroContents.map((heroContent)=>{
-  return <HeroCard key={heroContent.id} title={heroContent.title} content={heroContent.content} />
+  return <HeroCard key={heroContent.id} title={heroContent.title} content={heroContent.content}/>
 })}
 </div>
     </main>

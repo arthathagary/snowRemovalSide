@@ -8,18 +8,18 @@ const ServicesSection = () => {
   return (
     <div id='services' className='w-full md:px-32 px-8'>
     <main className='pt-8'>
-    <div className='grid grid-cols-2 gap-8'>
+    <div className='md:flex md:gap-16 mb-8'>
     <div>
     <h2 className="font-bold text-xl mb-3">Services</h2>
     <p>Mr. Snow-It-All now offers Durham Region residents 2 snow removal options. Seasonal and Pay-Per-Visit services.Our Seasonal service is for customers wanting a hassle and worry free winter. Our contract begins November 1st and expires March 31st of the following year, giving our customers 5 months of snowfall coverage. Our Pay-Per-Visit services are for the once in a while customers. Whether you're out of town or just not in the mood, P-P-V is a perfect option for customers not looking to commit long term.Both services include FREE salt spreading. (Customer provided)</p>
     </div>
     <div>
     <h2 className="font-bold text-xl mb-3">SERVICE AREA</h2>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1O_-Fa1NMUQMmN38IxnR2nwjAaQEykVNz&ehbc=2E312F" width="450" height="290"></iframe>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1O_-Fa1NMUQMmN38IxnR2nwjAaQEykVNz&ehbc=2E312F" className='md:h-[290px] md:w-[550px] h-[320px] w-full'></iframe>
     </div>
     </div>
 
-    <div className='grid grid-cols-2 gap-8 w-full'>
+    <div className='md:grid md:grid-cols-2 gap-8 md:w-full'>
     <div>
       <h2 className="font-bold text-xl mb-3">OUR GUARANTEE</h2>
       <ul>
@@ -33,8 +33,8 @@ const ServicesSection = () => {
         <li className='mb-3'>Fast response time.</li>
       </ul>
     </div>
-    <div>
-      <Image src={whitbyImg} alt='' width={'250'} />
+    <div className='justify-self-center'>
+      <Image src={whitbyImg} alt='' width={'250'} className='my-8'/>
       <Image src={oshawaImg} alt='' width={'250'}/>
       {/* <h1>image</h1>
       <h1>image</h1> */}
