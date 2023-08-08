@@ -1,12 +1,23 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import axios from "axios";
 import heroContents from "./heroContent";
 import HeroCard from "./HeroCard";
 import Image from 'next/image';
 import sunGif from '../../../public/assets/gifs/sun.gif';
+import {motion,useInView, useAnimation } from 'framer-motion';
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const isView = useInView(ref,{once:true});
+  const controlAnimation = useAnimation();
+  useEffect(() => {
+    if (isView) {
+      controlAnimation.start("visible");
+    } else {
+      controlAnimation.start("hidden");
+    }
+  }, [isView]);
   const [temperature, setTemperature] = useState("");
   const [currentTime, setCurrentTime] = useState(new Date());
   const [currentDate, setCurrentDate] = useState(null);
@@ -44,7 +55,7 @@ const HeroSection = () => {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <main id="home" className="w-full md:px-32 px-8 bg-[#C5DFF8] py-8">
+    <main ref={ref} id="home" className="w-full md:px-32 px-8 bg-[#C5DFF8] py-8">
       <h1 className="text-center">FULLY BOOKED FOR THE 2022-2023 SEASON </h1>
 
       {/* <p>{currentTime.toLocaleTimeString()}</p> */}
@@ -78,7 +89,15 @@ const HeroSection = () => {
             let us give you a hand! <span className="text-2xl font-bold">905 922 4888</span>
           </p>
         </div>
-        <div>
+        <motion.div
+        variants={{
+          hidden: { x: "100vw", opacity: 0 },
+          visible: { x: 0, opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ type: "spring", stiffness: 30 }}
+        >
           <a
             href="#"
             class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
@@ -95,14 +114,22 @@ const HeroSection = () => {
           </a>
 
          
-        </div>
+        </motion.div>
       </div>
 
-<div className="md:grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+<motion.div
+variants={{
+          hidden: { x: "-100vw", opacity: 0 },
+          visible: { x: 0, opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ type: "spring", stiffness: 30 }}
+ className="md:grid lg:grid-cols-4 md:grid-cols-2 gap-8">
 {heroContents.map((heroContent)=>{
   return <HeroCard key={heroContent.id} title={heroContent.title} content={heroContent.content}/>
 })}
-</div>
+</motion.div>
     </main>
   );
 };
