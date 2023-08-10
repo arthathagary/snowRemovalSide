@@ -6,6 +6,7 @@ import HeroCard from "./HeroCard";
 import Image from 'next/image';
 import sunGif from '../../../public/assets/gifs/sun.gif';
 import {motion,useInView, useAnimation } from 'framer-motion';
+import HeroBanner from "./HeroBanner";
 
 const HeroSection = () => {
   const ref = useRef(null);
@@ -55,22 +56,28 @@ const HeroSection = () => {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <main ref={ref} id="home" className="w-full md:px-32 px-8 bg-[#C5DFF8] py-8">
-      <h1 className="text-center">FULLY BOOKED FOR THE 2022-2023 SEASON </h1>
+    <main ref={ref} id="home" className="w-full md:px-32 px-8 bg-[#90e0ef] py-8">
+      <HeroBanner />
 
       {/* <p>{currentTime.toLocaleTimeString()}</p> */}
 
-      <hr className="w-full h-[2px] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
-
-      <div className="md:flex justify-between w-full gap-16">
-        <div className="md:w-[60%]">
+      <div className="md:flex justify-between w-full gap-16 mb-6">
+        <motion.div
+        variants={{
+          hidden: {  opacity: 0 },
+          visible: {  opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ duration:2.5 }}
+         className="md:w-[60%]">
           <div className="mb-4">
             <h2 className="font-bold text-xl">WELCOME</h2>
             <p>To The Official Home of Mr. Snow-It-All</p>
           </div>
 
           <p className="mb-4">
-            <span className="font-bold">Mr. Snow-It-All</span> is an affordable
+            <span className="font-bold text-black">Mr. Snow Removal</span> is an affordable
             and customer friendly way to keep your residence snow & ice free
             this winter. Servicing the Durham Region for over 10 years, we focus
             STRICTLY on residential snow removal. This means the home owner
@@ -85,10 +92,10 @@ const HeroSection = () => {
           </p>
 
           <p>
-            <span className="font-bold">Call Mr. Snow-It-All</span> today and
-            let us give you a hand! <span className="text-2xl font-bold">905 922 4888</span>
+            <span className="font-bold text-black">Call Mr. Snow Removal</span> today and
+            let us give you a hand! <span className="text-2xl font-bold text-black">905 922 4888</span>
           </p>
-        </div>
+        </motion.div>
         <motion.div
         variants={{
           hidden: { x: "100vw", opacity: 0 },
@@ -102,14 +109,14 @@ const HeroSection = () => {
             href="#"
             class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
           >
-            <div class="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <p>Oshawa, Ontario, Canada</p>
-            <Image src={sunGif} width={'100px'} height={'100px'} alt=""/>
-            {temperature ? <p>{`${temperature} °C`}</p> : <p>Loading...</p>}
+            <div class="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white py-12 px-6 ">
+            <h3 className="mb-3">Oshawa, Ontario, Canada</h3>
+            <Image className="mb-3" src={sunGif} width={'100px'} height={'100px'} alt=""/>
+            {temperature ? <h3>{`${temperature} °C`}</h3> : <h3>Loading...</h3>}
             </div>
-            <p class="font-normal text-gray-700 dark:text-gray-400">
+            <h3 class="font-normal text-gray-700 dark:text-gray-400">
             {/* <p>Current Date with Year: {currentDate.toDateString()}</p> */}
-            </p>
+            </h3>
             
           </a>
 
@@ -125,7 +132,7 @@ variants={{
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
- className="md:grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+ className="md:grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-4">
 {heroContents.map((heroContent)=>{
   return <HeroCard key={heroContent.id} title={heroContent.title} content={heroContent.content}/>
 })}

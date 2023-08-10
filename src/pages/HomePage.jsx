@@ -1,3 +1,4 @@
+import ContactUsSection from '@/components/ContactUsSection/ContactUsSection'
 import FaqSection from '@/components/FaqSection/FaqSection'
 import Footer from '@/components/Footer/Footer'
 import HeroCard from '@/components/HeroSection/HeroCard'
@@ -17,6 +18,7 @@ const HomePage = () => {
         <RatesSection />
         <TestimonialSection />
         <FaqSection />
+        <ContactUsSection />
         <Footer />
     </>
   )

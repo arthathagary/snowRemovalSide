@@ -9,7 +9,7 @@ const NavBar = () => {
   const handleClick = ()=>setNav(!nav)
 
   return (
-    <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-[#00E8EB] '>
+    <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-[#90e0ef] '>
         <div className=''>Logo</div>
 
         {/* {Desktop Menus} */}
@@ -19,7 +19,7 @@ const NavBar = () => {
                 <a href='#services'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>Services</li></a>
                 <a href='#rates'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>Rates</li></a>
                 <a href='#faq'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>FAQs</li></a>
-                <a href='#contactus'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>Contact Us</li></a>
+                <a href='#contactUs'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>Contact Us</li></a>
             </ul>
         
         <button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Call Us Now</span></button>

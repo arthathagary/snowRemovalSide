@@ -27,10 +27,10 @@ const FaqSection = () => {
   //   }
   // },[isView])
   return (
-    <div id="faq" className=' w-full md:px-32 px-8 mt-8'>
+    <div id="faq" className=' w-full md:px-32 px-8 mt-8 bg-[#90e0ef] py-8'>
     <div
      className='p-8'>
-        <h4 className='text-2xl font-semibold mb-4 text-center'>Frequently Asked Questions</h4>
+        <h4 className='text-2xl font-semibold mb-8 text-center'>Frequently Asked Questions</h4>
         
             <div>
             {quizes.map((quiz,index)=>{
