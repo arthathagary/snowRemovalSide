@@ -1,11 +1,40 @@
-import React from 'react'
+"use client";
+import React,{useState,useEffect,useRef } from "react";
 import ContactUsInput from './ContactUsInput'
 import { IoMdArrowDropdown } from "react-icons/io";
+import {motion,useInView, useAnimation } from 'framer-motion';
 
 const ContactUsSection = () => {
+  const ref = useRef(null);
+  const isView = useInView(ref,{once:true});
+  const controlAnimation = useAnimation();
+  useEffect(() => {
+    if (isView) {
+      controlAnimation.start("visible");
+    } else {
+      controlAnimation.start("hidden");
+    }
+  }, [isView]);
   return (
-<form id='contactUs' class="w-full md:px-32 px-8 py-12">
-<h2 className='text-center'>We'd love to hear from you</h2>
+<form ref={ref} id='contactUs' class="w-full md:px-32 px-8 py-12">
+<motion.h2
+variants={{
+          hidden: { x: "100vw", opacity: 0 },
+          visible: { x: 0, opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ type: "spring", stiffness: 30 }}
+ className='text-center'>We'd love to hear from you</motion.h2>
+ <motion.div
+ variants={{
+          hidden: { x: "-100vw", opacity: 0 },
+          visible: { x: 0, opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ type: "spring", stiffness: 30 }}
+ >
   <ContactUsInput labelName="First Name" labelName2="Last Name"/>
   <ContactUsInput labelName="Email" labelName2="Phone"/>
   <ContactUsInput labelName="Street Address" labelName2="City/Town"/>
@@ -32,6 +61,7 @@ const ContactUsSection = () => {
   Submit
 </button>
 </div>
+</motion.div>
 
    
  

@@ -73,7 +73,7 @@ const HeroSection = () => {
          className="md:w-[60%]">
           <div className="mb-4">
             <h3 className="font-bold text-xl">WELCOME</h3>
-            <p>To The Official Home of Mr. Snow-It-All</p>
+            <p>To The Official Home of Mr. Snow Removal</p>
           </div>
 
           <p className="mb-4">
