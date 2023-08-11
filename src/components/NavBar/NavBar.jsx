@@ -9,17 +9,17 @@ const NavBar = () => {
   const handleClick = ()=>setNav(!nav)
 
   return (
-    <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-[#90e0ef] '>
+    <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-gray-800 '>
         <div className=''>Logo</div>
 
         {/* {Desktop Menus} */}
         
             <ul className='hidden md:flex gap-8'>
-                <a href='#home'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>Home</li></a>
-                <a href='#services'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>Services</li></a>
-                <a href='#rates'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>Rates</li></a>
-                <a href='#faq'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>FAQs</li></a>
-                <a href='#contactUs'><li className='text-[1.1rem] text-gray-600 hover:text-gray-950'>Contact Us</li></a>
+                <a href='#home'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>Home</li></a>
+                <a href='#services'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>Services</li></a>
+                <a href='#rates'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>Rates</li></a>
+                <a href='#faq'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>FAQs</li></a>
+                <a href='#contactUs'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>Contact Us</li></a>
             </ul>
         
         <button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Call Us Now</span></button>

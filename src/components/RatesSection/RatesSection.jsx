@@ -9,7 +9,8 @@ import { BiSolidRightArrowCircle} from "react-icons/bi";
 
 const RatesSection = () => {
   return (
-    <div id='rates' className=' w-full md:px-32 px-8 bg-[#90e0ef] py-12'>
+    <div id='rates' className=' w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
+    <h2 className='text-center'>Rates</h2>
     <main className='md:grid md:grid-cols-2 mb-8'>
       <Image src={rateImg1} width={'500'} alt=''  />
       <Image src={rateImg2} width={'500'} alt='' className='justify-self-end'/>
