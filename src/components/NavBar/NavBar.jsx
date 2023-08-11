@@ -25,18 +25,18 @@ const NavBar = () => {
         <button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Call Us Now</span></button>
 
         {/* {Hamburger Button} */}
-        <div onClick={handleClick} className='z-10 md:hidden cursor-pointer'>
-        {!nav?<FaBars/>:<FaTimes/>}
+        <div onClick={handleClick} className='z-50 md:hidden cursor-pointer'>
+        {!nav?<FaBars color='white'/>:<FaTimes/>}
         </div>
 
         {/* {Mobile Menus} */}
         
-        <ul className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-[white] flex flex-col justify-center items-center'}>
-                <li className='py-6 text-4xl'>Home</li>
-                <li className='py-6 text-4xl'>Services</li>
-                <li className='py-6 text-4xl'>Rates</li>
-                <li className='py-6 text-4xl'>FAQs</li>
-                <li className='py-6 text-4xl'>Contact Us</li>
+        <ul className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-[white] flex flex-col justify-center items-center z-40'} onClick={handleClick}>
+                <a href='#home'><li className='py-6 text-4xl'>Home</li></a>
+                <a href='#services'><li className='py-6 text-4xl'>Services</li></a>
+                <a href='#rates'><li className='py-6 text-4xl'>Rates</li></a>
+                <a href='#faq'><li className='py-6 text-4xl'>FAQs</li></a>
+                <a href='#contactUs'><li className='py-6 text-4xl'>Contact Us</li></a>
             </ul>
         
     </nav>
