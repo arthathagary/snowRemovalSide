@@ -107,14 +107,14 @@ const HeroSection = () => {
         >
           <a
             href="#"
-            class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
+            className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
           >
-            <div class="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white py-12 px-6 text-center">
+            <div className="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white py-12 px-6 text-center">
             <h3 className="mb-3">Oshawa, Ontario, Canada</h3>
             <div className="flex justify-center"><Image className="mb-3" src={sunGif} width={'100px'} height={'100px'} alt=""/></div>
             {temperature ? <h3>{`${temperature} °C`}</h3> : <h3>Loading...</h3>}
             </div>
-            <h3 class="font-normal text-gray-700 dark:text-gray-400">
+            <h3 className="font-normal text-gray-700 dark:text-gray-400">
             {/* <p>Current Date with Year: {currentDate.toDateString()}</p> */}
             </h3>
             
