@@ -30,7 +30,7 @@ const RatesSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='md:grid md:grid-cols-2 mb-8'>
+     className='md:grid md:grid-cols-2 mb-8 flex flex-col gap-8'>
       <Image src={rateImg1} width={'500'} alt=''  />
       <Image src={rateImg2} width={'500'} alt='' className='justify-self-end'/>
       

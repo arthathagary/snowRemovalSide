@@ -10,7 +10,7 @@ const NavBar = () => {
 
   return (
     <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-gray-800 '>
-        <div className=''>Logo</div>
+        <div className='text-white font-bold'>Mr Snow Removal</div>
 
         {/* {Desktop Menus} */}
         

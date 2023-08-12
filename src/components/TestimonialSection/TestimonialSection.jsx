@@ -31,7 +31,7 @@ const TestimonialSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-   className='md:grid md:grid-cols-3 gap-8'>
+   className='md:grid md:grid-cols-3 flex flex-col gap-8'>
   {testiData.map((data)=>{
     return <TestimonialCard key={data.id} title={data.title} content={data.content} reviewer={data.reviewer} worksAt={data.worksAt}/>
   })}
