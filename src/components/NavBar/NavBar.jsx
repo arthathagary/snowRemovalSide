@@ -2,6 +2,8 @@
 import React,{useState} from 'react'
 import Image from 'next/image'
 import {FaBars,FaTimes,FaArrowRight} from 'react-icons/fa'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const NavBar = () => {
   const [nav,setNav] = useState(false);
@@ -15,14 +17,18 @@ const NavBar = () => {
         {/* {Desktop Menus} */}
         
             <ul className='hidden md:flex gap-8'>
-                <a href='#home'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>Home</li></a>
-                <a href='#services'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>Services</li></a>
-                <a href='#rates'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>Rates</li></a>
-                <a href='#faq'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>FAQs</li></a>
-                <a href='#contactUs'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'>Contact Us</li></a>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/">Home</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="#services">Services</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="#rates">Rates</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="#faq">FAQs</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/ContactUs">Contact Us</Link></li>
+                {/* <a href='#services'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'></li></a>
+                <a href='#rates'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'></li></a>
+                <a href='#faq'><li className='text-[1.1rem] text-white hover:text-[#bfecec]'></li></a>
+                <Link href="/ContactUs"><li className='text-[1.1rem] text-white hover:text-[#bfecec]'></li></Link> */}
             </ul>
         
-        <button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Call Us Now</span></button>
+        <button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Book Now !</span></button>
 
         {/* {Hamburger Button} */}
         <div onClick={handleClick} className='z-50 md:hidden cursor-pointer'>

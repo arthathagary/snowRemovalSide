@@ -3,6 +3,10 @@ import React, { useState, useEffect, useRef } from "react";
 import ContactUsInput from "./ContactUsInput";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { motion, useInView, useAnimation } from "framer-motion";
+import bannerBg from '../../../public/assets/images/banner.jpg'
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
+
 
 const ContactUsSection = () => {
   const ref = useRef(null);
@@ -16,8 +20,46 @@ const ContactUsSection = () => {
     }
   }, [isView]);
   return (
-    <form ref={ref} id="contactUs" className="w-full md:px-32 px-8 py-12">
-      <motion.h2
+    <form ref={ref} id="contactUs" >
+    <div style={{
+      backgroundImage: `url(${bannerBg.src})`
+    }} className="bg-no-repeat bg-cover h-52">
+
+    </div>
+    <div className="w-full md:px-32 px-8 py-8">
+    <div className="md:flex justify-between mb-8">
+    <div>
+      <div className="flex items-center gap-4">
+      <FaLocationDot size={20}/>
+      <div>
+      <p>240 Commerce Street</p>
+      <p>Glastonbury, CT 06033</p>
+      </div>
+      </div>
+    </div>
+
+    <div>
+      <div className="flex items-center gap-4">
+      <FaPhoneAlt size={20} />
+      <div>
+      <p>Talk to an expert</p>
+      <p>(860) 633-0115</p>
+      </div>
+      </div>
+    </div>
+
+    <div>
+      <div className="flex items-center gap-4">
+      <FaLocationDot size={20}/>
+      <div>
+      <p>Mon - Fri <span className="ml-8">7:00 - 4:30</span> </p>
+      <p>Sat - Sun <span className="ml-8"> Closed</span></p>
+      </div>
+      </div>
+    </div>
+
+    </div>
+      {/* <motion.h2
         variants={{
           hidden: { x: "100vw", opacity: 0 },
           visible: { x: 0, opacity: 1 },
@@ -28,7 +70,7 @@ const ContactUsSection = () => {
         className="text-center"
       >
         We'd love to hear from you
-      </motion.h2>
+      </motion.h2> */}
       <motion.div
         variants={{
           hidden: { x: "-100vw", opacity: 0 },
@@ -83,6 +125,7 @@ const ContactUsSection = () => {
           </button>
         </div>
       </motion.div>
+      </div>
     </form>
   );
 };

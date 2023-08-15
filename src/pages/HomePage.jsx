@@ -18,7 +18,6 @@ const HomePage = () => {
         <RatesSection />
         <TestimonialSection />
         <FaqSection />
-        <ContactUsSection />
         <Footer />
     </>
   )

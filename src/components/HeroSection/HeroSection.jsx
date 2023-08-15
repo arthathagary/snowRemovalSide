@@ -7,6 +7,10 @@ import Image from 'next/image';
 import sunGif from '../../../public/assets/gifs/sun.gif';
 import {motion,useInView, useAnimation } from 'framer-motion';
 import HeroBanner from "./HeroBanner";
+import heroBg from '../../../public/assets/images/hero.jpg'
+import WeatherCard from "./WeatherCard";
+import cloud from "../../../public/assets/gifs/cloud.gif"
+
 
 const HeroSection = () => {
   const ref = useRef(null);
@@ -56,10 +60,13 @@ const HeroSection = () => {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <main ref={ref} id="home" className="w-full md:px-32 px-8 bg-[#DAF3F4] py-8">
-      <HeroBanner />
-
+    <main
+    style={{
+      backgroundImage: `url(${heroBg.src})`
+    }}
+     ref={ref} id="home" className="w-full md:px-32 px-8  py-8 bg-no-repeat bg-cover">
       {/* <p>{currentTime.toLocaleTimeString()}</p> */}
+      <WeatherCard />
 
       <div className="md:flex justify-between w-full gap-16 mb-6">
         <motion.div
@@ -108,9 +115,13 @@ const HeroSection = () => {
           <a
             href="#"
             className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
+            style={{
+      backgroundImage: `url(${cloud.src})`
+    }}
           >
             <div className="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white py-12 px-6 text-center">
             <h3 className="mb-3">Oshawa, Ontario, Canada</h3>
+            
             <div className="flex justify-center"><Image className="mb-3" src={sunGif} width={'100px'} height={'100px'} alt=""/></div>
             {temperature ? <h3>{`${temperature} °C`}</h3> : <h3>Loading...</h3>}
             </div>
@@ -120,8 +131,8 @@ const HeroSection = () => {
             
           </a>
 
-         
         </motion.div>
+       
       </div>
 
 <motion.div
