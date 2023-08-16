@@ -3,9 +3,11 @@ import React, { useState, useEffect, useRef } from "react";
 import ContactUsInput from "./ContactUsInput";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { motion, useInView, useAnimation } from "framer-motion";
-import bannerBg from '../../../public/assets/images/banner.jpg'
+import bannerBg from '../../../public/assets/images/banner.jpeg'
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
+import { BiSolidTimeFive } from "react-icons/bi";
+
 
 
 const ContactUsSection = () => {
@@ -23,8 +25,8 @@ const ContactUsSection = () => {
     <form ref={ref} id="contactUs" >
     <div style={{
       backgroundImage: `url(${bannerBg.src})`
-    }} className="bg-no-repeat bg-cover h-52">
-
+    }} className="bg-no-repeat bg-cover h-52 flex items-center justify-center">
+    <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full">We'd love to hear from you</h1>
     </div>
     <div className="w-full md:px-32 px-8 py-8">
     <div className="md:flex justify-between mb-8">
@@ -50,7 +52,7 @@ const ContactUsSection = () => {
 
     <div>
       <div className="flex items-center gap-4">
-      <FaLocationDot size={20}/>
+      <BiSolidTimeFive size={20}/>
       <div>
       <p>Mon - Fri <span className="ml-8">7:00 - 4:30</span> </p>
       <p>Sat - Sun <span className="ml-8"> Closed</span></p>

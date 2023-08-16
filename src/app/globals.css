@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 p{
-  @apply  text-gray-700;
+  @apply text-gray-700;
 }
 
 html {
@@ -15,5 +15,5 @@ h1{
 }
 
 h2{
-  @apply mb-8 text-4xl tracking-tight font-extrabold text-gray-900;
+  @apply mb-8 text-4xl tracking-tight font-bold text-gray-900;
 }

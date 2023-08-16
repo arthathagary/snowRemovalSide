@@ -48,7 +48,7 @@ const FaqSection = () => {
         transition={{ type: "spring", stiffness: 30 }}
             >
             {quizes.map((quiz,index)=>{
-              return <div key={quiz.id}> <h5 className='flex items-center justify-between gap-4 font-extrabold mb-4' onClick={()=>handleClick(index)}><span className='cursor-pointer'>{quiz.question}</span><span className='text-xl cursor-pointer'>{click===index?'-':'+'}</span></h5>
+              return <div key={quiz.id}> <h5 className='flex items-center justify-between gap-4 font-bold mb-4' onClick={()=>handleClick(index)}><span className='cursor-pointer'>{quiz.question}</span><span className='text-xl cursor-pointer'>{click===index?'-':'+'}</span></h5>
                 <h6 className={click === index ?'block':'hidden'}>{quiz.answer}</h6> 
                 <hr className="w-full h-[2px] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
                 </div>

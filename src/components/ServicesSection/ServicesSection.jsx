@@ -51,6 +51,7 @@ const ServicesSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
+        className='mb-4 md:mb-0'
     >
       <h2 className="font-bold text-xl mb-3">OUR GUARANTEE</h2>
       <ul>
