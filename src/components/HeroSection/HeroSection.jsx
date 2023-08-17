@@ -12,6 +12,7 @@ import WeatherCard from "./WeatherCard";
 import cloud from "../../../public/assets/gifs/cloud.gif"
 
 
+
 const HeroSection = () => {
   const ref = useRef(null);
   const isView = useInView(ref,{once:true});
