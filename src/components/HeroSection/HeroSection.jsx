@@ -1,12 +1,29 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import axios from "axios";
 import heroContents from "./heroContent";
 import HeroCard from "./HeroCard";
 import Image from 'next/image';
 import sunGif from '../../../public/assets/gifs/sun.gif';
+import {motion,useInView, useAnimation } from 'framer-motion';
+import HeroBanner from "./HeroBanner";
+import heroBg from '../../../public/assets/images/hero.jpg'
+import WeatherCard from "./WeatherCard";
+import cloud from "../../../public/assets/gifs/cloud.gif"
+
+
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const isView = useInView(ref,{once:true});
+  const controlAnimation = useAnimation();
+  useEffect(() => {
+    if (isView) {
+      controlAnimation.start("visible");
+    } else {
+      controlAnimation.start("hidden");
+    }
+  }, [isView]);
   const [temperature, setTemperature] = useState("");
   const [currentTime, setCurrentTime] = useState(new Date());
   const [currentDate, setCurrentDate] = useState(null);
@@ -44,22 +61,31 @@ const HeroSection = () => {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <main id="home" className="w-full md:px-32 px-8 bg-[#C5DFF8] py-8">
-      <h1 className="text-center">FULLY BOOKED FOR THE 2022-2023 SEASON </h1>
-
+    <main
+    style={{
+      backgroundImage: `url(${heroBg.src})`
+    }}
+     ref={ref} id="home" className="w-full md:px-32 px-8  py-8 bg-no-repeat bg-cover">
       {/* <p>{currentTime.toLocaleTimeString()}</p> */}
+      <WeatherCard />
 
-      <hr className="w-full h-[2px] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
-
-      <div className="md:grid md:grid-cols-2 w-full gap-8">
-        <div>
+      <div className="md:flex justify-between w-full gap-16 mb-6">
+        <motion.div
+        variants={{
+          hidden: {  opacity: 0 },
+          visible: {  opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ duration:2.5 }}
+         className="md:w-[60%]">
           <div className="mb-4">
-            <h2 className="font-bold text-xl">WELCOME</h2>
-            <p>To The Official Home of Mr. Snow-It-All</p>
+            <h3 className="font-bold text-xl">WELCOME</h3>
+            <p>To The Official Home of Mr. Snow Removal</p>
           </div>
 
           <p className="mb-4">
-            <span className="font-bold">Mr. Snow-It-All</span> is an affordable
+            <span className="font-bold text-black">Mr. Snow Removal</span> is an affordable
             and customer friendly way to keep your residence snow & ice free
             this winter. Servicing the Durham Region for over 10 years, we focus
             STRICTLY on residential snow removal. This means the home owner
@@ -74,40 +100,55 @@ const HeroSection = () => {
           </p>
 
           <p>
-            <span className="font-bold">Call Mr. Snow-It-All</span> today and
-            let us give you a hand! 905 922 4888
+            <span className="font-bold text-black">Call Mr. Snow Removal</span> today and
+            let us give you a hand! <span className="text-2xl font-bold text-black">905 922 4888</span>
           </p>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+        variants={{
+          hidden: { x: "100vw", opacity: 0 },
+          visible: { x: 0, opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ type: "spring", stiffness: 30 }}
+        >
           <a
             href="#"
-            class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+            className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
+            style={{
+      backgroundImage: `url(${cloud.src})`
+    }}
           >
-            <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <p>Oshawa, Ontario, Canada</p>
-            <Image src={sunGif} width={'100px'} height={'100px'} alt=""/>
-            {temperature ? <p>{`${temperature} °C`}</p> : <p>Loading...</p>}
+            <div className="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white py-12 px-6 text-center">
+            <h3 className="mb-3">Oshawa, Ontario, Canada</h3>
+            
+            <div className="flex justify-center"><Image className="mb-3" src={sunGif} width={'100px'} height={'100px'} alt=""/></div>
+            {temperature ? <h3>{`${temperature} °C`}</h3> : <h3>Loading...</h3>}
             </div>
-            <p class="font-normal text-gray-700 dark:text-gray-400">
+            <h3 className="font-normal text-gray-700 dark:text-gray-400">
             {/* <p>Current Date with Year: {currentDate.toDateString()}</p> */}
-            </p>
+            </h3>
             
           </a>
 
-         
-        </div>
+        </motion.div>
+       
       </div>
 
-      <div className="flex">
-        <h4>image</h4>
-        <h4>weather</h4>
-      </div>
-
-<div className="md:grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+<motion.div
+variants={{
+          hidden: { x: "-100vw", opacity: 0 },
+          visible: { x: 0, opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ type: "spring", stiffness: 30 }}
+ className="md:grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-4">
 {heroContents.map((heroContent)=>{
-  return <HeroCard key={heroContent.id} title={heroContent.title} content={heroContent.content} />
+  return <HeroCard key={heroContent.id} title={heroContent.title} content={heroContent.content}/>
 })}
-</div>
+</motion.div>
     </main>
   );
 };
