@@ -4,6 +4,7 @@ import Image from 'next/image'
 import {FaBars,FaTimes,FaArrowRight} from 'react-icons/fa'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import logo from '../../../public/assets/images/logo.png'
 
 const NavBar = () => {
   const [nav,setNav] = useState(false);
@@ -12,7 +13,8 @@ const NavBar = () => {
 
   return (
     <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-gray-800 '>
-        <div className='text-white font-bold'>Mr Snow Removal</div>
+        
+        <Image src={logo} alt='logo' width={50}/>
 
         {/* {Desktop Menus} */}
         
