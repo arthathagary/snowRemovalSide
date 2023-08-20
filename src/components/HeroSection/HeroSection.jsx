@@ -114,9 +114,6 @@ const HeroSection = () => {
           <a
             href="#"
             className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
-            style={{
-      backgroundImage: `url(${cloud.src})`
-    }}
           >
             <div className="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white py-12 px-6 text-center">
             <h3 className="mb-3">Oshawa, Ontario, Canada</h3>
