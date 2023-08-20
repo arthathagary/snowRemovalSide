@@ -61,11 +61,9 @@ const HeroSection = () => {
     return () => clearInterval(intervalId);
   }, []);
   return (
-    <main
-    style={{
-      backgroundImage: `url(${heroBg.src})`
-    }}
-     ref={ref} id="home" className="w-full md:px-32 px-8  py-8 bg-no-repeat bg-cover">
+    <>
+    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[95vh]"/>
+    <main ref={ref} id="home" className="w-full md:px-32 px-8  py-8 relative z-50">
       {/* <p>{currentTime.toLocaleTimeString()}</p> */}
       <WeatherCard />
 
@@ -150,6 +148,7 @@ variants={{
 })}
 </motion.div>
     </main>
+    </>
   );
 };
 
