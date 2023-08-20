@@ -7,6 +7,7 @@ import bannerBg from '../../../public/assets/images/banner.jpeg'
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BiSolidTimeFive } from "react-icons/bi";
+import Image from 'next/image';
 
 
 
@@ -23,10 +24,9 @@ const ContactUsSection = () => {
   }, [isView]);
   return (
     <form ref={ref} id="contactUs" >
-    <div style={{
-      backgroundImage: `url(${bannerBg.src})`
-    }} className="bg-no-repeat bg-cover h-52 flex items-center justify-center">
-    <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full">We'd love to hear from you</h1>
+    <Image src={bannerBg} alt="" className="absolute md:h-[30vh] h-[20vh]"/>
+    <div className="h-52 flex items-center justify-center">
+    <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full z-50 text-xl md:text-3xl ">We'd love to hear from you</h1>
     </div>
     <div className="w-full md:px-32 px-8 py-8">
     <div className="md:flex justify-between mb-8">
