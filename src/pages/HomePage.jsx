@@ -7,13 +7,11 @@ import NavBar from '@/components/NavBar/NavBar'
 import RatesSection from '@/components/RatesSection/RatesSection'
 import ServicesSection from '@/components/ServicesSection/ServicesSection'
 import TestimonialSection from '@/components/TestimonialSection/TestimonialSection'
-import PaymentCheck from '@/components/paymentCheck'
 import React from 'react'
 
 const HomePage = () => {
   return (
     <>
-    {/* <PaymentCheck /> */}
         <NavBar />
         <HeroSection />
         <ServicesSection />
