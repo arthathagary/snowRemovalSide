@@ -79,7 +79,7 @@ const RatesSection = () => {
       <li className='mb-4 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>Tax Information : Please note that the prices listed exclude taxes.</span></li>
       </ul>
     </motion.main>
-    <CustomRates />
+    {/* <CustomRates /> */}
     </div>
   )
 }
