@@ -1,3 +1,4 @@
+"use client";
 import ContactUsSection from '@/components/ContactUsSection/ContactUsSection'
 import FaqSection from '@/components/FaqSection/FaqSection'
 import Footer from '@/components/Footer/Footer'

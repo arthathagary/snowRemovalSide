@@ -9,6 +9,7 @@ import {motion,useInView, useAnimation } from 'framer-motion';
 import HeroBanner from "./HeroBanner";
 import heroBg from '../../../public/assets/images/hero.jpg'
 import WeatherCard from "./WeatherCard";
+import TopBanner from "./TopBanner";
 import cloud from "../../../public/assets/gifs/cloud.gif"
 
 
@@ -24,84 +25,30 @@ const HeroSection = () => {
       controlAnimation.start("hidden");
     }
   }, [isView]);
-  const [temperature, setTemperature] = useState("");
+
   const [currentTime, setCurrentTime] = useState(new Date());
   const [currentDate, setCurrentDate] = useState(null);
-  useEffect(() => {
-    // Function to fetch temperature data
-    const getTemperature = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=Oshawa&appid=21b1921fce82ffcdf76134de36476f3d&units=metric`
-        );
-
-        // Extract temperature from the API response and update state
-        const temp = response.data.main.temp;
-        setTemperature(temp);
-      } catch (error) {
-        console.error("Error fetching temperature:", error);
-      }
-    };
-
-    // Call the function to fetch temperature data
-    getTemperature();
-  }, []);
-
-  useEffect(() => {
-    // Function to update the current time every second
-    const updateTime = () => {
-      setCurrentTime(new Date());
-      setCurrentDate(new Date().getDay())
-    };
-
-    // Call the updateTime function every second
-    const intervalId = setInterval(updateTime, 1000);
-
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, []);
+  
+ 
   return (
     <>
-    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[95vh]"/>
+    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[100vh]"/>
     <main ref={ref} id="home" className="w-full md:px-32 px-8  py-8 relative z-50">
-      {/* <p>{currentTime.toLocaleTimeString()}</p> */}
-      <WeatherCard />
+      <TopBanner />
+      <div className="md:grid md:grid-cols-2 justify-between w-full gap-12 mb-6">
+      <motion.div
+            className="block p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700  mb-2 md:mb-0"
+          >
+            <div className=" md:text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h3 className="text-white font-medium">Elevate your winter experience with Mr. Snow Removal's reliable and tailored residential snow removal services. Call us today at 416-420-8000  for a quote and enjoy a worry-free winter.</h3>
+            <hr className="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-5 dark:bg-gray-700"></hr>
+            <h3>Effective Snow Clearance</h3>
+            </div>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+            We clear snow measuring 3cm or more using plows and high-powered snow blowers, combined with the use of plastic shovels to prevent property damage.
+            </p>
+          </motion.div>
 
-      <div className="md:flex justify-between w-full gap-16 mb-6">
-        <motion.div
-        variants={{
-          hidden: {  opacity: 0 },
-          visible: {  opacity: 1 },
-        }}
-        initial="hidden"
-        animate={controlAnimation}
-        transition={{ duration:2.5 }}
-         className="md:w-[60%]">
-          <div className="mb-4">
-            <h3 className="font-bold text-xl">WELCOME</h3>
-            <p>To The Official Home of Mr. Snow Removal</p>
-          </div>
-
-          <p className="mb-4">
-            <span className="font-bold text-black">Mr. Snow Removal</span> is an affordable
-            and customer friendly way to keep your residence snow & ice free
-            this winter. Servicing the Durham Region for over 10 years, we focus
-            STRICTLY on residential snow removal. This means the home owner
-            always come first.
-          </p>
-
-          <p className="mb-4">
-            With our seasonal services beginning November 1st and continuing
-            through March 31, your property will be snow free for the entire
-            winter. Why risk being buried in snow? It's time for you to enjoy
-            winter and leave the labour to us.
-          </p>
-
-          <p>
-            <span className="font-bold text-black">Call Mr. Snow Removal</span> today and
-            let us give you a hand! <span className="text-2xl font-bold text-black">905 922 4888</span>
-          </p>
-        </motion.div>
         <motion.div
         variants={{
           hidden: { x: "100vw", opacity: 0 },
@@ -111,21 +58,7 @@ const HeroSection = () => {
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
         >
-          <a
-            href="#"
-            className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 my-2 md:my-0"
-          >
-            <div className="mb-2 md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white py-12 px-6 text-center">
-            <h3 className="mb-3">Oshawa, Ontario, Canada</h3>
-            
-            <div className="flex justify-center"><Image className="mb-3" src={sunGif} width={'100px'} height={'100px'} alt=""/></div>
-            {temperature ? <h3>{`${temperature} °C`}</h3> : <h3>Loading...</h3>}
-            </div>
-            <h3 className="font-normal text-gray-700 dark:text-gray-400">
-            {/* <p>Current Date with Year: {currentDate.toDateString()}</p> */}
-            </h3>
-            
-          </a>
+          <WeatherCard />
 
         </motion.div>
        
