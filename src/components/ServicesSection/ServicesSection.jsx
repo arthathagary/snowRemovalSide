@@ -23,8 +23,8 @@ const ServicesSection = () => {
     <div className='md:flex md:gap-16 mb-8'>
     <motion.div
     variants={{
-          hidden: { x: "-100vw", opacity: 0 },
-          visible: { x: 0, opacity: 1 },
+          hidden: { y: "100vw", opacity: 0 },
+          visible: { y: 0, opacity: 1 },
         }}
         initial="hidden"
         animate={controlAnimation}
@@ -45,8 +45,8 @@ const ServicesSection = () => {
     <div className='md:grid md:grid-cols-2 gap-8 md:w-full'>
     <motion.div
     variants={{
-          hidden: { x: "-100vw", opacity: 0 },
-          visible: { x: 0, opacity: 1 },
+          hidden: { y: "100vw", opacity: 0 },
+          visible: { y: 0, opacity: 1 },
         }}
         initial="hidden"
         animate={controlAnimation}
@@ -67,8 +67,8 @@ const ServicesSection = () => {
     </motion.div>
     <motion.div
     variants={{
-          hidden: { x: "100vw", opacity: 0 },
-          visible: { x: 0, opacity: 1 },
+          hidden: { y: "100vw", opacity: 0 },
+          visible: { y: 0, opacity: 1 },
         }}
         initial="hidden"
         animate={controlAnimation}

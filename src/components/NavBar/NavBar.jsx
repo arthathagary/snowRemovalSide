@@ -35,7 +35,7 @@ const NavBar = () => {
 
         {/* {Mobile Menus} */}
         
-        <ul className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-[white] flex flex-col justify-center items-center z-40'} onClick={handleClick}>
+        <ul className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-[white] flex flex-col justify-center items-center z-40'} onClick={handleClick} >
                 <li className='py-6 text-4xl'><Link href="/">Home</Link></li>
                 <li className='py-6 text-4xl'><Link href="#services">Services</Link></li>
                 <li className='py-6 text-4xl'><Link href="#rates">Rates</Link></li>
