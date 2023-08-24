@@ -30,8 +30,8 @@ const FaqSection = () => {
     <div>
         <motion.h2
         variants={{
-          hidden: { x: "100vw", opacity: 0 },
-          visible: { x: 0, opacity: 1 },
+          hidden: { y: "100vw", opacity: 0 },
+          visible: { y: 0, opacity: 1 },
         }}
         initial="hidden"
         animate={controlAnimation}
@@ -40,8 +40,8 @@ const FaqSection = () => {
         
             <motion.div
             variants={{
-          hidden: { x: "-100vw", opacity: 0 },
-          visible: { x: 0, opacity: 1 },
+          hidden: { y: "100vw", opacity: 0 },
+          visible: { y: 0, opacity: 1 },
         }}
         initial="hidden"
         animate={controlAnimation}

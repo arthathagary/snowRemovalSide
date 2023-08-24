@@ -26,7 +26,7 @@ const ContactUsSection = () => {
     <form ref={ref} id="contactUs" >
     <Image src={bannerBg} alt="" className="absolute md:h-[30vh] h-[20vh]"/>
     <div className="h-52 flex items-center justify-center">
-    <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full z-50 text-xl md:text-3xl ">We'd love to hear from you</h1>
+    <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full z-30 text-xl md:text-3xl ">We'd love to hear from you</h1>
     </div>
     <div className="w-full md:px-32 px-8 py-8">
     <div className="md:flex justify-between mb-8">
