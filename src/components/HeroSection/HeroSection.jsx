@@ -41,7 +41,7 @@ const HeroSection = () => {
           >
             <div className=" md:text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             <h3 className="text-white font-medium">Elevate your winter experience with Mr. Snow Removal's reliable and tailored residential snow removal services. Call us today at 416-420-8000  for a quote and enjoy a worry-free winter.</h3>
-            <hr class="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-5 dark:bg-gray-700"></hr>
+            <hr className="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-5 dark:bg-gray-700"></hr>
             <h3>Effective Snow Clearance</h3>
             </div>
             <p className="font-normal text-gray-700 dark:text-gray-400">

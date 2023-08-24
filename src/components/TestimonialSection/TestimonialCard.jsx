@@ -4,12 +4,12 @@ const TestimonialCard = (props) => {
   return (
 
     
-      <figure className="flex flex-col  items-center  text-center bg-gray-50 border-b border-gray-200 lg:border-r dark:bg-gray-800 dark:border-gray-700 md:p-6 rounded-xl">
+      <figure className="flex flex-col  items-center  text-center bg-gray-50 border-b border-gray-200 lg:border-r dark:bg-gray-800 dark:border-gray-700 md:p-6 rounded-xl relative">
               <blockquote className="mx-auto mb-8  text-gray-500 dark:text-gray-400">
                   <p className="my-4 text-gray-500">{props.content}</p>
               </blockquote>
-              <figcaption className="flex justify-center items-center space-x-3">
-                  <div className="space-y-0.5 font-medium dark:text-white text-left">
+              <figcaption className="absolute bottom-4">
+                  <div className="space-y-0.5 font-medium dark:text-white">
                       <div>{props.reviewer}</div>
                   </div>
               </figcaption>    
