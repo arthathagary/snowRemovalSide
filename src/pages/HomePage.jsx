@@ -5,6 +5,7 @@ import Footer from '@/components/Footer/Footer'
 import HeroCard from '@/components/HeroSection/HeroCard'
 import HeroSection from '@/components/HeroSection/HeroSection'
 import NavBar from '@/components/NavBar/NavBar'
+import Payment from '@/components/Payment';
 import RatesSection from '@/components/RatesSection/RatesSection'
 import ServicesSection from '@/components/ServicesSection/ServicesSection'
 import TestimonialSection from '@/components/TestimonialSection/TestimonialSection'
@@ -19,6 +20,7 @@ const HomePage = () => {
         <RatesSection />
         <TestimonialSection />
         <FaqSection />
+        {/* <Payment /> */}
         <Footer />
     </>
   )

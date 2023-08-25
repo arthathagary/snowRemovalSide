@@ -1,9 +1,9 @@
 "use client";
 import React,{ useEffect, useState,useRef } from 'react';
 import Image from 'next/image';
-import rateImg1 from '../../../public/assets/images/rates1.png';
-import rateImg2 from '../../../public/assets/images/rates2.png';
-import rateImg3 from '../../../public/assets/images/rates3.png'
+import rateImg1 from '../../../public/assets/images/rates1.jpg';
+import rateImg2 from '../../../public/assets/images/rates2.jpg';
+import rateImg3 from '../../../public/assets/images/rates3.jpg'
 import { LiaGreaterThanSolid } from "react-icons/lia";
 import { BiSolidRightArrowCircle} from "react-icons/bi";
 import {motion,useInView, useAnimation } from 'framer-motion';
@@ -34,7 +34,7 @@ const RatesSection = () => {
     }
 
     if (query.get('canceled')) {
-      console.log('Order canceled -- continue to shop around and checkout when you’re ready.');
+      console.log('Order canceled -- continue to shop around and checkout when you\'re ready.');
     }
   }, []);
   return (
