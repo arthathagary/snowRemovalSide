@@ -9,6 +9,7 @@ import { BiSolidRightArrowCircle} from "react-icons/bi";
 import {motion,useInView, useAnimation } from 'framer-motion';
 import { loadStripe } from '@stripe/stripe-js';
 import CustomRates from './CustomRates';
+import Payment from './Payment';
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -38,8 +39,9 @@ const RatesSection = () => {
     }
   }, []);
   return (
-    <div ref={ref} id='rates' className=' w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
+    <div ref={ref} id='rates' className='w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
     <h2 className='text-center'>Rates</h2>
+    <div className='md:grid md:grid-cols-2 gap-16'>
     <motion.main
     variants={{
           hidden: { y: "100vw", opacity: 0 },
@@ -48,7 +50,7 @@ const RatesSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='md:grid md:grid-cols-2 mb-8 flex flex-col gap-8'>
+     className='mb-8'>
      <form action="/api/checkout/1" method="POST">
       <button type='submit' role='link'><Image src={rateImg1} width={'500'} alt=''  /></button>
       </form>
@@ -66,9 +68,10 @@ const RatesSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='md:grid md:grid-cols-2 md:gap-8'>
+     className='mb-8'>
      <form action="/api/checkout/4" method="POST">
-      <button type='submit' role='link' ><Image src={rateImg3} width={'500'} alt='' /></button>
+     <button type='submit' role='link' ><Image src={rateImg3} width={'500'} alt='' /></button>
+
       </form>
       <ul className='max-w-lg justify-self-end'>
       <li className='mb-4 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>For Seasonal Contracts : Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulder's.</span></li>
@@ -79,7 +82,9 @@ const RatesSection = () => {
       <li className='mb-4 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>Tax Information : Please note that the prices listed exclude taxes.</span></li>
       </ul>
     </motion.main>
-    {/* <CustomRates /> */}
+    <CustomRates />
+    <Payment />
+    </div>
     </div>
   )
 }

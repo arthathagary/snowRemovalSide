@@ -8,17 +8,17 @@ async function CreateStripeSession(req, res) {
       ? 'http://localhost:3000'
       : 'https://stripe-checkout-next-js-demo.vercel.app';
 
-  const transformedItem = {
-    price_data: {
-      currency: 'usd',
-      product_data: {
-        name: item.name,
-      },
-      unit_amount: item.price * 100,
-    },
-    description: item.description,
-    quantity: item.quantity,
-  };
+  // const transformedItem = {
+  //   price_data: {
+  //     currency: 'usd',
+  //     product_data: {
+  //       name: item.name,
+  //     },
+  //     unit_amount: item.price * 100,
+  //   },
+  //   description: item.description,
+  //   quantity: item.quantity,
+  // };
 
   const itemSold = {
     price_data: {

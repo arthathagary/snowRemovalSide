@@ -1,8 +1,6 @@
 "use client";
 import React,{ useEffect, useState,useRef } from 'react'
 import Image from 'next/image';
-import oshawaImg from '../../../public/assets/images/osawa.png'
-import whitbyImg from '../../../public/assets/images/whitby.png'
 import { BiSolidRightArrowCircle} from "react-icons/bi";
 import {motion,useInView, useAnimation } from 'framer-motion';
 
@@ -76,7 +74,7 @@ const ServicesSection = () => {
     >
     <h2 className="font-bold text-xl mb-3">SERVICE AREA</h2>
     {/* <iframe src="https://www.google.com/maps/d/embed?mid=1O_-Fa1NMUQMmN38IxnR2nwjAaQEykVNz&ehbc=2E312F" className='h-[320px] w-full'></iframe> */}
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92025.57817750126!2d-79.38211102261634!3d43.880709372589635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d5efa0324ca9%3A0xf73d52812cb23d63!2sMarkham%2C%20ON%2C%20Canada!5e0!3m2!1sen!2slk!4v1692888048100!5m2!1sen!2slk" width="100%" height="320" style={{border:'8px'}} allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92025.57817750126!2d-79.38211102261634!3d43.880709372589635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d5efa0324ca9%3A0xf73d52812cb23d63!2sMarkham%2C%20ON%2C%20Canada!5e0!3m2!1sen!2slk!4v1692888048100!5m2!1sen!2slk" width="100%" height="320" style={{border:'8px'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
     </motion.div>
     </div>
     
