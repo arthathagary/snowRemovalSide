@@ -58,15 +58,15 @@ const Payment = () => {
   };
   return (
     <main>
-  <div className='w-full border rounded-lg shadow bg-gray-800 border-gray-700 mb-2 md:mb-0 flex flex-col justify-center items-center'>
-    <h3 className='text-xl text-white font-semibold mb-3'>{item.name}</h3>
-    <p className='text-white mb-3'>{item.description}</p>
-    <p className='text-sm text-white mt-1 mb-3'>Enter Amount:</p>
+  <div className='w-full border rounded-lg shadow bg-white border-gray-700 mb-2 md:mb-0 flex flex-col justify-center items-center md:h-96 py-6'>
+    <h3 className='text-xl text-gray-800 font-semibold mb-3'>{item.name}</h3>
+    <p className='text-gray-800 mb-3'>{item.description}</p>
+    <p className='text-sm text-gray-800 mt-1 mb-3'>Enter Amount:</p>
     <div className='border rounded mb-3'>
     
       <input
         type='number'
-        className='p-2'
+        className='p-2 border border-gray-800'
         onChange={onInputChange}
         value={item.price}
       />
@@ -75,7 +75,7 @@ const Payment = () => {
     <button
       disabled={item.price === 0}
       onClick={createCheckOutSession}
-      className='disabled:cursor-not-allowed disabled:bg-blue-100 border border-white text-white px-4 py-2 mb-3'
+      className='disabled:cursor-not-allowed disabled:bg-blue-100 border border-gray-800 px-4 py-2 mb-3 text-gray-800'
     >
       Checkout
     </button>

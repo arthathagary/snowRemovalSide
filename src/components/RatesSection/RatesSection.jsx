@@ -41,7 +41,7 @@ const RatesSection = () => {
   return (
     <div ref={ref} id='rates' className='w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
     <h2 className='text-center'>Rates</h2>
-    <div className='md:grid md:grid-cols-2 gap-16'>
+    <div className='md:grid md:grid-cols-2 gap-28'>
     <motion.main
     variants={{
           hidden: { y: "100vw", opacity: 0 },
@@ -55,7 +55,7 @@ const RatesSection = () => {
       <button type='submit' role='link'><Image src={rateImg1} width={'500'} alt=''  /></button>
       </form>
 
-      <form action="/api/checkout/2" method="POST" className='justify-self-end'>
+      <form action="/api/checkout/2" method="POST">
       <button type='submit' role='link' ><Image src={rateImg2} width={'500'} alt='' /></button>
       </form>
     </motion.main>

@@ -107,7 +107,7 @@ const CustomRates = () => {
     }
   };
   return (
-    <main className="w-[90%] border rounded-lg shadow bg-gray-800 border-gray-700 mb-2 md:mb-0 flex flex-col justify-center items-center">
+    <main className="md:w-[90%] border rounded-lg shadow bg-gray-800 border-gray-700 mb-2 md:mb-0 flex flex-col justify-center items-center">
         <div className="mb-3 py-6">
           <h3 className="text-white font-semibold text-center text-xl mb-3">
             Custom Packages
