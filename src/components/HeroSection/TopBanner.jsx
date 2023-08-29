@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 import heroBg from "../../../public/assets/images/hero.jpg";
 const TopBanner = () => {
   return (
@@ -8,7 +9,7 @@ const TopBanner = () => {
           Sell out of spots we don't take on more clients so we can ensure
           hight-quality service for our seasonal clients.
         </p>
-        <button>Book Now</button>
+        <Link href="#rates"><button>Book Now</button></Link>
       </div>
     </div>
   );

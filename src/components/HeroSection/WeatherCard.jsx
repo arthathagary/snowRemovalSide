@@ -2,7 +2,7 @@
 import React,{useEffect,useState} from 'react'
 import Image from 'next/image';
 import axios from 'axios'
-import sunGif from '../../../public/assets/gifs/sun.gif';
+import { BsSunFill,BsSnow2 } from "react-icons/bs";
 
 const WeatherCard = () => {
     const options = {
@@ -40,7 +40,7 @@ const WeatherCard = () => {
             <h3 className='mb-3 text-xl font-normal'>{new Date().toLocaleDateString('en-US', options)}</h3>
             <h3 className="mb-3 text-xl font-normal">Markham, Ontario, Canada</h3>
             
-            <div className="flex justify-center"><Image className="mb-3" src={sunGif} width={'100px'} height={'100px'} alt=""/></div>
+            <div className="flex justify-center mb-3">{temperature>0?<BsSunFill size={30}/>:<BsSnow2 size={30}/>}</div>
             {temperature ? <h3>{`${temperature} °C`}</h3> : <h3>Loading...</h3>}
             
             </div>

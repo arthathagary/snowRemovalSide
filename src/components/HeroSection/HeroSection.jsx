@@ -32,8 +32,8 @@ const HeroSection = () => {
  
   return (
     <>
-    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[100vh]"/>
-    <main ref={ref} id="home" className="w-full md:px-32 px-8  py-8 relative z-30">
+    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[100vh] z-10"/>
+    <main ref={ref} id="home" className="w-full md:px-32 px-8  py-8 relative z-30 md:bg-transparent bg-[#DAF3F4]">
       <TopBanner />
       <div className="md:grid md:grid-cols-2 justify-between w-full gap-12 mb-6">
       <motion.div
