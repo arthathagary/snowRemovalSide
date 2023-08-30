@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
+import Popup from "../Popups/Popup";
+import PopupForm from "../Forms/PopupForm";
 const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 const stripePromise = loadStripe(publishableKey);
 
@@ -10,6 +12,8 @@ const CustomRates = () => {
   const [sideWalkValue, setSideWalkValue] = useState(0);
   const [boulderValue, setBoulderValue] = useState(0);
   const [amount, setAmount] = useState(0);
+  const [popup,setPopup] = useState(false)
+
 
   const [item, setItem] = useState({
     name: "Car Driveaway",
@@ -107,7 +111,7 @@ const CustomRates = () => {
     }
   };
   return (
-    <main className="md:w-[90%] border rounded-lg shadow bg-gray-800 border-gray-700 mb-2 md:mb-0 flex flex-col justify-center items-center">
+    <main className="md:w-[95%] border rounded-lg shadow bg-gray-800 border-gray-700 mb-2 md:mb-0 flex flex-col justify-center items-center">
         <div className="mb-3 py-6">
           <h3 className="text-white font-semibold text-center text-xl mb-3">
             Custom Packages
@@ -153,11 +157,22 @@ const CustomRates = () => {
         <div className="mb-3">
           <button
             className="border border-white text-white px-4 py-2"
-            onClick={createCheckOut}
+            // onClick={createCheckOut}
+            onClick={()=>setPopup(true)}
           >
             Checkout
           </button>
         </div>
+        <Popup isVisible={popup} onClose={()=>setPopup(false)}> 
+        <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
+        <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
+        <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
+        <label>Addtional NotesAddtional Notes</label>
+        <textarea className="w-full border-gray-300 border-2 h-32"/>
+        
+                
+        <button onClick={createCheckOut} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button>
+         </Popup>
     </main>
   );
 };

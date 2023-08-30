@@ -7,10 +7,9 @@ import Image from 'next/image';
 import sunGif from '../../../public/assets/gifs/sun.gif';
 import {motion,useInView, useAnimation } from 'framer-motion';
 import HeroBanner from "./HeroBanner";
-import heroBg from '../../../public/assets/images/hero.jpg'
+import heroBg from '../../../public/assets/images/hero.webp'
 import WeatherCard from "./WeatherCard";
 import TopBanner from "./TopBanner";
-import cloud from "../../../public/assets/gifs/cloud.gif"
 
 
 

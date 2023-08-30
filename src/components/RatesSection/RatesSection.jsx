@@ -10,12 +10,16 @@ import {motion,useInView, useAnimation } from 'framer-motion';
 import { loadStripe } from '@stripe/stripe-js';
 import CustomRates from './CustomRates';
 import Payment from './Payment';
+import Popup from '../Popups/Popup';
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
 
 const RatesSection = () => {
+
+  const [popup,setPopup] = useState(false)
+
   const ref = useRef(null);
   const isView = useInView(ref,{once:true});
   const controlAnimation = useAnimation();
@@ -41,7 +45,7 @@ const RatesSection = () => {
   return (
     <div ref={ref} id='rates' className='w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
     <h2 className='text-center'>Rates</h2>
-    <div className='md:grid md:grid-cols-2 gap-28'>
+    <div className='md:grid md:grid-cols-2 gap-x-28'>
     <motion.main
     variants={{
           hidden: { y: "100vw", opacity: 0 },
@@ -73,7 +77,7 @@ const RatesSection = () => {
      <button type='submit' role='link' ><Image src={rateImg3} width={'500'} alt='' /></button>
 
       </form>
-      <ul className='max-w-lg justify-self-end'>
+      <ul className='max-w-lg'>
       <li className='mb-4 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>For Seasonal Contracts : Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulder's.</span></li>
       <li className='mb-4 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>For Pay-Per-Visit (P-P-V) Pricing : P-P-V pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch.</span></li>
       <li className='mb-4 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>Regarding Driveways with Municipal Boulevards : Driveways featuring municipal boulevards will be billed according to their size.</span></li>
@@ -84,6 +88,7 @@ const RatesSection = () => {
     </motion.main>
     <CustomRates />
     <Payment />
+    <Popup isVisible={popup}/>
     </div>
     </div>
   )
