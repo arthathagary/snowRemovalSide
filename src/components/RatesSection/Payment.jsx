@@ -61,15 +61,15 @@ const Payment = () => {
   };
   return (
     <main>
-  <div className='w-full border rounded-lg shadow bg-white border-gray-700 mb-2 md:mb-0 flex flex-col justify-center items-center md:h-96 py-6'>
-    <h3 className='text-xl text-gray-800 font-semibold mb-3'>{item.name}</h3>
-    <p className='text-gray-800 mb-3'>{item.description}</p>
+  <div className='w-full rounded-lg shadow bg-white  mb-2 md:mb-0 flex flex-col justify-center items-center md:h-96 py-6  sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-3xl'>
+    <h3 className='text-xl text-gray-800 font-semibold mb-3'>Custom Payment</h3>
+    <p className='text-gray-800 mb-3'>Contact us for a custom quote for larger properties.</p>
     <p className='text-sm text-gray-800 mt-1 mb-3'>Enter Amount:</p>
     <div className='border rounded mb-3'>
     
       <input
         type='number'
-        className='p-2 border border-gray-800'
+        className='p-2 border border-gray-800 rounded-lg'
         onChange={onInputChange}
         value={item.price}
       />
@@ -87,8 +87,10 @@ const Payment = () => {
         <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
+        <PopupForm typeOfForm="text" formTitle="Phone Number" formName="phonenumber"/>
         <label>Addtional Notes</label>
         <textarea className="w-full border-gray-300 border-2 h-32"/>
+        
         
                 
         <button onClick={createCheckOutSession} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button>

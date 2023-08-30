@@ -1,7 +1,9 @@
 "use client";
 import React,{ useEffect, useState,useRef } from 'react'
 import Image from 'next/image';
-import { BiSolidRightArrowCircle} from "react-icons/bi";
+// import { BiSolidRightArrowCircle} from "react-icons/bi";
+import { MdStars } from "react-icons/md";
+
 import {motion,useInView, useAnimation } from 'framer-motion';
 
 const ServicesSection = () => {
@@ -61,13 +63,13 @@ const ServicesSection = () => {
     >
       <h2 className="font-bold text-xl mb-3">OUR GUARANTEE</h2>
       <ul>
-        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>24/7 Availability:</span> Count on us round the clock, from November 1st to March 31.</span></li>
-        <li className='mb-2 flex items-baseline gap-3 text-gray-700'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Limited Exclusive Spots:</span> Our Seasonal service features fully serviced, flat-rate contracts with a cap on client intake. When we sell out of spots we don't take on more clients so we can ensure hight-quality service for our seasonal clients.</span></li>
-        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Effective Snow Clearance:</span> We clear snow measuring 3cm or more using plows and high-powered snow blowers, combined with the use of plastic shovels to prevent property damage.</span></li>
-        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Customized Planning:</span> Your residence is cleared according to your specifications, providing you with a personalized experience.</span></li>
-        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>FREE Salt Spreading:</span> We offer complimentary salt spreading (with salt provided by customer) to enhance safety.</span></li>
-        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Excellent Customer Service:</span> We pride ourselves on providing top-quality customer service.</span></li>
-        <li className='flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Quick Response Time:</span> Expect a rapid response when you need us.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>24/7 Availability:</span> Count on us round the clock, from November 1st to March 31.</span></li>
+        <li className='mb-2 flex items-baseline gap-3 text-gray-700'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Limited Exclusive Spots:</span> Our Seasonal service features fully serviced, flat-rate contracts with a cap on client intake. When we sell out of spots we don't take on more clients so we can ensure hight-quality service for our seasonal clients.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Effective Snow Clearance:</span> We clear snow measuring 3cm or more using plows and high-powered snow blowers, combined with the use of plastic shovels to prevent property damage.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Customized Planning:</span> Your residence is cleared according to your specifications, providing you with a personalized experience.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>FREE Salt Spreading:</span> We offer complimentary salt spreading (with salt provided by customer) to enhance safety.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Excellent Customer Service:</span> We pride ourselves on providing top-quality customer service.</span></li>
+        <li className='flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Quick Response Time:</span> Expect a rapid response when you need us.</span></li>
       </ul>
     </motion.div>
     <motion.div
@@ -81,7 +83,7 @@ const ServicesSection = () => {
     >
     <h2 className="font-bold text-xl mb-3">SERVICE AREA</h2>
     {/* <iframe src="https://www.google.com/maps/d/embed?mid=1O_-Fa1NMUQMmN38IxnR2nwjAaQEykVNz&ehbc=2E312F" className='h-[320px] w-full'></iframe> */}
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92025.57817750126!2d-79.38211102261634!3d43.880709372589635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d5efa0324ca9%3A0xf73d52812cb23d63!2sMarkham%2C%20ON%2C%20Canada!5e0!3m2!1sen!2slk!4v1692888048100!5m2!1sen!2slk" width="100%" height="320" style={{border:'8px'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92025.57817750126!2d-79.38211102261634!3d43.880709372589635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d5efa0324ca9%3A0xf73d52812cb23d63!2sMarkham%2C%20ON%2C%20Canada!5e0!3m2!1sen!2slk!4v1692888048100!5m2!1sen!2slk" width="100%" height="90%" style={{border:'8px'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
     </motion.div>
     </div>
     
