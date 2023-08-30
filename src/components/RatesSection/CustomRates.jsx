@@ -167,7 +167,7 @@ const CustomRates = () => {
         <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
-        <label>Addtional NotesAddtional Notes</label>
+        <label>Addtional Notes</label>
         <textarea className="w-full border-gray-300 border-2 h-32"/>
         
                 

@@ -31,7 +31,7 @@ const HeroSection = () => {
  
   return (
     <>
-    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[100vh] z-10"/>
+    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[95vh] z-10"/>
     <main ref={ref} id="home" className="w-full md:px-32 px-8  py-8 relative z-30 md:bg-transparent bg-[#DAF3F4]">
       <TopBanner />
       <div className="md:grid md:grid-cols-2 justify-between w-full gap-12 mb-6">
@@ -45,14 +45,13 @@ const HeroSection = () => {
         transition={{ type: "spring", stiffness: 30 }}
             className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none"
           >
-            <div className=" md:text-xl font-bold tracking-tight text-gray-900">
-            <h3 className="text-gray-900 font-medium">Elevate your winter experience with Mr. Snow Removal's reliable and tailored residential snow removal services. Call us today at 416-420-8000  for a quote and enjoy a worry-free winter.</h3>
-            <hr className="w-full h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-5 dark:bg-gray-700"></hr>
-            <h3>Effective Snow Clearance</h3>
+            <div className="tracking-tight text-gray-900">
+            <h3 className="text-gray-900 mb-2">Welcome to <span className="font-semibold">Mr. Snow Removal</span> — Your Trusted Partner for Residential Snow Removal in Markham!</h3>
+            <h3 className="mb-2">When winter covers your neighbourhood in snow, trust <span className="font-semibold">Mr. Snow Removal</span> to be your dedicated solution for hassle-free residential snow removal. With over 3 years experience in the Markham Region, we specialize <span className="font-semibold">EXCLUSIVELY</span> in residential snow removal. Our goal is to keep your home safe and free from snow and ice throughout the winter season, always thinking of you, the homeowner.</h3>
+            <h3 className="mb-2">Our seasonal services run from November 1 to March 31, making sure that your property remains clear and accessible all winter long. Why struggle through deep snow? Say goodbye to snow hassles and  embrace winter's charm while we handle the hard work!</h3>
+            <h3 className="mb-2">Call <span className="font-semibold">Mr. Snow Removal</span> today at <span className="font-semibold">416-420-8000</span> and let us lend you a hand!</h3>
             </div>
-            <p className="font-normal text-gray-600">
-            We clear snow measuring 3cm or more using plows and high-powered snow blowers, combined with the use of plastic shovels to prevent property damage.
-            </p>
+            
           </motion.div>
 
         <motion.div
@@ -65,12 +64,17 @@ const HeroSection = () => {
         transition={{ type: "spring", stiffness: 30 }}
         >
           <WeatherCard />
+          <div className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none mt-4">
+            <h3>OUR EQUIPMENT </h3>
+            <hr className="w-full h-1 mx-auto bg-gray-100 border-0 rounded  dark:bg-gray-700"></hr>
+              <p>We use an arsenal of plastic shovels, snow blowers, and plow trucks for efficient and safe snow removal.</p>
+            </div>
 
         </motion.div>
        
       </div>
 
-<motion.div
+{/* <motion.div
 variants={{
           hidden: { y: "100vw", opacity: 0 },
           visible: { y: 0, opacity: 1 },
@@ -82,7 +86,7 @@ variants={{
 {heroContents.map((heroContent)=>{
   return <HeroCard key={heroContent.id} title={heroContent.title} content={heroContent.content}/>
 })}
-</motion.div>
+</motion.div> */}
     </main>
     </>
   );
