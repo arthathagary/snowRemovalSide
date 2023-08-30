@@ -29,7 +29,15 @@ const ServicesSection = () => {
         transition={{ type: "spring", stiffness: 30 }}
     >
     <h2 className="font-bold text-3xl mb-3">Services</h2>
-    <p>Mr. Snow Removal now offers Durham Region residents 2 snow removal options. Seasonal and Pay-Per-Visit services.Our Seasonal service is for customers wanting a hassle and worry free winter. Our contract begins November 1st and expires March 31st of the following year, giving our customers 5 months of snowfall coverage. Our Pay-Per-Visit services are for the once in a while customers. Whether you're out of town or just not in the mood, P-P-V is a perfect option for customers not looking to commit long term.Both services include FREE salt spreading. (Customer provided)</p>
+    <p className='mb-2'><span className='font-semibold'>Mr. Snow Removal</span> offers Markham residents two options: <span className='font-semibold'>Seasonal and Pay-Per-Visit services.</span> </p>
+
+
+
+<p className='mb-2'>Our very exclusive <span className='font-semibold'>Seasonal</span> clients receive the VIP treatment. We have a limited number of spots each year to give them the best service. Once we're full, we focus on these clients for the season and we cease taking on additional clients to ensure a focused commitment to our seasonal customers. Seasonal service is for those who want a worry-free winter. The contract starts on November 1 and ends on March 31, giving you 5 months of snow coverage. </p>
+
+
+
+<p><span className='font-bold'>Pay-Per-Visit Services</span> work for those who don't want a long-term deal and cater to sporadic needs. Both options include FREE salt spreading (you provide the salt).</p>
     </motion.div>
     {/* <div className='justify-self-center'>
       <Image src={whitbyImg} alt='' width={'250'} className='my-8'/>
@@ -53,14 +61,13 @@ const ServicesSection = () => {
     >
       <h2 className="font-bold text-xl mb-3">OUR GUARANTEE</h2>
       <ul>
-        <li className='mb-2 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>24-hour service, 7 days a week from November 1st to March 31.</span></li>
-        <li className='mb-2 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>Competitively priced and fully serviced, flat-rate seasonal contracts.</span></li>
-        <li className='mb-2 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>Clearance of 3cms or more.</span></li>
-        <li className='mb-2 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>Personalized planning to ensure the residence is cleared exactly how you want it.</span></li>
-        <li className='mb-2 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>The use of high powered snow blowers to clear through all snow conditions and plastic shovels to prevent damaging your driveway and/or interlock. NO snow plows.</span></li>
-        <li className='mb-2 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>FREE salt spreading. (Provided by customer)</span></li>
-        <li className='mb-2 flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>Top quality customer service.</span></li>
-        <li className='flex items-baseline font-medium gap-3'><span><BiSolidRightArrowCircle/></span><span>Fast response time.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>24/7 Availability:</span> Count on us round the clock, from November 1st to March 31.</span></li>
+        <li className='mb-2 flex items-baseline gap-3 text-gray-700'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Limited Exclusive Spots:</span> Our Seasonal service features fully serviced, flat-rate contracts with a cap on client intake. When we sell out of spots we don't take on more clients so we can ensure hight-quality service for our seasonal clients.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Effective Snow Clearance:</span> We clear snow measuring 3cm or more using plows and high-powered snow blowers, combined with the use of plastic shovels to prevent property damage.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Customized Planning:</span> Your residence is cleared according to your specifications, providing you with a personalized experience.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>FREE Salt Spreading:</span> We offer complimentary salt spreading (with salt provided by customer) to enhance safety.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Excellent Customer Service:</span> We pride ourselves on providing top-quality customer service.</span></li>
+        <li className='flex items-baseline gap-3'><span><BiSolidRightArrowCircle/></span><span><span className='font-semibold text-gray-900'>Quick Response Time:</span> Expect a rapid response when you need us.</span></li>
       </ul>
     </motion.div>
     <motion.div

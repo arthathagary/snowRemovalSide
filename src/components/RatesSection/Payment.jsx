@@ -3,6 +3,8 @@ import React,{useState} from 'react';
 import Image from 'next/image';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
+import Popup from '../Popups/Popup';
+import PopupForm from '../Forms/PopupForm';
 const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 console.log(publishableKey);
 const stripePromise = loadStripe(publishableKey);
@@ -11,6 +13,7 @@ const stripePromise = loadStripe(publishableKey);
 
   
 const Payment = () => {
+  const [popup,setPopup] = useState(false)
     const [item, setItem] = useState({
         name: 'Car Driveaway',
         description: 'Remove Snows based on car driveaway price',
@@ -74,12 +77,22 @@ const Payment = () => {
     </div>
     <button
       disabled={item.price === 0}
-      onClick={createCheckOutSession}
+      onClick={()=>setPopup(true)}
       className='disabled:cursor-not-allowed disabled:bg-blue-100 border border-gray-800 px-4 py-2 mb-3 text-gray-800'
     >
       Checkout
     </button>
   </div>
+  <Popup isVisible={popup} onClose={()=>setPopup(false)}> 
+        <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
+        <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
+        <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
+        <label>Addtional Notes</label>
+        <textarea className="w-full border-gray-300 border-2 h-32"/>
+        
+                
+        <button onClick={createCheckOutSession} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button>
+         </Popup>
 </main>
   )
 }

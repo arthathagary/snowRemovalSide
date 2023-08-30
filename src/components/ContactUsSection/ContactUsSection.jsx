@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ContactUsInput from "./ContactUsInput";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { motion, useInView, useAnimation } from "framer-motion";
-import bannerBg from '../../../public/assets/images/banner.jpeg'
+import bannerBg from '../../../public/assets/images/banner.webp'
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BiSolidTimeFive } from "react-icons/bi";

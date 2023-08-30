@@ -55,6 +55,9 @@ const FaqSection = () => {
             })}
             </motion.div>
            
+
+           <h3 className="text-center">Elevate your winter experience with <span className="font-semibold">Mr. Snow Removal's</span> reliable and tailored residential snow removal services. <span className="font-semibold">Call us</span> today at <span className="font-semibold">416-420-8000</span>  for a quote and enjoy a worry-free winter.</h3>
+           
         
     </div>
     </div>
