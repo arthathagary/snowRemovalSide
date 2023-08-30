@@ -116,7 +116,7 @@ const CustomRates = () => {
           <h3 className="text-white font-semibold text-center text-xl mb-3">
             Custom Packages
           </h3>
-          <select onChange={handleMainSelect} name="driveaway" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <select onChange={handleMainSelect} name="driveaway" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option disabled selected>
               Select No. of Driveway and Front Porch
             </option>
@@ -167,6 +167,7 @@ const CustomRates = () => {
         <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
+        <PopupForm typeOfForm="text" formTitle="Phone Number" formName="phonenumber"/>
         <label>Addtional Notes</label>
         <textarea className="w-full border-gray-300 border-2 h-32"/>
         

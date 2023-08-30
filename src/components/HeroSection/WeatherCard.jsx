@@ -53,6 +53,22 @@ const WeatherCard = () => {
   )
 }
 
+
+// export async function getServerSideProps() {
+//   try {
+//     const response = await axios.get(
+//       `https://api.openweathermap.org/data/2.5/weather?q=Markham&appid=21b1921fce82ffcdf76134de36476f3d&units=metric`
+//     );
+
+//     const temperature = response.data.main.temp;
+//     return { props: { temperature } };
+//   } catch (error) {
+//     console.error('Error fetching temperature:', error);
+//     return { props: { temperature: null } };
+//   }
+// }
+
+
 export default WeatherCard
 
 
