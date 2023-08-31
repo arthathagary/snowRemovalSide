@@ -31,7 +31,7 @@ const HeroSection = () => {
  
   return (
     <>
-    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[95vh] z-10"/>
+    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[90vh] z-10"/>
     <main ref={ref} id="home" className="w-full md:px-32 px-8  py-8 relative z-30 md:bg-transparent bg-[#DAF3F4]">
       <TopBanner />
       <div className="md:grid md:grid-cols-2 justify-between w-full gap-12 mb-6">
@@ -43,7 +43,7 @@ const HeroSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-            className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none"
+            className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none p-4 rounded-lg mb-5 md:mb-0"
           >
             <div className="tracking-tight text-gray-900">
             <h3 className="text-gray-900 mb-2">Welcome to <span className="font-semibold">Mr. Snow Removal</span> — Your Trusted Partner for Residential Snow Removal in Markham!</h3>
@@ -64,7 +64,7 @@ const HeroSection = () => {
         transition={{ type: "spring", stiffness: 30 }}
         >
           <WeatherCard />
-          <div className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none mt-4">
+          <div className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none mt-4 rounded-lg p-4">
             <h3>OUR EQUIPMENT </h3>
             <hr className="w-full h-1 mx-auto bg-gray-100 border-0 rounded  dark:bg-gray-700"></hr>
               <p>We use an arsenal of plastic shovels, snow blowers, and plow trucks for efficient and safe snow removal.</p>

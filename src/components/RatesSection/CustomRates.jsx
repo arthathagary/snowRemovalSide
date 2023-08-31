@@ -11,7 +11,7 @@ const CustomRates = () => {
   const [select2, setSelect2] = useState(false);
   const [sideWalkValue, setSideWalkValue] = useState(0);
   const [boulderValue, setBoulderValue] = useState(0);
-  const [amount, setAmount] = useState(0);
+  const [sideWalkPrice, setSideWalkPrice] = useState(0);
   const [popup,setPopup] = useState(false)
 
 
@@ -76,6 +76,37 @@ const CustomRates = () => {
     setItem({ ...item, price: newPrice });
   };
 
+  const handleSideWalk = (e)=>{
+    e.preventDefault();
+    let newPrice;
+    switch(e.target.value){
+      case "1":
+        setSideWalkPrice(0)
+        setItem({ ...item, price: item.price + sideWalkPrice })
+        setSideWalkPrice(150);
+        setItem({ ...item, price: item.price + sideWalkPrice })
+        break;
+      case "2":
+        setSideWalkPrice(0)
+        setItem({ ...item, price: item.price + sideWalkPrice })
+        setSideWalkPrice(300);
+        setItem({ ...item, price: item.price + sideWalkPrice })
+        break;
+      case "3":
+        setSideWalkPrice(0)
+        setSideWalkPrice(450)
+        setItem({ ...item, price: item.price + sideWalkPrice })
+        break;
+      case "4":
+        setSideWalkPrice(0)
+        setSideWalkPrice(600)
+        setItem({ ...item, price: item.price + sideWalkPrice })
+        break;
+    }
+  }
+
+
+
   const handleBoulderSelect = (e) => {
     const prevSelect2 = select2;
     setSelect2(!select2);
@@ -135,13 +166,22 @@ const CustomRates = () => {
 
         <div className="mb-3">
           <label className="text-white mr-2">Sidewalk</label>
-          <input
+          <select onChange={handleSideWalk} name="sidewalk" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <option disabled selected>
+              Select No. of SideWalk
+            </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          {/* <input
             value={sideWalkValue}
             onChange={handleSidewalkSelect}
             type="checkbox"
             name="side"
             defaultValue={select}
-          />
+          /> */}
           <label className="text-white ml-8 mr-2">Boulder</label>
           <input
             value={boulderValue}

@@ -78,7 +78,10 @@ const RatesSection = () => {
      <button type='submit' role='link' ><Image src={rateImg3} width={'500'} alt='' /></button>
 
       </form>
-      <ul className='max-w-lg'>
+      <CustomRates />
+    </motion.main>
+    <div>
+    <ul className='max-w-lg'>
       <li className='mb-2 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>For Seasonal Contracts :</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulder's.</span></li>
       <li className='mb-2 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>For Pay-Per-Visit (P-P-V) Pricing :</span> P-P-V pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch.</span></li>
       <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Regarding Driveways with Municipal Boulevards :</span> Driveways featuring municipal boulevards will be billed according to their size.</span></li>
@@ -88,8 +91,7 @@ const RatesSection = () => {
       </ul>
 
       <h3 className='text-gray-900 font-semibold mt-8'>Contact us for a custom quote for larger properties.</h3>
-    </motion.main>
-    <CustomRates />
+      </div>
     <Payment />
     <Popup isVisible={popup}/>
     </div>
