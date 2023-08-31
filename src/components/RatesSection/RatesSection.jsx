@@ -93,8 +93,9 @@ const RatesSection = () => {
       <h3 className='text-gray-900 font-semibold mt-8'>Contact us for a custom quote for larger properties.</h3>
       </div>
     <Payment />
-    <Popup isVisible={popup}/>
+    
     </div>
+    <Popup isVisible={popup}/>
     </div>
   )
 }

@@ -81,24 +81,23 @@ const CustomRates = () => {
     let newPrice;
     switch(e.target.value){
       case "1":
-        setSideWalkPrice(0)
-        setItem({ ...item, price: item.price + sideWalkPrice })
+        console.log(e.target.value);
         setSideWalkPrice(150);
         setItem({ ...item, price: item.price + sideWalkPrice })
         break;
       case "2":
-        setSideWalkPrice(0)
-        setItem({ ...item, price: item.price + sideWalkPrice })
+       
+        console.log(e.target.value);
         setSideWalkPrice(300);
         setItem({ ...item, price: item.price + sideWalkPrice })
         break;
       case "3":
-        setSideWalkPrice(0)
+      
         setSideWalkPrice(450)
         setItem({ ...item, price: item.price + sideWalkPrice })
         break;
       case "4":
-        setSideWalkPrice(0)
+       
         setSideWalkPrice(600)
         setItem({ ...item, price: item.price + sideWalkPrice })
         break;
@@ -142,12 +141,13 @@ const CustomRates = () => {
     }
   };
   return (
-    <main className="md:w-[95%] border rounded-lg shadow bg-gray-800 border-gray-700 mb-2 md:mb-0 flex flex-col justify-center items-center">
+    <>
+    <main className="w-full md:h-[50%] border rounded-2xl shadow bg-gray-800 border-gray-700 mb-2 md:mb-0 flex flex-col justify-center px-8">
         <div className="mb-3 py-6">
           <h3 className="text-white font-semibold text-center text-xl mb-3">
             Custom Packages
           </h3>
-          <select onChange={handleMainSelect} name="driveaway" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <select value={sideWalkPrice} onChange={handleMainSelect} name="driveaway" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option disabled selected>
               Select No. of Driveway and Front Porch
             </option>
@@ -165,8 +165,7 @@ const CustomRates = () => {
         </div>
 
         <div className="mb-3">
-          <label className="text-white mr-2">Sidewalk</label>
-          <select onChange={handleSideWalk} name="sidewalk" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <select onChange={handleSideWalk} name="sidewalk" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6">
           <option disabled selected>
               Select No. of SideWalk
             </option>
@@ -182,7 +181,8 @@ const CustomRates = () => {
             name="side"
             defaultValue={select}
           /> */}
-          <label className="text-white ml-8 mr-2">Boulder</label>
+          <div className="flex justify-center items-center">
+          <label className="text-white mr-3">Boulder</label>
           <input
             value={boulderValue}
             onChange={handleBoulderSelect}
@@ -190,20 +190,23 @@ const CustomRates = () => {
             name="boilder"
             defaultValue={select2}
           />
+          </div>
         </div>
-        <h3 className="text-white font-medium mb-3">
+        <h3 className="text-white font-medium mb-3 self-center">
           Total Amount is: {item.price} CAD
         </h3>
-        <div className="mb-3">
+        <div className="mb-3 self-center">
           <button
-            className="border border-white text-white px-4 py-2"
+            className="border border-white text-white px-4 py-2 hover:bg-[white] hover:text-gray-700"
             // onClick={createCheckOut}
             onClick={()=>setPopup(true)}
           >
             Checkout
           </button>
         </div>
-        <Popup isVisible={popup} onClose={()=>setPopup(false)}> 
+        
+    </main>
+    <Popup isVisible={popup} onClose={()=>setPopup(false)}> 
         <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
@@ -214,7 +217,7 @@ const CustomRates = () => {
                 
         <button onClick={createCheckOut} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button>
          </Popup>
-    </main>
+    </>
   );
 };
 
