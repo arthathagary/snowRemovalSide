@@ -63,8 +63,8 @@ const RatesSection = () => {
     <div class="relative overflow-hidden">
       <Image class="h-full w-full object-cover" src={rateImg1} alt=""/>
       <div class="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
-        <button class="text-black bg-white py-2 px-5">Car driveaway only -($500)</button>
-        <button class="text-black bg-white py-2 px-5">With Sidewalk -($650)</button>
+        <button class="text-black bg-white py-2 px-5">Car driveaway only($500)</button>
+        <button class="text-black bg-white py-2 px-5">With Sidewalk($650)</button>
         <button class="text-black bg-white py-2 px-5">With Boulder($650)</button>
         <button class="text-black bg-white py-2 px-5">With Sidewalk & Boulder($800)</button>
       </div>
@@ -76,8 +76,11 @@ const RatesSection = () => {
   <div class="w-full h-fit group">
     <div class="relative overflow-hidden">
       <Image class="h-full w-full object-cover" src={rateImg2} alt=""/>
-      <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-        <button class="bg-black text-white py-2 px-5">Add to cart</button>
+      <div class="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
+      <button class="text-black bg-white py-2 px-5">Car driveaway only($600)</button>
+        <button class="text-black bg-white py-2 px-5">With Sidewalk($750)</button>
+        <button class="text-black bg-white py-2 px-5">With Boulder($850)</button>
+        <button class="text-black bg-white py-2 px-5">With Sidewalk & Boulder($1000)</button>
       </div>
     </div>
   </div>
@@ -87,8 +90,11 @@ const RatesSection = () => {
   <div class="w-full h-fit group">
     <div class="relative overflow-hidden">
       <Image class="h-full w-full object-cover" src={rateImg3} alt=""/>
-      <div class="absolute h-full w-full bg-black/20 flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-        <button class="bg-black text-white py-2 px-5">Add to cart</button>
+      <div class="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
+      <button class="text-black bg-white py-2 px-5">Car driveaway only($800)</button>
+        <button class="text-black bg-white py-2 px-5">With Sidewalk($950)</button>
+        <button class="text-black bg-white py-2 px-5">With Boulder($1050)</button>
+        <button class="text-black bg-white py-2 px-5">With Sidewalk & Boulder($1200)</button>
       </div>
     </div>
   </div>
@@ -116,18 +122,22 @@ const RatesSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='mb-8 md:flex md:justify-between'>
+     className='mb-8 md:flex gap-12'>
+     <div className='md:w-[50%]'>
       <CustomRates />
+      </div>
+      <div className='md:w-[50%]'>
       <Payment />
+      </div>
     </motion.main>
     <div>
     <ul className=''>
-      <li className='mb-2 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>For Seasonal Contracts :</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulder's.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>For Pay-Per-Visit (P-P-V) Pricing :</span> P-P-V pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Regarding Driveways with Municipal Boulevards :</span> Driveways featuring municipal boulevards will be billed according to their size.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Flexibility in Pricing :</span> We understand that some properties may have more extensive walkways, sidewalks, or require extra clearance. In such cases, price adjustments will be applied accordingly. The illustrations and pricing is subject to change per property.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Free Salt Spreading :</span> Rest assured, if you provide your salt, we'll distribute it at no extra cost.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Tax Information :</span> Please note that the prices listed exclude taxes.</span></li>
+      <li className='mb-2 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>For Seasonal Contracts :</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulder's.</span></li>
+      <li className='mb-2 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>For Pay-Per-Visit (P-P-V) Pricing :</span> P-P-V pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch.</span></li>
+      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>Regarding Driveways with Municipal Boulevards :</span> Driveways featuring municipal boulevards will be billed according to their size.</span></li>
+      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>Flexibility in Pricing :</span> We understand that some properties may have more extensive walkways, sidewalks, or require extra clearance. In such cases, price adjustments will be applied accordingly. The illustrations and pricing is subject to change per property.</span></li>
+      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>Free Salt Spreading :</span> Rest assured, if you provide your salt, we'll distribute it at no extra cost.</span></li>
+      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>Tax Information :</span> Please note that the prices listed exclude taxes.</span></li>
       </ul>
 
       <h3 className='text-gray-900 font-semibold mt-8'>Contact us for a custom quote for larger properties.</h3>
