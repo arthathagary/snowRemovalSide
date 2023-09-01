@@ -16,7 +16,7 @@ const NavBar = () => {
 
 
   return (
-    <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-gray-800 sticky top-0 z-40'>
+    <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-[#4B5D5E] sticky top-0 z-40'>
         
         <Image src={logo} alt='logo' width={90}/>
 
@@ -40,7 +40,7 @@ const NavBar = () => {
         {/* {Mobile Menus} */}
         
         <ul
-         className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-gray-800 flex flex-col justify-center items-center z-40'} onClick={handleClick} >
+         className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-[#4B5D5E] flex flex-col justify-center items-center z-40'} onClick={handleClick} >
                 <li className='py-6 text-4xl text-white'><Link href="/">Home</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="#services">Services</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="#rates">Rates</Link></li>
