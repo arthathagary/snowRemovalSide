@@ -61,7 +61,7 @@ const Payment = () => {
   };
   return (
     <main>
-  <div className='w-full h-full rounded-lg shadow bg-white  mb-2 md:mb-0 flex flex-col justify-center items-center py-6  sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-3xl'>
+  <div className='h-full rounded-lg shadow bg-white  mb-2 md:mb-0 flex flex-col justify-center items-center py-6  sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-3xl'>
     <h3 className='text-xl text-gray-800 font-semibold mb-3'>Custom Payment</h3>
     <p className='text-gray-800 mb-3'>Contact us for a custom quote for larger properties.</p>
     <p className='text-sm text-gray-800 mt-1 mb-3'>Enter Amount:</p>

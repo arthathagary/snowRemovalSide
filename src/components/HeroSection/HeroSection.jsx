@@ -4,7 +4,6 @@ import axios from "axios";
 import heroContents from "./heroContent";
 import HeroCard from "./HeroCard";
 import Image from 'next/image';
-import sunGif from '../../../public/assets/gifs/sun.gif';
 import {motion,useInView, useAnimation } from 'framer-motion';
 import HeroBanner from "./HeroBanner";
 import heroBg from '../../../public/assets/images/hero.webp'
