@@ -25,6 +25,8 @@ const CustomRates = () => {
 
   const handleMainSelect = (e) => {
     switch (e.target.value) {
+      case "0":
+        setItem({...item,price:0,numOfDriveaway:0})
       case "1":
         setItem({ ...item, price: 500, numOfDriveaway: 1 });
         break;
@@ -80,26 +82,24 @@ const CustomRates = () => {
     e.preventDefault();
     let newPrice;
     switch(e.target.value){
+      case "0":
+        setSideWalkPrice(0)
+        setItem({...item,price:item.price+0})
       case "1":
         console.log(e.target.value);
         setSideWalkPrice(150);
-        setItem({ ...item, price: item.price + sideWalkPrice })
+        setItem({...item,price:item.price+150})
         break;
       case "2":
-       
         console.log(e.target.value);
         setSideWalkPrice(300);
-        setItem({ ...item, price: item.price + sideWalkPrice })
+        setItem({...item,price:item.price+300})
         break;
       case "3":
-      
         setSideWalkPrice(450)
-        setItem({ ...item, price: item.price + sideWalkPrice })
         break;
       case "4":
-       
         setSideWalkPrice(600)
-        setItem({ ...item, price: item.price + sideWalkPrice })
         break;
     }
   }
@@ -123,12 +123,9 @@ const CustomRates = () => {
     newPrice = item.price - (boulderValue - newBoulderValue);
     setItem({ ...item, price: newPrice });
   };
-  //someNew
 
-  // console.log(total);
 
   const createCheckOut = async (e) => {
-    e.preventDefault();
     const stripe = await stripePromise;
     const checkoutSession = await axios.post("/api/create-checkout", {
       item,
@@ -147,33 +144,35 @@ const CustomRates = () => {
           <h3 className="text-white font-semibold text-center text-xl mb-3">
             Custom Packages
           </h3>
-          <select value={sideWalkPrice} onChange={handleMainSelect} name="driveaway" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option disabled selected>
-              Select No. of Driveway and Front Porch
-            </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+          <div className="flex justify-between items-center">
+          <label className="text-white">Select No. of Driveway and Front Porch</label>
+          <select  onChange={handleMainSelect} name="driveaway" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-white block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="0" selected>0</option>
+            <option value="1">1 ($500)</option>
+            <option value="2">2 ($600)</option>
+            <option value="3">3 ($700)</option>
+            <option value="4">4 ($800)</option>
+            <option value="5">5 ($900)</option>
+            <option value="6">6 ($1000)</option>
+            <option value="7">7 ($1100)</option>
+            <option value="8">8 ($1200)</option>
+            <option value="9">9 ($1300)</option>
+            <option value="10">10 ($1400)</option>
           </select>
+          </div>
         </div>
 
         <div className="mb-3">
-          <select onChange={handleSideWalk} name="sidewalk" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6">
-          <option disabled selected>
-              Select No. of SideWalk
-            </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+        <div className="flex justify-between items-baseline">
+        <label className="text-white">Select No. of SideWalk</label>
+          <select onChange={handleSideWalk} name="sidewalk" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6">
+            <option value="0" selected>0</option>
+            <option value="1">1 ($150)</option>
+            <option value="2">2 ($300)</option>
+            <option value="3">3 ($450)</option>
+            <option value="4">4 ($600)</option>
           </select>
+          </div>
           {/* <input
             value={sideWalkValue}
             onChange={handleSidewalkSelect}

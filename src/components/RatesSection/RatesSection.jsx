@@ -5,6 +5,7 @@ import rateImg1 from '../../../public/assets/images/rates1.webp';
 import rateImg2 from '../../../public/assets/images/rates2.webp';
 import rateImg3 from '../../../public/assets/images/rates3.webp'
 import { LiaGreaterThanSolid } from "react-icons/lia";
+import PopupForm from '../Forms/PopupForm';
 // import { BiSolidRightArrowCircle} from "react-icons/bi";
 import { MdStars } from "react-icons/md";
 import {motion,useInView, useAnimation } from 'framer-motion';
@@ -12,6 +13,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import CustomRates from './CustomRates';
 import Payment from './Payment';
 import Popup from '../Popups/Popup';
+import axios from 'axios';
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -19,7 +21,17 @@ const stripePromise = loadStripe(
 
 const RatesSection = () => {
 
+
   const [popup,setPopup] = useState(false)
+  const [item, setItem] = useState({
+    name: "Car Driveaway",
+    description: "Remove Snows based on car driveaway price",
+    quantity: 1,
+    price: 0,
+    numOfDriveaway: 0,
+  });
+
+  
 
   const ref = useRef(null);
   const isView = useInView(ref,{once:true});
@@ -32,6 +44,19 @@ const RatesSection = () => {
     }
   }, [isView]);
 
+  const handleImgClick = (e)=>{
+    e.preventDefault();
+    const selectValue = e.target.value;
+    switch (e.target.value) {
+      case "1":
+        setItem({ ...item, price: 500, numOfDriveaway: 1 });
+        break;
+      case "2":
+        setItem({ ...item, price: 600, numOfDriveaway: 2 });
+        break;  
+  }
+}
+
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
@@ -43,6 +68,20 @@ const RatesSection = () => {
       console.log('Order canceled -- continue to shop around and checkout when you\'re ready.');
     }
   }, []);
+
+
+  const createCheckOut = async () => {
+    const stripe = await stripePromise;
+    const checkoutSession = await axios.post("/api/create-checkout", {
+      item,
+    });
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+    if (result.error) {
+      console.log(result.error.message);
+    }
+  };
   return (
     <div ref={ref} id='rates' className='w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
     <h2 className='text-center'>Rates</h2>
@@ -58,60 +97,54 @@ const RatesSection = () => {
      className='mb-8 md:flex md:gap-12'>
      
 
-  <section class="mx-auto w-fit">
-  <div class="w-full h-fit group">
-    <div class="relative overflow-hidden">
-      <Image class="h-full w-full object-cover" src={rateImg1} alt=""/>
-      <div class="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
-        <button class="text-black bg-white py-2 px-5">Car driveaway only($500)</button>
-        <button class="text-black bg-white py-2 px-5">With Sidewalk($650)</button>
-        <button class="text-black bg-white py-2 px-5">With Boulder($650)</button>
-        <button class="text-black bg-white py-2 px-5">With Sidewalk & Boulder($800)</button>
+  <section className="mx-auto w-fit">
+  <div className="w-full h-fit group">
+    <div className="relative overflow-hidden">
+      <Image className="h-full w-full object-cover" src={rateImg1} alt=""/>
+      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 px-8">
+        <button id='11' onClick={()=>{setPopup(true)}} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Car driveaway only($500)</button>
+       
+       
+        <button id='12' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Sidewalk($650)</button>
+       
+        
+        <button id='13' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Boulder($650)</button>
+        
+        
+        <button id='14' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Sidewalk & Boulder($800)</button>
+       
       </div>
     </div>
   </div>
 </section>
 
-<section class="mx-auto w-fit">
-  <div class="w-full h-fit group">
-    <div class="relative overflow-hidden">
-      <Image class="h-full w-full object-cover" src={rateImg2} alt=""/>
-      <div class="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
-      <button class="text-black bg-white py-2 px-5">Car driveaway only($600)</button>
-        <button class="text-black bg-white py-2 px-5">With Sidewalk($750)</button>
-        <button class="text-black bg-white py-2 px-5">With Boulder($850)</button>
-        <button class="text-black bg-white py-2 px-5">With Sidewalk & Boulder($1000)</button>
+<section className="mx-auto w-fit">
+  <div className="w-full h-fit group">
+    <div className="relative overflow-hidden">
+      <Image className="h-full w-full object-cover" src={rateImg2} alt=""/>
+      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
+      <button className="text-black bg-white py-2 px-5">Car driveaway only($600)</button>
+        <button className="text-black bg-white py-2 px-5">With Sidewalk($750)</button>
+        <button className="text-black bg-white py-2 px-5">With Boulder($850)</button>
+        <button className="text-black bg-white py-2 px-5">With Sidewalk & Boulder($1000)</button>
       </div>
     </div>
   </div>
 </section>
 
-<section class="mx-auto w-fit ">
-  <div class="w-full h-fit group">
-    <div class="relative overflow-hidden">
-      <Image class="h-full w-full object-cover" src={rateImg3} alt=""/>
-      <div class="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
-      <button class="text-black bg-white py-2 px-5">Car driveaway only($800)</button>
-        <button class="text-black bg-white py-2 px-5">With Sidewalk($950)</button>
-        <button class="text-black bg-white py-2 px-5">With Boulder($1050)</button>
-        <button class="text-black bg-white py-2 px-5">With Sidewalk & Boulder($1200)</button>
+<section className="mx-auto w-fit ">
+  <div className="w-full h-fit group">
+    <div className="relative overflow-hidden">
+      <Image className="h-full w-full object-cover" src={rateImg3} alt=""/>
+      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
+      <button className="text-black bg-white py-2 px-5">Car driveaway only($800)</button>
+        <button className="text-black bg-white py-2 px-5">With Sidewalk($950)</button>
+        <button className="text-black bg-white py-2 px-5">With Boulder($1050)</button>
+        <button className="text-black bg-white py-2 px-5">With Sidewalk & Boulder($1200)</button>
       </div>
     </div>
   </div>
 </section>
-
-
-     {/* <form action="/api/checkout/1" method="POST">
-      <button type='submit' role='link'><Image src={rateImg1} width={400} alt=''  /></button>
-      </form>
-
-      <form action="/api/checkout/2" method="POST">
-      <button type='submit' role='link' ><Image src={rateImg2} width={400} alt='' /></button>
-      </form>
-      <form action="/api/checkout/4" method="POST">
-     <button type='submit' role='link' ><Image src={rateImg3} width={400} alt='' /></button>
-
-      </form> */}
     </motion.main>
 
     <motion.main
@@ -123,29 +156,46 @@ const RatesSection = () => {
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
      className='mb-8 md:flex gap-12'>
-     <div className='md:w-[50%]'>
+     <div>
+     <div className='mb-4'>
       <CustomRates />
       </div>
-      <div className='md:w-[50%]'>
+      <div className=''>
       <Payment />
       </div>
-    </motion.main>
-    <div>
+      </div>
+      <div className='md:w-2/3'>
     <ul className=''>
-      <li className='mb-2 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>For Seasonal Contracts :</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulder's.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>For Pay-Per-Visit (P-P-V) Pricing :</span> P-P-V pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>Regarding Driveways with Municipal Boulevards :</span> Driveways featuring municipal boulevards will be billed according to their size.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>Flexibility in Pricing :</span> We understand that some properties may have more extensive walkways, sidewalks, or require extra clearance. In such cases, price adjustments will be applied accordingly. The illustrations and pricing is subject to change per property.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>Free Salt Spreading :</span> Rest assured, if you provide your salt, we'll distribute it at no extra cost.</span></li>
-      <li className='mb-2 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block'>Tax Information :</span> Please note that the prices listed exclude taxes.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2 pt-6'>For Seasonal Contracts :</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulder's.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>For Pay-Per-Visit (P-P-V) Pricing :</span> P-P-V pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Regarding Driveways with Municipal Boulevards :</span> Driveways featuring municipal boulevards will be billed according to their size.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Flexibility in Pricing :</span> We understand that some properties may have more extensive walkways, sidewalks, or require extra clearance. In such cases, price adjustments will be applied accordingly. The illustrations and pricing is subject to change per property.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Free Salt Spreading :</span> Rest assured, if you provide your salt, we'll distribute it at no extra cost.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Tax Information :</span> Please note that the prices listed exclude taxes.</span></li>
       </ul>
 
-      <h3 className='text-gray-900 font-semibold mt-8'>Contact us for a custom quote for larger properties.</h3>
+      <h3 className='text-gray-900 font-semibold mt-10 text-xl'>Contact us for a custom quote for larger properties.</h3>
       </div>
+    </motion.main>
+    
     
     
     </div>
-    <Popup isVisible={popup}/>
+    <Popup isVisible={popup} onClose={()=>setPopup(false)}> 
+        <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
+        <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
+        <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
+        <PopupForm typeOfForm="text" formTitle="Phone Number" formName="phonenumber"/>
+        <label>Addtional Notes</label>
+        <textarea className="w-full border-gray-300 border-2 h-32"/>
+        <div className='mb-3 flex gap-4 justify-end mt-2'>
+        <label>I accept all terms & conditions</label>
+        <input type='checkbox'/>
+        </div>
+     
+                
+        <button onClick={createCheckOut} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button>
+         </Popup>
     </div>
   )
 }
