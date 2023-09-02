@@ -8,8 +8,15 @@ const payId = req.query.id;
 console.log(payId);
 let paymentId;
 if(payId == 1){
-paymentId = 'price_1NgPSjJmpiScpwkb2nEjboio'
-}else if (payId == 2){
+paymentId = 'price_1NlpDpJmpiScpwkbXmWOxw2z'
+}else if(payId ==12){
+    paymentId = 'price_1NlqZTJmpiScpwkbCKpYrjJi'
+}else if(payId ==13){
+    paymentId = 'price_1Nlqb4JmpiScpwkb7DdHDOW5'
+}else if(payId ==14){
+    paymentId = 'price_1NlqbXJmpiScpwkbwhthzgVO'
+}
+else if (payId == 2){
 paymentId = 'price_1NhF93JmpiScpwkbArq0t8Nh'
 }else if (payId == 4){
 paymentId = 'price_1NhHDCJmpiScpwkbagSr0oVT'

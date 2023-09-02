@@ -27,6 +27,9 @@ async function CreateCheckout(req, res) {
     success_url: redirectURL + "?status=success",
     cancel_url: redirectURL + "?status=cancel",
     metadata: {},
+    shipping_address_collection: {
+      allowed_countries:  ["CA"],
+    },
   });
 
   res.json({ id: session.id });
