@@ -45,17 +45,35 @@ const RatesSection = () => {
   }, [isView]);
 
   const handleImgClick = (e)=>{
-    e.preventDefault();
-    const selectValue = e.target.value;
-    switch (e.target.value) {
-      case "1":
-        setItem({ ...item, price: 500, numOfDriveaway: 1 });
+    
+    let btnId = e.target.id
+    let btnIdInt = parseInt(btnId)
+    switch (btnId) {
+      case 1:
+        setItem({ ...item, price: 800, numOfDriveaway: 1 });
+        
         break;
-      case "2":
-        setItem({ ...item, price: 600, numOfDriveaway: 2 });
+      case 2:
+        setItem({ ...item, price: 1000, numOfDriveaway: 2 });
+        
         break;  
+      case 3:
+        setItem({ ...item, price: 1200, numOfDriveaway: 4 });
+      
+        break; 
+      default:
+        console.log("Error in click"); 
+        console.log(btnIdInt);
   }
 }
+
+const handleButtonClick = (e) => {
+  const id = e.target.id;
+  const idInInt = parseInt(id)
+  console.log(idInInt);
+  setPopup(true); // Set the popup to true
+  handleImgClick({ target: { id: idInInt } }); // Trigger handleImgClick with an event object containing the id '2'
+};
 
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
@@ -102,16 +120,12 @@ const RatesSection = () => {
     <div className="relative overflow-hidden">
       <Image className="h-full w-full object-cover" src={rateImg1} alt=""/>
       <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 px-8">
-        <button id='11' onClick={()=>{setPopup(true)}} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Car driveaway only($500)</button>
+        <button id='1' onClick={handleButtonClick} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Checkout</button>
        
        
-        <button id='12' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Sidewalk($650)</button>
-       
-        
+        {/* <button id='12' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Sidewalk($650)</button>
         <button id='13' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Boulder($650)</button>
-        
-        
-        <button id='14' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Sidewalk & Boulder($800)</button>
+        <button id='14' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Sidewalk & Boulder($800)</button> */}
        
       </div>
     </div>
@@ -122,11 +136,8 @@ const RatesSection = () => {
   <div className="w-full h-fit group">
     <div className="relative overflow-hidden">
       <Image className="h-full w-full object-cover" src={rateImg2} alt=""/>
-      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
-      <button className="text-black bg-white py-2 px-5">Car driveaway only($600)</button>
-        <button className="text-black bg-white py-2 px-5">With Sidewalk($750)</button>
-        <button className="text-black bg-white py-2 px-5">With Boulder($850)</button>
-        <button className="text-black bg-white py-2 px-5">With Sidewalk & Boulder($1000)</button>
+      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 px-8">
+        <button id='2'  onClick={handleButtonClick} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Checkout</button>
       </div>
     </div>
   </div>
@@ -136,11 +147,8 @@ const RatesSection = () => {
   <div className="w-full h-fit group">
     <div className="relative overflow-hidden">
       <Image className="h-full w-full object-cover" src={rateImg3} alt=""/>
-      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
-      <button className="text-black bg-white py-2 px-5">Car driveaway only($800)</button>
-        <button className="text-black bg-white py-2 px-5">With Sidewalk($950)</button>
-        <button className="text-black bg-white py-2 px-5">With Boulder($1050)</button>
-        <button className="text-black bg-white py-2 px-5">With Sidewalk & Boulder($1200)</button>
+      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 px-8">
+        <button id='3'  onClick={handleButtonClick} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Checkout</button>
       </div>
     </div>
   </div>
