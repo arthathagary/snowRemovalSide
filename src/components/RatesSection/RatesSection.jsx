@@ -6,7 +6,6 @@ import rateImg2 from '../../../public/assets/images/rates2.webp';
 import rateImg3 from '../../../public/assets/images/rates3.webp'
 import { LiaGreaterThanSolid } from "react-icons/lia";
 import PopupForm from '../Forms/PopupForm';
-// import { BiSolidRightArrowCircle} from "react-icons/bi";
 import { MdStars } from "react-icons/md";
 import {motion,useInView, useAnimation } from 'framer-motion';
 import { loadStripe } from '@stripe/stripe-js';

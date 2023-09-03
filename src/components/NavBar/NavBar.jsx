@@ -28,13 +28,11 @@ const NavBar = () => {
         {/* {Desktop Menus} */}
         
             <ul className='hidden md:flex gap-8'>
-                {/* <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/" passHref onClick={scrollToTop}>Home</Link></li> */}
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><div onClick={()=>{router.push("/")}}>Home</div></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/" passHref onClick={scrollToTop}>Home</Link></li>
                 <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#services" passHref>Services</Link></li>
                 <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#rates" passHref>Rates</Link></li>
                 <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#faq" passHref>FAQs</Link></li>
-                {/* <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/ContactUs" passHref>Contact Us</Link></li> */}
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><div onClick={()=>{router.push("/ContactUs")}}>Contact Us</div></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/ContactUs" passHref>Contact Us</Link></li>
             </ul>
         
         <Link href="#rates"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Book Now!</span></button></Link>
