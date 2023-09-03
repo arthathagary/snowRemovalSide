@@ -20,7 +20,7 @@ const TestimonialSection = () => {
   return (
     <div ref={ref} className='w-full md:px-32 px-8 my-12'>
     <div className="mx-auto max-w-screen-sm">
-          <h2 className="text-center">Testimonials</h2>
+          <h1>Testimonials</h1>
       </div> 
   
   <motion.div

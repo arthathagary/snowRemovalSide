@@ -28,7 +28,7 @@ const FaqSection = () => {
   return (
     <div ref={ref} id="faq" className=' w-full md:px-32 px-8 mt-8 bg-[#DAF3F4] py-8'>
     <div>
-        <motion.h2
+        <motion.h1
         variants={{
           hidden: { y: "100vw", opacity: 0 },
           visible: { y: 0, opacity: 1 },
@@ -36,7 +36,7 @@ const FaqSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-         className="text-center">Frequently Asked Questions</motion.h2>
+         >Frequently Asked Questions</motion.h1>
         
             <motion.div
             variants={{
@@ -50,13 +50,14 @@ const FaqSection = () => {
             {quizes.map((quiz,index)=>{
               return <div key={quiz.id}> <h5 className='flex items-center justify-between gap-4 font-bold mb-4' onClick={()=>handleClick(index)}><span className='cursor-pointer'>{quiz.question}</span><span className='text-xl cursor-pointer'>{click===index?'-':'+'}</span></h5>
                 <h6 className={click === index ?'block':'hidden'}>{quiz.answer}</h6> 
-                <hr className="w-full h-[2px] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
+                <hr className="w-full h-[2px] mx-auto my-4 border-0 rounded md:my-10 bg-gray-700"/>
                 </div>
             })}
             </motion.div>
            
 
-           <h3 className="text-center">Elevate your winter experience with <span className="font-semibold">Mr. Snow Removal's</span> reliable and tailored residential snow removal services. <span className="font-semibold">Call us</span> today at <span className="font-semibold">416-420-8000</span>  for a quote and enjoy a worry-free winter.</h3>
+           <p className="text-center">Elevate your winter experience with <span className="font-semibold text-gray-800">Mr. Snow Removal's</span> reliable and tailored residential snow removal services. </p>
+           <p className="text-center"><span className="font-semibold text-gray-800">Call us</span> today at <span className="font-semibold text-gray-800">416-420-8000</span>  for a quote and enjoy a worry-free winter.</p>
            
         
     </div>

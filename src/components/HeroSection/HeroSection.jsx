@@ -30,9 +30,10 @@ const HeroSection = () => {
  
   return (
     <>
-    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[90vh] z-10"/>
+    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute md:h-[100vh] z-10"/>
     <main ref={ref} id="home" className="w-full md:px-32 px-8  py-8 relative z-30 md:bg-transparent bg-[#DAF3F4]">
       <TopBanner />
+      <h1>Welcome</h1>
       <div className="md:grid md:grid-cols-2 justify-between w-full gap-12 mb-6">
       <motion.div
       variants={{
@@ -64,28 +65,14 @@ const HeroSection = () => {
         >
           <WeatherCard />
           <div className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none mt-4 rounded-lg p-4">
-            <h3>OUR EQUIPMENT </h3>
-            <hr className="w-full h-1 mx-auto bg-gray-100 border-0 rounded  dark:bg-gray-700"></hr>
+            <h3 className="font-semibold">OUR EQUIPMENT </h3>
+            <hr className="w-full h-1 mx-auto border-0 rounded bg-gray-700"></hr>
               <p>We use an arsenal of plastic shovels, snow blowers, and plow trucks for efficient and safe snow removal.</p>
             </div>
 
         </motion.div>
        
       </div>
-
-{/* <motion.div
-variants={{
-          hidden: { y: "100vw", opacity: 0 },
-          visible: { y: 0, opacity: 1 },
-        }}
-        initial="hidden"
-        animate={controlAnimation}
-        transition={{ type: "spring", stiffness: 30 }}
- className="md:grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-4">
-{heroContents.map((heroContent)=>{
-  return <HeroCard key={heroContent.id} title={heroContent.title} content={heroContent.content}/>
-})}
-</motion.div> */}
     </main>
     </>
   );

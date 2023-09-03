@@ -102,7 +102,7 @@ const handleButtonClick = (e) => {
   };
   return (
     <div ref={ref} id='rates' className='w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
-    <h2 className='text-center'>Rates</h2>
+    <h1>Rates</h1>
     <div className=''>
     <motion.main
     variants={{
@@ -122,10 +122,7 @@ const handleButtonClick = (e) => {
       <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 px-8">
         <button id='1' onClick={handleButtonClick} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Checkout</button>
        
-       
-        {/* <button id='12' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Sidewalk($650)</button>
-        <button id='13' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Boulder($650)</button>
-        <button id='14' onClick={()=>setPopup(true)} className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">With Sidewalk & Boulder($800)</button> */}
+      
        
       </div>
     </div>
@@ -194,6 +191,7 @@ const handleButtonClick = (e) => {
         <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
         <PopupForm typeOfForm="text" formTitle="Phone Number" formName="phonenumber"/>
+        <PopupForm typeOfForm="email" formTitle="Email Address" formName="email"/>
         <label>Addtional Notes</label>
         <textarea className="w-full border-gray-300 border-2 h-32"/>
         <div className='mb-3 flex gap-4 justify-end mt-2'>
