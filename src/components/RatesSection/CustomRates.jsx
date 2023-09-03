@@ -97,9 +97,11 @@ const CustomRates = () => {
         break;
       case "3":
         setSideWalkPrice(450)
+        setItem({...item,price:item.price+450})
         break;
       case "4":
         setSideWalkPrice(600)
+        setItem({...item,price:item.price+600})
         break;
     }
   }
@@ -146,8 +148,8 @@ const CustomRates = () => {
           </h3>
           <div className="flex justify-between items-center">
           <label className="text-white">Select No. of Driveway and Front Porch</label>
-          <select  onChange={handleMainSelect} name="driveaway" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-white block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option value="0" selected>0</option>
+          <select defaultValue="0"  onChange={handleMainSelect} name="driveaway" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-white block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-28">
+            <option value="0">0</option>
             <option value="1">1 ($500)</option>
             <option value="2">2 ($600)</option>
             <option value="3">3 ($700)</option>
@@ -165,8 +167,8 @@ const CustomRates = () => {
         <div className="mb-3">
         <div className="flex justify-between items-baseline">
         <label className="text-white">Select No. of SideWalk</label>
-          <select onChange={handleSideWalk} name="sidewalk" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6">
-            <option value="0" selected>0</option>
+          <select defaultValue="0" onChange={handleSideWalk} name="sidewalk" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6 w-28">
+            <option value="0">0</option>
             <option value="1">1 ($150)</option>
             <option value="2">2 ($300)</option>
             <option value="3">3 ($450)</option>
