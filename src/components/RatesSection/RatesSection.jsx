@@ -118,12 +118,6 @@ const handleButtonClick = (e) => {
   <div className="w-full h-fit group">
     <div className="relative overflow-hidden">
       <Image className="h-full w-full object-cover" src={rateImg1} alt=""/>
-      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 px-8">
-        <button id='1' onClick={handleButtonClick} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Checkout</button>
-       
-      
-       
-      </div>
     </div>
   </div>
 </section>
@@ -132,9 +126,7 @@ const handleButtonClick = (e) => {
   <div className="w-full h-fit group">
     <div className="relative overflow-hidden">
       <Image className="h-full w-full object-cover" src={rateImg2} alt=""/>
-      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 px-8">
-        <button id='2'  onClick={handleButtonClick} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Checkout</button>
-      </div>
+  
     </div>
   </div>
 </section>
@@ -143,9 +135,7 @@ const handleButtonClick = (e) => {
   <div className="w-full h-fit group">
     <div className="relative overflow-hidden">
       <Image className="h-full w-full object-cover" src={rateImg3} alt=""/>
-      <div className="absolute h-full w-full bg-black/20 flex flex-col gap-4 items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 px-8">
-        <button id='3'  onClick={handleButtonClick} type='submit' role='link' className="text-black bg-white py-2 px-5 place-self-stretch hover:bg-gray-400 hover:text-white">Checkout</button>
-      </div>
+      
     </div>
   </div>
 </section>
