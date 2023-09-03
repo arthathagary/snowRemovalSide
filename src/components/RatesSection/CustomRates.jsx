@@ -159,7 +159,7 @@ const CustomRates = () => {
         setCustomPrice({...customPrice,sideWalk:300})
         break;
       case "3":
-        setCustomPrice({...customPrice,sideWalk:4500})
+        setCustomPrice({...customPrice,sideWalk:450})
         break;
       case "4":
         setCustomPrice({...customPrice,sideWalk:600})
