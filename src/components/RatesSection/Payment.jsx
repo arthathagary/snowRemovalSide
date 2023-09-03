@@ -5,6 +5,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
 import Popup from '../Popups/Popup';
 import PopupForm from '../Forms/PopupForm';
+import Link from 'next/link';
 const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
 console.log(publishableKey);
 const stripePromise = loadStripe(publishableKey);
@@ -88,12 +89,15 @@ const Payment = () => {
         <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
         <PopupForm typeOfForm="text" formTitle="Phone Number" formName="phonenumber"/>
-        <label>Addtional Notes</label>
-        <textarea className="w-full border-gray-300 border-2 h-32"/>
-        
+        <PopupForm typeOfForm="email" formTitle="Email Address" formName="email"/>
+        <PopupForm typeOfForm="text" formTitle="Additional Notes" formName="Additionalnotes"/>
+        <div className='mb-3 flex gap-4 justify-end mt-2'>
+        <label>I accept all <Link href="/">terms & conditions</Link></label>
+        <input type='checkbox'/>
+        </div>
         
                 
-        <button onClick={createCheckOutSession} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button>
+        <button onClick={createCheckOutSession} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded">Proceed</button>
          </Popup>
 </main>
   )

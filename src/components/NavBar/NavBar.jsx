@@ -3,7 +3,8 @@ import React,{useState,useEffect} from 'react'
 import Image from 'next/image'
 import {FaBars,FaTimes,FaArrowRight} from 'react-icons/fa'
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { animateScroll as scroll } from 'react-scroll';
+import { useRouter } from 'next/navigation';
 import logo from '../../../public/assets/images/logo.png'
 
 
@@ -13,7 +14,11 @@ const NavBar = () => {
   const handleClick = ()=>setNav(!nav)
 
   //mobile
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
+  const router = useRouter()
 
   return (
     <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-gray-600 sticky top-0 z-40'>
@@ -23,14 +28,14 @@ const NavBar = () => {
         {/* {Desktop Menus} */}
         
             <ul className='hidden md:flex gap-8'>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/">Home</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="#services">Services</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="#rates">Rates</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="#faq">FAQs</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/ContactUs">Contact Us</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/" passHref onClick={scrollToTop}>Home</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#services" passHref>Services</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#rates" passHref>Rates</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#faq" passHref>FAQs</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/ContactUs" passHref>Contact Us</Link></li>
             </ul>
         
-        <Link href="#rates"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Book Now !</span></button></Link>
+        <Link href="#rates"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Book Now!</span></button></Link>
 
         {/* {Hamburger Button} */}
         <div onClick={handleClick} className='z-50 md:hidden cursor-pointer'>

@@ -15,9 +15,9 @@ body{
 }
 
 h1{
-  @apply text-3xl font-bold;
+  @apply text-3xl tracking-tight font-bold text-gray-900 flex justify-center my-4;
 }
 
 h2{
-  @apply mb-8 text-4xl tracking-tight font-bold text-gray-900;
+  @apply font-bold text-xl mb-3;
 }
