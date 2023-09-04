@@ -17,7 +17,7 @@ const ServicesSection = () => {
     }
   }, [isView]);
   return (
-    <div id='services' ref={ref} className='w-full md:px-32 px-8 md:mt-16 z-20'>
+    <div id='services' ref={ref} className='w-full md:px-32 px-8'>
     <main>
     <div className='md:flex md:gap-16 mb-8'>
     <motion.div
@@ -29,7 +29,7 @@ const ServicesSection = () => {
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
     >
-    <h1>Services</h1>
+    <h1 className='md:mb-6'>Services</h1>
     <p className='mb-2'><span className='font-semibold'>Mr. Snow Removal</span> offers Markham residents two options: <span className='font-semibold'>Seasonal and Pay-Per-Visit services.</span> </p>
 
 
