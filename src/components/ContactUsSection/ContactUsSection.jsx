@@ -27,10 +27,10 @@ const ContactUsSection = () => {
     <div className="h-52 flex items-center justify-center">
     <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full z-30 text-xl md:text-3xl ">We would love to hear from you!</h1>
     </div>
-    <div className="w-full md:px-32 px-8 py-8">
-    <div className="md:flex justify-between mb-8">
+    <div className="w-full md:px-32 px-8 md:py-8">
+    <div className="md:flex justify-between mb-8 md:mt-6 mt-0">
     <div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 md:mb-0 mb-4 ">
       <MdEmail size={30}/>
       <div>
       <p>Email Address:</p>
@@ -83,7 +83,7 @@ const ContactUsSection = () => {
             className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           ></textarea>
         </div>
-        <div className="text-right">
+        <div className="text-right mb-4">
           <button className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
             Submit
           </button>
