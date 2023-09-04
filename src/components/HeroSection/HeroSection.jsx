@@ -71,7 +71,15 @@ const HeroSection = () => {
         </motion.div>
         </div>
 
-        <div className="md:flex md:gap-8">
+        <motion.div 
+        variants={{
+          hidden: { y: "100vw", opacity: 0 },
+          visible: { y: 0, opacity: 1 },
+        }}
+        initial="hidden"
+        animate={controlAnimation}
+        transition={{ type: "spring", stiffness: 30 }}
+         className="md:flex md:gap-8">
         <div className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none rounded-lg p-4 md:h-72 mb-4 md:mb-0">
             <h3 className="font-semibold mt-2 pb-2 text-xl">OUR EQUIPMENT </h3>
             <hr className="w-full h-1 mx-auto border-0 rounded bg-gray-700 mb-6 mt-2"></hr>
@@ -82,7 +90,7 @@ const HeroSection = () => {
         <div className="rounded-xl">
         <Image src={heroBg1} alt=""  className="rounded-2xl md:h-72 border-2 border-black"/>
         </div>
-        </div>
+        </motion.div>
             
        
      
