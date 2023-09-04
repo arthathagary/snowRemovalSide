@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-gray-600 sticky top-0 z-40'>
         
-        <Image src={logo} alt='logo' width={90}/>
+        <Image src={logo} alt='logo' width={140}/>
 
         {/* {Desktop Menus} */}
         
