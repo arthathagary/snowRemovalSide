@@ -47,9 +47,9 @@ const NavBar = () => {
         <ul
          className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-[#4B5D5E] flex flex-col justify-center items-center z-40'} onClick={handleClick} >
                 <li className='py-6 text-4xl text-white'><Link href="/">Home</Link></li>
-                <li className='py-6 text-4xl text-white'><Link href="#services">Services</Link></li>
-                <li className='py-6 text-4xl text-white'><Link href="#rates">Rates</Link></li>
-                <li className='py-6 text-4xl text-white'><Link href="#faq">FAQs</Link></li>
+                <li className='py-6 text-4xl text-white'><Link href="/#services">Services</Link></li>
+                <li className='py-6 text-4xl text-white'><Link href="/#rates">Rates</Link></li>
+                <li className='py-6 text-4xl text-white'><Link href="/#faq">FAQs</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/ContactUs">Contact Us</Link></li>
                 
                 
