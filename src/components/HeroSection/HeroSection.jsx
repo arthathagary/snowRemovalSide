@@ -31,7 +31,7 @@ const HeroSection = () => {
  
   return (
     <>
-    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute  z-10"/>
+    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute  z-10 2xl:h-1/2"/>
     <main ref={ref} id="home" className="w-full md:px-32 px-8  py-8 relative z-30 md:bg-transparent bg-[#DAF3F4]">
       <TopBanner />
       <h1>Welcome</h1>
