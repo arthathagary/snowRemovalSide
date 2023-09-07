@@ -22,7 +22,7 @@ const quiz = [
     {
         id:5,
         question : 'Do you handle windrow clearing following plow services?',
-        answer : 'During our route and on repeat visits, all windrows will be cleared. Anytime After that will be by request only and may incur additional charges.'
+        answer : 'During our route and on repeat visits, all snow windrows will be cleared. Anytime after that will be by request only and there may be additional charges.'
     },
     {
         id:6,

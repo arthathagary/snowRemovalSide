@@ -38,12 +38,14 @@ const ServicesSection = () => {
 
 
 
-<p><span className='font-bold'>Pay-Per-Visit Services</span> work for those who don't want a long-term deal and cater to sporadic needs. Both options include FREE salt spreading (you provide the salt).</p>
+<p className='mb-2'><span className='font-bold'>Pay-Per-Visit Services</span> work for those who don't want a long-term deal and cater to sporadic needs. You can call us when you need your snow cleared and our Pay-Per-Visit Team will be happy to help!</p>
+<p>
+Both options include FREE salt spreading (you provide the salt).</p>
     </motion.div>
     
     </div>
 
-    <div className='md:grid md:grid-cols-2 gap-8 md:w-full'>
+    <div className='md:grid md:grid-cols-2 gap-8 md:w-full mb-12'>
     <motion.div
     variants={{
           hidden: { y: "100vw", opacity: 0 },

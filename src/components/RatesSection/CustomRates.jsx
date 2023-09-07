@@ -3,15 +3,11 @@ import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import Popup from "../Popups/Popup";
 import PopupForm from "../Forms/PopupForm";
-const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
-const stripePromise = loadStripe(publishableKey);
-import Select from "react-select";
 import Link from "next/link";
+import getStripe from "../../../lib/get-stripe";
+
 
 const CustomRates = () => {
-  // const [sideWalkValue, setSideWalkValue] = useState(0);
-  // const [boulderValue, setBoulderValue] = useState(0);
-  // const [sideWalkPrice, setSideWalkPrice] = useState(0);
   const [value1, setValue1] = useState("0");
   const [value2, setValue2] = useState("0");
   const [value3, setValue3] = useState("0");
@@ -210,6 +206,7 @@ const handleButtonClick = (e) => {
 
 
   const createCheckOut = async (e) => {
+    const stripePromise = getStripe();
     const stripe = await stripePromise;
     const checkoutSession = await axios.post("/api/create-checkout", {
       item,
@@ -225,13 +222,14 @@ const handleButtonClick = (e) => {
     <>
     <main className="border rounded-2xl shadow bg-gray-600 border-gray-700 mb-2 md:mb-0 flex flex-col justify-center px-8 backdrop-blur-xl">
         <div className="mb-3 py-6">
-          <h4 className="text-white font-semibold text-center text-xl mb-3">
+          <h4 className="text-white font-semibold text-center text-xl ">
           Select Package
           </h4>
+          <h4 className="text-white text-center mb-3">(For Seasonal Contracts)</h4>
 
           {/* -------- Driveway price details Start----------- */}
           <div className="flex justify-between items-center">
-          <label className="text-white">Driveway Size (select)</label>
+          <label className="text-white">Driveway Size <span className="block text-xs">(select)</span> </label>
           <select value={value1} onChange={handleDrivewayClick} name="driveaway" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-white block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-28">
             <option value="0">0</option>
             <option value="1">1 ($500)</option>
@@ -252,7 +250,7 @@ const handleButtonClick = (e) => {
         <div className="mb-3">
         {/* -------- SideWalk price details Start----------- */}
         <div className="flex justify-between items-baseline">
-        <label className="text-white">Number of Sidewalks (select)</label>
+        <label className="text-white">Number of Sidewalks <span className="block text-xs">(select)</span></label>
           <select value={value2} onChange={handleSideWalkClick} name="sidewalk" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6 w-28">
             <option value="0">0</option>
             <option value="1">1 ($150)</option>
@@ -263,16 +261,16 @@ const handleButtonClick = (e) => {
           </div>
            {/* -------- SideWalk price details End----------- */}
 
-            {/* -------- Boulders price details Start----------- */}
+            {/* -------- boulevards price details Start----------- */}
           <div className="flex justify-between items-baseline">
-        <label className="text-white">Number of Boulders (select)</label>
+        <label className="text-white">Number of boulevards <span className="text-xs">(select)</span></label>
           <select value={value3} onChange={handleBoulderClick} name="boulder" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-6 w-28">
             <option value="0">0</option>
             <option value="1">1 ($150)</option>
             <option value="2">2 ($300)</option>
           </select>
           </div>
-          {/* -------- Boulders price details End----------- */}
+          {/* -------- boulevards price details End----------- */}
    
           
         </div>
@@ -280,6 +278,7 @@ const handleButtonClick = (e) => {
         <h3 className="text-white font-medium mb-3 self-center">
           Total Amount is: {total} CAD
         </h3>
+        <h3 className="text-center text-white mb-3">Disclaimer</h3>
          {/* -------- Show Total Price details End----------- */}
         <div className="mb-3 self-center">
           <button

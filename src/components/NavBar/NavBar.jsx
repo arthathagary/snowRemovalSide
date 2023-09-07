@@ -28,14 +28,14 @@ const NavBar = () => {
         {/* {Desktop Menus} */}
         
             <ul className='hidden md:flex gap-8'>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/" passHref onClick={scrollToTop}>Home</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#services" passHref>Services</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#rates" passHref>Rates</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/#faq" passHref>FAQs</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec]'><Link href="/ContactUs" passHref>Contact Us</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/" passHref onClick={scrollToTop}>Home</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/#services" passHref>Services</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/#payment" passHref>Rates</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/#faq" passHref>FAQs</Link></li>
+                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/ContactUs" passHref>Contact Us</Link></li>
             </ul>
         
-        <Link href="#rates"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#004450]'><span>Book Now!</span></button></Link>
+        <Link href="/#payment"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
 
         {/* {Hamburger Button} */}
         <div onClick={handleClick} className='z-50 md:hidden cursor-pointer'>
@@ -48,12 +48,9 @@ const NavBar = () => {
          className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-[#4B5D5E] flex flex-col justify-center items-center z-40'} onClick={handleClick} >
                 <li className='py-6 text-4xl text-white'><Link href="/">Home</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/#services">Services</Link></li>
-                <li className='py-6 text-4xl text-white'><Link href="/#rates">Rates</Link></li>
+                <li className='py-6 text-4xl text-white'><Link href="/#payment">Rates</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/#faq">FAQs</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/ContactUs">Contact Us</Link></li>
-                
-                
-               
             </ul>
         
     </nav>

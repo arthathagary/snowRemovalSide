@@ -6,10 +6,7 @@ import axios from 'axios';
 import Popup from '../Popups/Popup';
 import PopupForm from '../Forms/PopupForm';
 import Link from 'next/link';
-const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
-console.log(publishableKey);
-const stripePromise = loadStripe(publishableKey);
-
+import getStripe from '../../../lib/get-stripe';
 
 
   
@@ -21,12 +18,6 @@ const Payment = () => {
         quantity: 1,
         price: '',
       });
-
-      // const changeQuantity = (value) => {
-      //   // Don't allow the quantity less than 0, if the quantity is greater than value entered by user then the user entered quantity is used, else 0
-      //   setItem({ ...item, quantity: Math.max(0, value) });
-      // };
-      
 
 
     const onInputChange = (e) => {
@@ -49,6 +40,7 @@ const Payment = () => {
 
 
     const createCheckOutSession = async () => {
+    const stripePromise = getStripe();
     const stripe = await stripePromise;
     const checkoutSession = await axios.post('/api/create-checkout', {
       item,
