@@ -13,10 +13,9 @@ import CustomRates from './CustomRates';
 import Payment from './Payment';
 import Popup from '../Popups/Popup';
 import axios from 'axios';
+import getStripe from '../../../lib/get-stripe';
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-);
+
 
 const RatesSection = () => {
 
@@ -88,6 +87,7 @@ const handleButtonClick = (e) => {
 
 
   const createCheckOut = async () => {
+    const stripePromise = getStripe();
     const stripe = await stripePromise;
     const checkoutSession = await axios.post("/api/create-checkout", {
       item,
@@ -149,7 +149,7 @@ const handleButtonClick = (e) => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='mb-8 md:flex gap-12'>
+     className='mb-8 md:flex gap-12' id='payment'>
      <div>
      <div className='mb-4'>
       <CustomRates />
@@ -160,12 +160,12 @@ const handleButtonClick = (e) => {
       </div>
       <div className='md:w-2/3'>
     <ul className=''>
-      <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2 pt-6'>For Seasonal Contracts :</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulder's.</span></li>
-      <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>For Pay-Per-Visit (P-P-V) Pricing :</span> P-P-V pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch.</span></li>
-      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Regarding Driveways with Municipal Boulevards :</span> Driveways featuring municipal boulevards will be billed according to their size.</span></li>
-      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Flexibility in Pricing :</span> We understand that some properties may have more extensive walkways, sidewalks, or require extra clearance. In such cases, price adjustments will be applied accordingly. The illustrations and pricing is subject to change per property.</span></li>
-      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Free Salt Spreading :</span> Rest assured, if you provide your salt, we'll distribute it at no extra cost.</span></li>
-      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Tax Information :</span> Please note that the prices listed exclude taxes.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2 pt-6'>For Seasonal Contracts:</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulevards. To book a Seasonal Contract you can use our Online Select Package Tool or call us at <span className='font-semibold text-gray-800'>416-420-8000</span></span></li>
+      <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>For Pay-Per-Visit Pricing:</span> P-P-V pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch. Call us  at  <span className='font-semibold text-gray-800'>416-420-8000</span> for a custom quote.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Regarding Driveways with Municipal Boulevards:</span> Driveways featuring municipal boulevards will be billed according to their size.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Flexibility in Pricing:</span> We understand that some properties may have more extensive walkways, sidewalks, or require extra clearance. In such cases, price adjustments will be applied accordingly. The illustrations and pricing is subject to change per property.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Free Salt Spreading:</span> Rest assured, if you provide your salt, we'll distribute it at no extra cost.</span></li>
+      <li className='mb-6 flex items-baseline text-gray-700  gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 block mb-2'>Tax Information:</span> Please note that the prices listed exclude taxes.</span></li>
       </ul>
 
       <h3 className='text-gray-900 font-semibold mt-10 text-xl'>Contact us for a custom quote for larger properties.</h3>

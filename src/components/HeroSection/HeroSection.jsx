@@ -33,7 +33,9 @@ const HeroSection = () => {
     <section className="md:mb-20">
     <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute  z-10 md:h-[900px]"/>
     <main ref={ref} id="home" className="w-full md:px-32 px-8 relative z-30 md:bg-transparent bg-[#DAF3F4]">
+    <div className="pt-6">
       <TopBanner />
+      </div>
       <h1>Welcome</h1>
       <div className="md:flex md:gap-8 mb-8">
       <motion.div
@@ -51,6 +53,12 @@ const HeroSection = () => {
             <h3 className="mb-2">When winter covers your neighbourhood in snow, trust <span className="font-semibold">Mr. Snow Removal</span> to be your dedicated solution for hassle-free residential snow removal. With over 3 years experience in the Markham Region, we specialize <span className="font-semibold">EXCLUSIVELY</span> in residential snow removal. Our goal is to keep your home safe and free from snow and ice throughout the winter season, always thinking of you, the homeowner.</h3>
             <h3 className="mb-2">Our seasonal services run from November 1 to March 31, making sure that your property remains clear and accessible all winter long. Why struggle through deep snow? Say goodbye to snow hassles and  embrace winter's charm while we handle the hard work!</h3>
             <h3 className="mb-2">Call <span className="font-semibold">Mr. Snow Removal</span> today at <span className="font-semibold">416-420-8000</span> and let us lend you a hand!</h3>
+
+            <hr className="w-full h-1 mx-auto border-0 rounded bg-gray-700 my-6"></hr>
+            <h2>OUR EQUIPMENT </h2>
+           
+          
+              <p>We use an arsenal of plastic shovels, snow blowers, and plow trucks for efficient and safe snow removal.</p>
             </div>
  
           </motion.div>
@@ -67,30 +75,14 @@ const HeroSection = () => {
         transition={{ type: "spring", stiffness: 30 }}
         >
           <WeatherCard />
+          <div className="rounded-xl mt-4">
+        <Image src={heroBg1} alt=""  className="rounded-2xl md:h-72 border-2 border-black"/>
+        </div>
           
         </motion.div>
         </div>
 
-        <motion.div 
-        variants={{
-          hidden: { y: "100vw", opacity: 0 },
-          visible: { y: 0, opacity: 1 },
-        }}
-        initial="hidden"
-        animate={controlAnimation}
-        transition={{ type: "spring", stiffness: 30 }}
-         className="md:flex md:gap-8">
-        <div className="bg-white shadow-lg sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none rounded-lg p-4 md:h-72 mb-4 md:mb-0">
-            <h3 className="font-semibold mt-2 pb-2 text-xl">OUR EQUIPMENT </h3>
-            <hr className="w-full h-1 mx-auto border-0 rounded bg-gray-700 mb-6 mt-2"></hr>
-          
-              <p>We use an arsenal of plastic shovels, snow blowers, and plow trucks for efficient and safe snow removal.</p>
-             
-            </div>
-        <div className="rounded-xl">
-        <Image src={heroBg1} alt=""  className="rounded-2xl md:h-72 border-2 border-black"/>
-        </div>
-        </motion.div>
+       
             
        
      
