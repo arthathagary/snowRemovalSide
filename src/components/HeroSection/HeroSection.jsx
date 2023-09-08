@@ -31,13 +31,13 @@ const HeroSection = () => {
  
   return (
     <section className="md:mb-20">
-    <Image src={heroBg} alt="hero-bg" className="hidden md:flex md:absolute  z-10 md:h-[900px]"/>
-    <main ref={ref} id="home" className="w-full md:px-32 px-8 relative z-30 md:bg-transparent bg-[#DAF3F4]">
+    
+    <main ref={ref} id="home" className="w-full md:px-32 px-8 z-30 bg-[#DAF3F4]">
     <div className="pt-6">
       <TopBanner />
       </div>
       <h1>Welcome</h1>
-      <div className="md:flex md:gap-8 mb-8">
+      <div className="md:flex md:gap-8 pb-16">
       <motion.div
       variants={{
           hidden: { y: "100vw", opacity: 0 },

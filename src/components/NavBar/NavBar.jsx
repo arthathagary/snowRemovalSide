@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-gray-600 sticky top-0 z-40'>
         
-        <Image src={logo} alt='logo' width={180}/>
+        <Image src={logo} alt='logo' width={220}/>
 
         {/* {Desktop Menus} */}
         
@@ -35,7 +35,7 @@ const NavBar = () => {
                 <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/ContactUs" passHref>Contact Us</Link></li>
             </ul>
         
-        <Link href="/#payment"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-[1.1rem] text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
+        <Link href="/#payment"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-xl text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
 
         {/* {Hamburger Button} */}
         <div onClick={handleClick} className='z-50 md:hidden cursor-pointer'>

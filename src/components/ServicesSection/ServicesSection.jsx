@@ -30,15 +30,15 @@ const ServicesSection = () => {
         transition={{ type: "spring", stiffness: 30 }}
     >
     <h1 className='md:mb-6'>Services</h1>
-    <p className='mb-2'><span className='font-semibold'>Mr. Snow Removal</span> offers Markham residents two options: <span className='font-semibold'>Seasonal and Pay-Per-Visit services.</span> </p>
+    <p className='mb-2'><span className='font-semibold'>Mr. Snow Removal</span> offers Markham residents two options: <span className='font-semibold'>Seasonal and Pay-Per-Visit Services.</span> </p>
 
 
 
-<p className='mb-2'>Our very exclusive <span className='font-semibold'>Seasonal</span> clients receive the VIP treatment. We have a limited number of spots each year to give them the best service. Once we're full, we focus on these clients for the season and we cease taking on additional clients to ensure a focused commitment to our seasonal customers. Seasonal service is for those who want a worry-free winter. The contract starts on November 1 and ends on March 31, giving you 5 months of snow coverage. </p>
+<p className='mb-2'>Our very exclusive <span className='font-semibold'>Seasonal</span> clients receive the VIP treatment. We have a limited number of seasonal spots each year to provide the best service. Once we're full, our Seasonal team exclusively focuses on these seasonal clients and we cease taking on additional seasonal clients to ensure a dedicated commitment during the season. Seasonal service is for those who want a worry-free winter. The contract starts on November 1 and ends on March 31, giving you 5 months of snow coverage. </p>
 
 
 
-<p className='mb-2'><span className='font-bold'>Pay-Per-Visit Services</span> work for those who don't want a long-term deal and cater to sporadic needs. You can call us when you need your snow cleared and our Pay-Per-Visit Team will be happy to help!</p>
+<p className='mb-2'><span className='font-bold'>Pay-Per-Visit Services</span>work for those who don't want a long-term deal and cater to sporadic needs. You can call us when you need your snow cleared and our Pay-Per-Visit Team will be happy to help!</p>
 <p>
 Both options include FREE salt spreading (you provide the salt).</p>
     </motion.div>
