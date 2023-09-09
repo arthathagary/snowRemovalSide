@@ -149,8 +149,8 @@ const handleButtonClick = (e) => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='mb-8 md:flex gap-12' id='payment'>
-     <div>
+     className='mb-8 md:grid md:grid-cols-3 gap-x-16' id='payment'>
+     <div className=''>
      <div className='mb-4'>
       <CustomRates />
       </div>
@@ -158,7 +158,7 @@ const handleButtonClick = (e) => {
       <Payment />
       </div>
       </div>
-      <div className='md:w-2/3'>
+      <div className='col-span-2'>
     <ul className=''>
       <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 pt-6'>For Seasonal Contracts:</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulevards. To book a Seasonal Contract you can use our Online Select Package Tool or call us at <span className='font-semibold text-gray-800'>416-420-8000</span></span></li>
       <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>For Pay-Per-Visit Pricing:</span> Pay-Per-Visit pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch. Call us  at  <span className='font-semibold text-gray-800'>416-420-8000</span> for a custom quote.</span></li>
