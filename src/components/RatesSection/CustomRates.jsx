@@ -3,7 +3,6 @@ import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import Popup from "../Popups/Popup";
 import PopupForm from "../Forms/PopupForm";
-import Link from "next/link";
 import getStripe from "../../../lib/get-stripe";
 
 
@@ -280,7 +279,7 @@ const handleButtonClick = (e) => {
         <h3 className="text-white font-medium mb-3 self-center">
           Total Amount is: {total} CAD
         </h3>
-        <h3 className="text-center text-white mb-3">Disclaimer</h3>
+        
          {/* -------- Show Total Price details End----------- */}
         <div className="mb-3 self-center">
           <button

@@ -3,36 +3,39 @@ import React,{useState,useEffect} from 'react'
 import Image from 'next/image'
 import {FaBars,FaTimes,FaArrowRight} from 'react-icons/fa'
 import Link from 'next/link';
-import { animateScroll as scroll } from 'react-scroll';
+import { animateScroll as scroll, Link as ScrollLink} from 'react-scroll';
 import { useRouter } from 'next/navigation';
 import logo from '../../../public/assets/images/logo.png'
 
 
 const NavBar = () => {
+  const router = useRouter();
   const [nav,setNav] = useState(false);
 
   const handleClick = ()=>setNav(!nav)
 
   //mobile
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
+  // const scrollToTop = () => {
+  //   scroll.scrollToTop();
+  // };
+ 
 
-  const router = useRouter()
+  
 
   return (
-    <nav className='flex justify-between w-full h-[80px] items-center md:px-32 px-8 bg-gray-600 sticky top-0 z-40'>
-        
-        <Image src={logo} alt='logo' width={220}/>
+    <nav className='flex justify-between w-full h-[100px] items-center md:px-32 px-8 bg-gray-600 sticky top-0 z-40'>
+        <div className='mt-2'>
+        <Image src={logo} alt='logo' width={300}/>
+        </div>
 
         {/* {Desktop Menus} */}
         
             <ul className='hidden md:flex gap-8'>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/" passHref onClick={scrollToTop}>Home</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/#services" passHref>Services</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/#payment" passHref>Rates</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/#faq" passHref>FAQs</Link></li>
-                <li className='text-[1.1rem] text-white hover:text-[#bfecec] font-medium'><Link href="/ContactUs" passHref>Contact Us</Link></li>
+            <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/">Home</Link></li>
+                <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#services">Services</Link></li>
+                <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#rates">Rates</Link></li>
+                <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#faq">FAQs</Link></li>
+                <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/ContactUs">Contact Us</Link></li>
             </ul>
         
         <Link href="/#payment"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-xl text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
@@ -48,7 +51,7 @@ const NavBar = () => {
          className={!nav ? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-[#4B5D5E] flex flex-col justify-center items-center z-40'} onClick={handleClick} >
                 <li className='py-6 text-4xl text-white'><Link href="/">Home</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/#services">Services</Link></li>
-                <li className='py-6 text-4xl text-white'><Link href="/#payment">Rates</Link></li>
+                <li className='py-6 text-4xl text-white'><Link href="/#rates">Rates</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/#faq">FAQs</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/ContactUs">Contact Us</Link></li>
             </ul>
