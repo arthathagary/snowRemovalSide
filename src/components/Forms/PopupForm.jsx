@@ -2,6 +2,8 @@ import React from 'react'
 import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
+import Link from "next/link";
+
 
 
 
@@ -64,8 +66,12 @@ const PopupForm = (props) => {
     <p className='text-xs font-medium text-red-600 my-2 text-center'>{errors.email?.message}</p>
     <label>Enter Any Additional Comments:</label>
     <input  placeholder='Additional' className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-4"/>
-    <input  type='submit' disabled={isDirty && !isValid} className="mt-4 bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end"/>
-
+    <div className='mb-2 flex gap-4 justify-end mt-4'>
+        <label>I accept all <Link href="/">terms & conditions</Link></label>
+        <input type='checkbox'/>
+        </div>
+    <div className='md:flex md:justify-end'><input  type='submit' disabled={isDirty && !isValid} className="mt-2 bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end"/></div>
+    
 
     </form>
   )
