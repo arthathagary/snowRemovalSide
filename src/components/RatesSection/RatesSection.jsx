@@ -100,7 +100,7 @@ const handleButtonClick = (e) => {
     }
   };
   return (
-    <div ref={ref} id='rates' className='w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
+    <div ref={ref} className='w-full md:px-32 px-8 bg-[#DAF3F4] py-12'>
     <h1>Rates</h1>
     <div className=''>
     <motion.main
@@ -111,33 +111,27 @@ const handleButtonClick = (e) => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='mb-8 md:flex md:gap-12'>
+     className='mb-12 md:grid md:grid-cols-3 gap-8'>
      
 
-  <section className="mx-auto w-fit">
-  <div className="w-full h-fit group">
-    <div className="relative overflow-hidden">
-      <Image className="h-full w-full object-cover" src={rateImg1} alt=""/>
-    </div>
-  </div>
-</section>
-
-<section className="mx-auto w-fit">
-  <div className="w-full h-fit group">
-    <div className="relative overflow-hidden">
-      <Image className="h-full w-full object-cover" src={rateImg2} alt=""/>
+  <section>
   
-    </div>
-  </div>
+      <Image className="h-full w-full rounded-xl" src={rateImg1} alt=""/>
+ 
 </section>
 
-<section className="mx-auto w-fit ">
-  <div className="w-full h-fit group">
-    <div className="relative overflow-hidden">
-      <Image className="h-full w-full object-cover" src={rateImg3} alt=""/>
+<section >
+  
+      <Image className="h-full w-full rounded-xl" src={rateImg2} alt=""/>
+  
+   
+</section>
+
+<section>
+  
+      <Image className="h-full w-full rounded-xl" src={rateImg3} alt=""/>
       
-    </div>
-  </div>
+    
 </section>
     </motion.main>
 
@@ -149,8 +143,8 @@ const handleButtonClick = (e) => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='mb-8 md:grid md:grid-cols-3 gap-x-16' id='payment'>
-     <div className=''>
+     className='mb-8 md:grid md:grid-cols-5 gap-x-16' id='rates'>
+     <div  className='col-span-2'>
      <div className='mb-4'>
       <CustomRates />
       </div>
@@ -158,7 +152,7 @@ const handleButtonClick = (e) => {
       <Payment />
       </div>
       </div>
-      <div className='col-span-2'>
+      <div className='col-span-3'>
     <ul className=''>
       <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900 pt-6'>For Seasonal Contracts:</span> Our seasonal contracts encompass the driveway, walkway, and front steps/porch. Additional charges apply for sidewalks and boulevards. To book a Seasonal Contract you can use our Online Select Package Tool or call us at <span className='font-semibold text-gray-800'>416-420-8000</span></span></li>
       <li className='mb-6 flex items-baseline text-gray-700 gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>For Pay-Per-Visit Pricing:</span> Pay-Per-Visit pricing is calculated per visit and includes the driveway, walkway, sidewalk, boulder's and front steps/porch. Call us  at  <span className='font-semibold text-gray-800'>416-420-8000</span> for a custom quote.</span></li>

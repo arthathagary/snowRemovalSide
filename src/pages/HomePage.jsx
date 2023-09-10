@@ -1,8 +1,6 @@
 "use client";
-import ContactUsSection from '@/components/ContactUsSection/ContactUsSection'
 import FaqSection from '@/components/FaqSection/FaqSection'
 import Footer from '@/components/Footer/Footer'
-import HeroCard from '@/components/HeroSection/HeroCard'
 import HeroSection from '@/components/HeroSection/HeroSection'
 import NavBar from '@/components/NavBar/NavBar'
 import RatesSection from '@/components/RatesSection/RatesSection'
