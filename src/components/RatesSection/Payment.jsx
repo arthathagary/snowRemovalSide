@@ -52,6 +52,12 @@ const Payment = () => {
       alert(result.error.message);
     }
   };
+
+  const handleFormSubmit = (formData) => {
+    // Perform form data validation here if needed
+    // If the form data is valid, call the createCheckOut function
+    createCheckOutSession();
+  };
   return (
     <main>
   <div className='h-full rounded-lg shadow bg-white  mb-2 md:mb-0 flex flex-col justify-center items-center py-6  sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-3xl'>
@@ -77,19 +83,7 @@ const Payment = () => {
     </button>
   </div>
   <Popup isVisible={popup} onClose={()=>setPopup(false)}> 
-        <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
-        <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
-        <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
-        <PopupForm typeOfForm="text" formTitle="Phone Number" formName="phonenumber"/>
-        <PopupForm typeOfForm="email" formTitle="Email Address" formName="email"/>
-        <PopupForm typeOfForm="text" formTitle="Additional Notes" formName="Additionalnotes"/>
-        <div className='mb-3 flex gap-4 justify-end mt-2'>
-        <label>I accept all <Link href="/">terms & conditions</Link></label>
-        <input type='checkbox'/>
-        </div>
-        
-                
-        <button onClick={createCheckOutSession} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded">Proceed</button>
+        <PopupForm onSubmit={handleFormSubmit}/>
          </Popup>
 </main>
   )

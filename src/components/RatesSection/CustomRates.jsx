@@ -7,7 +7,8 @@ import Link from "next/link";
 import getStripe from "../../../lib/get-stripe";
 
 
-const CustomRates = () => {
+
+const CustomRates = (props) => {
   const [value1, setValue1] = useState("0");
   const [value2, setValue2] = useState("0");
   const [value3, setValue3] = useState("0");
@@ -99,8 +100,6 @@ const CustomRates = () => {
 
   const handleDriveway = (e)=>{
     const drivewayValue = e.target.drivewayValue;
-    console.log(drivewayValue);
-    console.log(typeof(drivewayValue));
     switch (drivewayValue) {
       case "0":
         setCustomPrice({...customPrice,driveway:0})
@@ -142,8 +141,6 @@ const CustomRates = () => {
 
   const handleSideWalk = (e)=>{
     const sideWalkValue = e.target.sideWalkValue;
-    console.log(sideWalkValue);
-    console.log(typeof(sideWalkValue));
     switch (sideWalkValue) {
       case "0":
         setCustomPrice({...customPrice,sideWalk:0})
@@ -167,8 +164,6 @@ const CustomRates = () => {
 
   const handleBoulder = (e)=>{
     const boulderValue = e.target.boulderValue;
-    console.log(boulderValue);
-    console.log(typeof(boulderValue));
     switch (boulderValue) {
       case "0":
         setCustomPrice({...customPrice,boulder:0})
@@ -214,9 +209,16 @@ const handleButtonClick = (e) => {
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
     });
+    
     if (result.error) {
       console.log(result.error.message);
     }
+  };
+
+  const handleFormSubmit = (formData) => {
+    // Perform form data validation here if needed
+    // If the form data is valid, call the createCheckOut function
+    createCheckOut();
   };
   return (
     <>
@@ -292,7 +294,7 @@ const handleButtonClick = (e) => {
         
     </main>
     <Popup isVisible={popup} onClose={()=>setPopup(false)}> 
-        <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
+        {/* <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
         <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
         <PopupForm typeOfForm="text" formTitle="Phone Number" formName="phonenumber"/>
@@ -304,7 +306,8 @@ const handleButtonClick = (e) => {
         </div>
         
                 
-        <button onClick={createCheckOut} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button>
+        <button onClick={createCheckOut} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button> */}
+        <PopupForm onSubmit={handleFormSubmit}/>
          </Popup>
     </>
   );
