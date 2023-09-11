@@ -6,14 +6,18 @@ import Link from "next/link";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is Mandatory"),
-  address1: yup.string().required("address is Mandatory"),
-  address2: yup.string().required("address is Mandatory"),
+  address1: yup.string().required("Address 1 is Mandatory"),
+  address2: yup.string().required("Address 2 is Mandatory"),
   phoneNum: yup
-    .number("num")
-    .integer("Give Only numbers")
-    .positive("Give Only numbers")
-    .required("phone Num is Mandatory"),
-  email: yup.string().email().required("email is Mandatory"),
+  .string() // Change the type to string
+  .test("is-valid-phone", "Invalid phone number", (value) => {
+    if (!value) return false; // Empty value is invalid
+    // You can use a regular expression or other validation logic here
+    // For example, you can use /^\d{10}$/ to require exactly 10 digits
+    return /^\d{1,15}$/.test(value); // Modify this regex as needed
+  })
+    .required("Phone Number is Mandatory"),
+  email: yup.string().email().required("Email is Mandatory"),
 });
 
 const PopupForm = (props) => {
@@ -122,7 +126,7 @@ const PopupForm = (props) => {
 
 <button type="submit"  disabled={isDirty && !isValid} className="mt-2 bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded flex gap-3">Checkout 
 <div
-            class={!isClick ? 'hidden' : "w-6 h-6 rounded-full animate-spin border-4 border-solid border-green-500 border-t-transparent shadow-md"}
+            class={!isClick ? 'hidden' : "w-6 h-6 rounded-full animate-spin border-4 border-solid border-white border-t-transparent shadow-md"}
           ></div>
 </button>
 
