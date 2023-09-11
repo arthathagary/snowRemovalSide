@@ -42,7 +42,7 @@ const HeroSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-            className="bg-white sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none p-4 rounded-lg mb-5 md:mb-0 md:w-2/3"
+            className="bg-white sm:rounded-lg sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none p-4 rounded-lg mb-5 md:mb-0 md:w-2/3"
           >
             <div className="tracking-tight text-gray-900">
             <h3 className="text-gray-900 mb-2">Welcome to <span className="font-semibold">Mr. Snow Removal</span> — Your Trusted Partner for Residential Snow Removal in Markham!</h3>
@@ -71,8 +71,8 @@ const HeroSection = () => {
         transition={{ type: "spring", stiffness: 30 }}
         >
           <WeatherCard />
-          <div className="rounded-xl mt-8">
-        <Image src={heroBg1} alt=""  className="rounded-2xl md:h-72 "/>
+          <div className="rounded-lg mt-8">
+        <Image src={heroBg1} alt=""  className="rounded-lg md:h-72 "/>
         </div>
           
         </motion.div>

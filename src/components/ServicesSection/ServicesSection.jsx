@@ -17,7 +17,7 @@ const ServicesSection = () => {
     }
   }, [isView]);
   return (
-    <div id='services' ref={ref} className='w-full md:px-32 px-8'>
+    <div id='services' ref={ref} className='w-full md:px-32 px-8 scroll-my-36'>
     <main>
     <div className='md:flex md:gap-16 mb-8'>
     <motion.div

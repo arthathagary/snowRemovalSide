@@ -26,7 +26,7 @@ const FaqSection = () => {
   }, [isView]);
 
   return (
-    <div ref={ref} id="faq" className='w-full md:px-32 px-8 mt-8 bg-[#DAF3F4] py-8'>
+    <div ref={ref} id="faq" className='w-full md:px-32 px-8 mt-8 bg-[#DAF3F4] py-8 scroll-my-20'>
     <div>
         <motion.h1
         variants={{

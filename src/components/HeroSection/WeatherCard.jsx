@@ -35,7 +35,7 @@ const WeatherCard = () => {
 
   return (
     <>
-        <div className='bg-white  sm:rounded-3xl sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none'          >
+        <div className='bg-white  sm:rounded-lg sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none'          >
             <div className="mb-2 md:text-2xl font-bold tracking-tight text-gray-900  py-12 px-6 text-center">
             <h3 className='mb-3 text-xl font-normal'>{new Date().toLocaleDateString('en-US', options)}</h3>
             <h3 className="mb-3 text-xl font-normal">Markham, Ontario, Canada</h3>

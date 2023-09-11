@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react'
 import Image from 'next/image'
 import {FaBars,FaTimes,FaArrowRight} from 'react-icons/fa'
 import Link from 'next/link';
-import { animateScroll as scroll, Link as ScrollLink} from 'react-scroll';
+import { animateScroll as scroll} from 'react-scroll';
 import { useRouter } from 'next/navigation';
 import logo from '../../../public/assets/images/logo.png'
 
@@ -14,10 +14,12 @@ const NavBar = () => {
 
   const handleClick = ()=>setNav(!nav)
 
-  //mobile
-  // const scrollToTop = () => {
-  //   scroll.scrollToTop();
-  // };
+  
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      smooth : 'easeInOutQuad'
+    });
+  };
  
 
   
@@ -31,14 +33,14 @@ const NavBar = () => {
         {/* {Desktop Menus} */}
         
             <ul className='hidden md:flex gap-8'>
-            <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/">Home</Link></li>
+            <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/" onClick={scrollToTop}>Home</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#services">Services</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#rates">Rates</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#faq">FAQs</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/ContactUs">Contact Us</Link></li>
             </ul>
         
-        <Link href="/#payment"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-xl text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
+        <Link href="/#rates"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-xl text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
 
         {/* {Hamburger Button} */}
         <div onClick={handleClick} className='z-50 md:hidden cursor-pointer'>
