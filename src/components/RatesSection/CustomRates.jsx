@@ -217,6 +217,7 @@ const handleButtonClick = (e) => {
   const handleFormSubmit = (formData) => {
     // Perform form data validation here if needed
     // If the form data is valid, call the createCheckOut function
+    
     createCheckOut();
   };
   return (
