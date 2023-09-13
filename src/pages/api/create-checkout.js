@@ -24,12 +24,16 @@ async function CreateCheckout(req, res) {
     payment_method_types: ["card"],
     line_items: [itemSold],
     mode: "payment",
-    success_url: redirectURL + "?status=success",
+    // success_url: redirectURL + "?status=success",
+    success_url: redirectURL +"?session_id={CHECKOUT_SESSION_ID}",
     cancel_url: redirectURL + "?status=cancel",
     metadata: {},
     // shipping_address_collection: {
     //   allowed_countries:  ["CA"],
     // },
+   
+    
+
   });
 
   res.json({ id: session.id });
