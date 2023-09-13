@@ -294,19 +294,6 @@ const handleButtonClick = (e) => {
         
     </main>
     <Popup isVisible={popup} onClose={()=>setPopup(false)}> 
-        {/* <PopupForm typeOfForm="text" formTitle="Name" formName="name"/>
-        <PopupForm typeOfForm="text" formTitle="Address Line 1" formName="addressLine1"/>
-        <PopupForm typeOfForm="text" formTitle="Address Line 2" formName="addressLine2"/>
-        <PopupForm typeOfForm="text" formTitle="Phone Number" formName="phonenumber"/>
-        <PopupForm typeOfForm="email" formTitle="Email Address" formName="email"/>
-        <PopupForm typeOfForm="text" formTitle="Additional Notes" formName="Additionalnotes"/>
-        <div className='mb-3 flex gap-4 justify-end mt-2'>
-        <label>I accept all <Link href="/">terms & conditions</Link></label>
-        <input type='checkbox'/>
-        </div>
-        
-                
-        <button onClick={createCheckOut} className="bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded place-self-end">Proceed</button> */}
         <PopupForm onSubmit={handleFormSubmit}/>
          </Popup>
     </>
