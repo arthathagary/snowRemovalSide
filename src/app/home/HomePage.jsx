@@ -1,12 +1,12 @@
 "use client";
-import FaqSection from '@/components/FaqSection/FaqSection'
-import Footer from '@/components/Footer/Footer'
+import Footer from '@/components/Footer/Footer';
 import HeroSection from '@/components/HeroSection/HeroSection'
 import NavBar from '@/components/NavBar/NavBar'
 import RatesSection from '@/components/RatesSection/RatesSection'
 import ServicesSection from '@/components/ServicesSection/ServicesSection'
 import TestimonialSection from '@/components/TestimonialSection/TestimonialSection'
 import React from 'react'
+import FaqSection from '@/components/FaqSection/FaqSection';
 
 const HomePage = () => {
   return (
@@ -16,7 +16,7 @@ const HomePage = () => {
         <ServicesSection />
         <RatesSection />
         <TestimonialSection />
-        <FaqSection />
+        <FaqSection/>
         <Footer />
     </>
   )
