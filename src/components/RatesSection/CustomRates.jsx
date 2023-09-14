@@ -171,7 +171,7 @@ const CustomRates = (props) => {
         setCustomPrice({...customPrice,boulder:150})
         break;
       case "2":
-        setCustomPrice({...customPrice,boulder:300})
+        setCustomPrice({...customPrice,boulder:250})
         break;
       default:
         break;
@@ -269,7 +269,7 @@ const handleButtonClick = (e) => {
           <select value={value3} onChange={handleBoulderClick} name="boulder" className="bg-gray-50 border border-gray-300  text-sm rounded-lg   block p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 mb-6 w-24">
             <option value="0">0</option>
             <option value="1">1 ($150)</option>
-            <option value="2">2 ($300)</option>
+            <option value="2">2 ($250)</option>
           </select>
           </div>
           {/* -------- boulevards price details End----------- */}

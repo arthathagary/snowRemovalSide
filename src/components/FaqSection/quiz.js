@@ -17,7 +17,7 @@ const quiz = [
     {
         id:4,
         question : 'When can I expect my property to be snow-free?',
-        answer : 'We initiate snow clearing when there is an accumulation of 3cm or more of snow. While we make every effort to adhere to a 12-hour timeframe for all our valued customers,  the unpredictability of winter weather means we cannot guarantee specific timing.  Rest assured, though, we are committed to taking care of the situation and that we are on it.'
+        answer : 'We initiate snow clearing when there is an accumulation of 3 inches or more of snow. While we make every effort to adhere to a 12-hour timeframe for all our valued customers,  the unpredictability of winter weather means we cannot guarantee specific timing.  Rest assured, though, we are committed to taking care of the situation and that we are on it.'
     },
     {
         id:5,
