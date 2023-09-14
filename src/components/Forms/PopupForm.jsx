@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
 
+
 const schema = yup.object().shape({
   name: yup.string().required("Name is Mandatory"),
   address1: yup.string().required("Address 1 is Mandatory"),
@@ -96,9 +97,9 @@ const PopupForm = (props) => {
         placeholder="Additional"
         className="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-4"
       />
-      <div className="mb-2 flex gap-4 justify-end mt-4">
+      <div className="mb-3 flex gap-4 justify-end mt-4">
         <label>
-          I accept all <Link href="/">terms & conditions</Link>
+        By checking this box I endorse that I have read, understood, and accept the <Link href="/terms&conditions" target="_blank" className="font-medium">Privacy Policy and Terms and Conditions.</Link>
         </label>
         <input type="checkbox" />
       </div>

@@ -36,7 +36,7 @@ const NavBar = () => {
             <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/" onClick={scrollToTop}>Home</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#services">Services</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#rates">Rates</Link></li>
-                <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#faq">FAQs</Link></li>
+                <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#faq">FAQ</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/contact">Contact Us</Link></li>
             </ul>
         
