@@ -114,31 +114,31 @@ const handleButtonClick = (e) => {
      className='mb-12 lg:grid lg:grid-cols-3 gap-8'>
      
 
-  <motion.section
-  whileHover={{ scale: 1.1 }}
+  <section
+  
   >
   
       <Image className="h-full w-full rounded-xl" src={rateImg1} alt=""/>
  
-</motion.section>
+</section>
 
-<motion.section
- whileHover={{ scale: 1.1 }}
+<section
+ 
 >
   
       <Image className="h-full w-full rounded-xl" src={rateImg2} alt=""/>
   
    
-</motion.section>
+</section>
 
-<motion.section
-whileHover={{ scale: 1.1 }}
+<section
+
 >
   
       <Image className="h-full w-full rounded-xl" src={rateImg3} alt=""/>
       
     
-</motion.section>
+</section>
     </motion.main>
 
     <motion.main
