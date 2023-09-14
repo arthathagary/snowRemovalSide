@@ -18,7 +18,7 @@ const TestimonialSection = () => {
     }
   }, [isView]);
   return (
-    <div ref={ref} className='w-full md:px-32 px-8 my-12'>
+    <div ref={ref} className='w-full lg:px-32 px-8 my-12'>
     <div className="mx-auto max-w-screen-sm">
           <h1>Testimonials</h1>
       </div> 
@@ -31,7 +31,7 @@ const TestimonialSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-   className='md:grid md:grid-cols-4 flex flex-col gap-4'>
+   className='lg:grid lg:grid-cols-4 flex flex-col gap-4'>
   {testiData.map((data)=>{
     return <TestimonialCard key={data.id} content={data.content} reviewer={data.reviewer} worksAt={data.worksAt}/>
   })}

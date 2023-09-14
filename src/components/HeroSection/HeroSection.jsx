@@ -28,12 +28,12 @@ const HeroSection = () => {
   return (
     <section className="md:mb-20">
     
-    <main ref={ref} id="home" className="w-full md:px-32 px-8 bg-[#DAF3F4]">
+    <main ref={ref} id="home" className="w-full lg:px-32 px-8 bg-[#DAF3F4]">
     <div className="pt-6">
       <TopBanner />
       </div>
       <h1 className="z-20">Welcome</h1>
-      <div className="md:flex md:gap-12 pb-16">
+      <div className="lg:flex lg:gap-12 pb-16">
       <motion.div
       variants={{
           hidden: { y: "100vw", opacity: 0 },
@@ -42,7 +42,7 @@ const HeroSection = () => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-            className="bg-white sm:rounded-lg sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none p-4 rounded-lg mb-5 md:mb-0 md:w-2/3"
+            className="bg-white sm:rounded-lg sm:p-8 bg-clip-padding bg-opacity-60 border border-gray-200 backdrop-blur-none p-4 rounded-lg mb-5 lg:mb-0 lg:w-2/3"
           >
             <div className="tracking-tight text-gray-900">
             <h3 className="text-gray-900 mb-2">Welcome to <span className="font-semibold">Mr. Snow Removal</span> — Your Trusted Partner for Residential Snow Removal in Markham!</h3>
