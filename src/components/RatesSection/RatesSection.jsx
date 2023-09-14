@@ -100,7 +100,7 @@ const handleButtonClick = (e) => {
     }
   };
   return (
-    <div ref={ref} id='rates' className='w-full md:px-32 px-8 bg-[#DAF3F4] py-12 -scroll-my-[35rem]'>
+    <div ref={ref} id='rates' className='w-full lg:px-32 px-8 bg-[#DAF3F4] py-12 -scroll-my-[35rem]'>
     <h1>Rates</h1>
     <div className=''>
     <motion.main
@@ -111,7 +111,7 @@ const handleButtonClick = (e) => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='mb-12 md:grid md:grid-cols-3 gap-8'>
+     className='mb-12 lg:grid lg:grid-cols-3 gap-8'>
      
 
   <section>
@@ -143,7 +143,7 @@ const handleButtonClick = (e) => {
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-     className='mb-8 md:grid md:grid-cols-5 gap-x-16' >
+     className='mb-8 lg:grid lg:grid-cols-5 gap-x-16' >
      <div  className='col-span-2'>
      <div className='mb-4'>
       <CustomRates />

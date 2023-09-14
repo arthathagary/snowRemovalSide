@@ -25,14 +25,14 @@ const NavBar = () => {
   
 
   return (
-    <nav className='flex justify-between w-full h-[100px] items-center md:px-32 px-8 bg-gray-600 sticky top-0 z-40'>
+    <nav className='flex justify-between w-full h-[100px] items-center lg:px-32 px-8 bg-gray-600 sticky top-0 z-40'>
         <div className='mt-2'>
         <Image src={logo} alt='logo' width={300}/>
         </div>
 
         {/* {Desktop Menus} */}
         
-            <ul className='hidden md:flex gap-8'>
+            <ul className='hidden lg:flex gap-8'>
             <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/" onClick={scrollToTop}>Home</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#services">Services</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#rates">Rates</Link></li>
@@ -40,10 +40,10 @@ const NavBar = () => {
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/contact">Contact Us</Link></li>
             </ul>
         
-        <Link href="/#rates"><button className='group hidden md:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-xl text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
+        <Link href="/#rates"><button className='group hidden lg:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-xl text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
 
         {/* {Hamburger Button} */}
-        <div onClick={handleClick} className='z-50 md:hidden cursor-pointer'>
+        <div onClick={handleClick} className='z-50 lg:hidden cursor-pointer'>
         {!nav?<FaBars color='white'/>:<FaTimes color='white'/>}
         </div>
 

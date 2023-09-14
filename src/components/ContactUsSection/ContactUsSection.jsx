@@ -23,12 +23,12 @@ const ContactUsSection = () => {
   }, [isView]);
   return (
     <form ref={ref} id="contactUs" >
-    <Image src={bannerBg} alt="" className="absolute md:h-[30vh] h-[20vh]"/>
+    <Image src={bannerBg} alt="" className="absolute lg:h-[30vh] h-[20vh]"/>
     <div className="h-52 flex items-center justify-center">
-    <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full z-30 text-xl md:text-3xl ">We would love to hear from you!</h1>
+    <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full z-30 text-xl lg:text-3xl ">We would love to hear from you!</h1>
     </div>
-    <div className="w-full md:px-32 px-8 md:py-8">
-    <div className="md:flex justify-between mb-8 md:mt-6 mt-0">
+    <div className="w-full lg:px-32 px-8 lg:py-8">
+    <div className="lg:flex justify-between mb-8 md:mt-6 mt-0">
     <div>
       <div className="flex items-center gap-4 md:mb-0 mb-4 ">
       <MdEmail size={30}/>

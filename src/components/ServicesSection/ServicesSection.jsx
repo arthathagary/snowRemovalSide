@@ -17,9 +17,9 @@ const ServicesSection = () => {
     }
   }, [isView]);
   return (
-    <div id='services' ref={ref} className='w-full md:px-32 px-8 scroll-my-36'>
+    <div id='services' ref={ref} className='w-full lg:px-32 px-8 scroll-my-36'>
     <main>
-    <div className='md:flex md:gap-16 mb-8'>
+    <div className='lg:flex lg:gap-16 mb-8'>
     <motion.div
     variants={{
           hidden: { y: "100vw", opacity: 0 },
@@ -29,7 +29,7 @@ const ServicesSection = () => {
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
     >
-    <h1 className='md:mb-6'>Services</h1>
+    <h1 className='lg:mb-6'>Services</h1>
     <p className='mb-2'><span className='font-semibold'>Mr. Snow Removal</span> offers Markham residents two options: <span className='font-semibold'>Seasonal and Pay-Per-Visit Services</span> </p>
 
 
@@ -45,7 +45,7 @@ Both options include FREE salt spreading (you provide the salt).</p>
     
     </div>
 
-    <div className='md:grid md:grid-cols-2 gap-8 md:w-full mb-12'>
+    <div className='lg:grid lg:grid-cols-2 gap-8 lg:w-full mb-12'>
     <motion.div
     variants={{
           hidden: { y: "100vw", opacity: 0 },
@@ -54,7 +54,7 @@ Both options include FREE salt spreading (you provide the salt).</p>
         initial="hidden"
         animate={controlAnimation}
         transition={{ type: "spring", stiffness: 30 }}
-        className='mb-4 md:mb-0'
+        className='mb-4 lg:mb-0'
     >
       <h2>OUR GUARANTEE</h2>
       <ul>
