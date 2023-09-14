@@ -8,7 +8,7 @@ import { MdEmail} from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import Image from 'next/image';
 
-const ContactUsPage = () => {
+const ContactUsPage = (props) => {
     const ref = useRef(null);
     const isView = useInView(ref, { once: true });
     const controlAnimation = useAnimation();
@@ -19,8 +19,15 @@ const ContactUsPage = () => {
         controlAnimation.start("hidden");
       }
     }, [isView]);
+
+    const handleSubmit = (e)=>{
+      e.preventDefault()
+      console.log("Clicked");
+    }
+
+
     return (
-      <form ref={ref} id="contactUs" >
+      <form ref={ref} id="contactUs" onSubmit={handleSubmit}>
       <Image src={bannerBg} alt="" className="absolute md:h-[30vh] h-[20vh]"/>
       <div className="h-52 flex items-center justify-center">
       <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full z-30 text-xl md:text-3xl ">We would love to hear from you!</h1>
