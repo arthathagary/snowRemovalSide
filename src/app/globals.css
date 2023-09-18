@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
 p{
   @apply text-gray-700;
 }
 
 html {
-  @apply scroll-smooth;
+  @apply !scroll-smooth;
 }
 
 body{
@@ -20,4 +21,5 @@ h1{
 
 h2{
   @apply font-bold text-xl mb-3;
+}
 }

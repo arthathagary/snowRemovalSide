@@ -8,7 +8,7 @@ import Link from "next/link";
 const schema = yup.object().shape({
   name: yup.string().required("Name is Mandatory"),
   address1: yup.string().required("Address 1 is Mandatory"),
-  address2: yup.string().required("Address 2 is Mandatory"),
+  // address2: yup.string().required("Address 2 is Mandatory"),
   phoneNum: yup
   .string() // Change the type to string
   .test("is-valid-phone", "Invalid phone number", (value) => {
@@ -67,7 +67,7 @@ const PopupForm = (props) => {
       </p>
       <label>Enter Your Address Line 2:</label>
       <input
-        {...register("address2")}
+        // {...register("address2")}
         placeholder="Adress line 2"
         className="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-4"
       />
@@ -99,7 +99,7 @@ const PopupForm = (props) => {
       />
       <div className="mb-3 flex gap-4 justify-end mt-4">
         <label>
-        By checking this box I endorse that I have read, understood, and accept the <Link href="/terms&conditions" target="_blank" className="font-medium">Privacy Policy and Terms and Conditions.</Link>
+        By checking this box I endorse that I have read, understood, and accept the <Link href="/terms&conditions" target="_blank" className="font-medium text-[#872B36]">Privacy Policy and Terms and Conditions.</Link>
         </label>
         <input type="checkbox" />
       </div>
@@ -112,7 +112,7 @@ const PopupForm = (props) => {
 
 <button type="submit"  disabled={isDirty && !isValid} className="mt-2 bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded flex gap-3">Checkout 
 <div
-            class={!isClick ? 'hidden' : "w-6 h-6 rounded-full animate-spin border-4 border-solid border-white border-t-transparent shadow-md"}
+            className={!isClick ? 'hidden' : "w-6 h-6 rounded-full animate-spin border-4 border-solid border-white border-t-transparent shadow-md"}
           ></div>
 </button>
 

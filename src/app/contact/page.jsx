@@ -20,14 +20,11 @@ const ContactUsPage = (props) => {
       }
     }, [isView]);
 
-    const handleSubmit = (e)=>{
-      e.preventDefault()
-      console.log("Clicked");
-    }
+    
 
 
     return (
-      <form ref={ref} id="contactUs" onSubmit={handleSubmit}>
+      <form ref={ref} id="contactUs">
       <Image src={bannerBg} alt="" className="absolute md:h-[30vh] h-[20vh]"/>
       <div className="h-52 flex items-center justify-center">
       <h1 className="text-gray-800 bg-white px-8 py-4 rounded-full z-30 text-xl md:text-3xl ">We would love to hear from you!</h1>
