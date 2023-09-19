@@ -19,10 +19,12 @@ const schema = yup.object().shape({
   })
     .required("Phone Number is Mandatory"),
   email: yup.string().email().required("Email is Mandatory"),
+  terms : yup.boolean().oneOf([true],"Please accept the terms and conditions")
 });
 
 const PopupForm = (props) => {
   const [isClick,setClick] = useState(false);
+  const [check,setCheck] = useState(false);
   const {
     register,
     handleSubmit,
@@ -65,7 +67,7 @@ const PopupForm = (props) => {
       <p className="text-xs font-medium text-red-600 my-2 text-center">
         {errors.address1?.message}
       </p>
-      <label>Enter Your Address Line 2:</label>
+      <label> Enter the Service address if it's different:</label>
       <input
         // {...register("address2")}
         placeholder="Adress line 2"
@@ -101,16 +103,18 @@ const PopupForm = (props) => {
         <label>
         By checking this box I endorse that I have read, understood, and accept the <Link href="/terms&conditions" target="_blank" className="font-medium text-[#872B36]">Privacy Policy and Terms and Conditions.</Link>
         </label>
-        <input type="checkbox" />
+        
+        <input
+        onClick={()=>{setCheck(!check)}}
+        {...register("terms")}
+         type="checkbox" />
+      
+        
       </div>
+      <p className="text-xs font-medium text-red-600 my-2 text-center">{errors.terms?.message}</p>
       <div className="">
-        {/* <input
-          type="submit"
-          disabled={isDirty && !isValid}
-          className="mt-2 bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded  relative"
-        /> */}
 
-<button type="submit"  disabled={isDirty && !isValid} className="mt-2 bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded flex gap-3">Checkout 
+<button type="submit"  disabled={isDirty && !isValid} className="disabled:opacity-5 mt-2 bg-gray-800 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded flex gap-3">Checkout 
 <div
             className={!isClick ? 'hidden' : "w-6 h-6 rounded-full animate-spin border-4 border-solid border-white border-t-transparent shadow-md"}
           ></div>
