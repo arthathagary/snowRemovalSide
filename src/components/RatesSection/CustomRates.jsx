@@ -232,10 +232,10 @@ const handleButtonClick = (e) => {
           {/* -------- Driveway price details Start----------- */}
           <div className="flex justify-between items-center">
           <label className="text-white">Driveway Size <span className="block text-xs text-center">(select)</span> </label>
-          <select value={value1} onChange={handleDrivewayClick} name="driveaway" className="border text-sm rounded-lg   block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 mb-6 w-24">
+          <select value={value1} onChange={handleDrivewayClick} name="driveaway" className="border text-sm rounded-lg   block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 mb-6 w-24">
             <option value="0">0</option>
-            <option value="1">1 ($500)</option>
-            <option value="2">2 ($600)</option>
+            <option  value="1">1 ($500)</option>
+            <option  value="2">2 ($600)</option>
             <option value="3">3 ($700)</option>
             <option value="4">4 ($800)</option>
             <option value="5">5 ($900)</option>
@@ -253,7 +253,7 @@ const handleButtonClick = (e) => {
         {/* -------- SideWalk price details Start----------- */}
         <div className="flex justify-between items-baseline">
         <label className="text-white">Number of Sidewalks <span className="block text-xs text-center">(select)</span></label>
-          <select value={value2} onChange={handleSideWalkClick} name="sidewalk" className="border  text-sm rounded-lg   block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 mb-6 w-24">
+          <select value={value2} onChange={handleSideWalkClick} name="sidewalk" className="border  text-sm rounded-lg   block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 mb-6 w-24">
             <option value="0">0</option>
             <option value="1">1 ($150)</option>
             <option value="2">2 ($300)</option>
@@ -266,7 +266,7 @@ const handleButtonClick = (e) => {
             {/* -------- boulevards price details Start----------- */}
           <div className="flex justify-between items-baseline">
         <label className="text-white">Number of Boulevards<span className="text-xs text-center  block">(select)</span></label>
-          <select value={value3} onChange={handleBoulderClick} name="boulder" className=" border   text-sm rounded-lg   block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-black focus:ring-blue-500 focus:border-blue-500 mb-6 w-24">
+          <select value={value3} onChange={handleBoulderClick} name="boulder" className=" border   text-sm rounded-lg   block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 mb-6 w-24">
             <option value="0">0</option>
             <option value="1">1 ($150)</option>
             <option value="2">2 ($250)</option>
