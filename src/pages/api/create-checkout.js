@@ -1,7 +1,9 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 async function CreateCheckout(req, res) {
-  const { item } = req.body;
+  const { item,values } = req.body;
+
+  console.log("formData:", values);
 
   const redirectURL =
     process.env.NODE_ENV === "development"
@@ -25,7 +27,7 @@ async function CreateCheckout(req, res) {
     line_items: [itemSold],
     mode: "payment",
     // success_url: redirectURL + "?status=success",
-    success_url: redirectURL +"/success",
+    success_url: redirectURL +"/success?formdata="+JSON.stringify(values),
     cancel_url: redirectURL + "/failure",
     metadata: {},
     // shipping_address_collection: {
@@ -36,7 +38,7 @@ async function CreateCheckout(req, res) {
 
   });
 
-  res.json({ id: session.id });
+  res.json({ id: session.id});
 }
 
 export default CreateCheckout;
