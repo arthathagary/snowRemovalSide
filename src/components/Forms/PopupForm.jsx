@@ -29,19 +29,23 @@ const PopupForm = (props) => {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
+    getValues
   } = useForm({
     resolver: yupResolver(schema),
     mode: "onChange",
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const values = getValues(); 
+    console.log(values);
     // Call the parent component's onSubmit function
     if (props.onSubmit) {
       handleClick()
-      props.onSubmit(data);
+      props.onSubmit(values);
     }
   };
+
+  
 
   const handleClick = ()=>{
     setClick(!isClick)

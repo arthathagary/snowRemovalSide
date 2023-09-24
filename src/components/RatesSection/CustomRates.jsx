@@ -4,10 +4,12 @@ import { loadStripe } from "@stripe/stripe-js";
 import Popup from "../Popups/Popup";
 import PopupForm from "../Forms/PopupForm";
 import getStripe from "../../../lib/get-stripe";
+import { useRouter } from "next/navigation";
 
 
 
 const CustomRates = (props) => {
+  const router = useRouter();
   const [value1, setValue1] = useState("0");
   const [value2, setValue2] = useState("0");
   const [value3, setValue3] = useState("0");
@@ -199,11 +201,12 @@ const handleButtonClick = (e) => {
 
 
 
-  const createCheckOut = async (e) => {
+  const createCheckOut = async (values) => {
     const stripePromise = getStripe();
     const stripe = await stripePromise;
     const checkoutSession = await axios.post("/api/create-checkout", {
       item,
+      values,
     });
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
@@ -214,11 +217,17 @@ const handleButtonClick = (e) => {
     }
   };
 
-  const handleFormSubmit = (formData) => {
+  const handleFormSubmit = (values) => {
+    
+    
     // Perform form data validation here if needed
     // If the form data is valid, call the createCheckOut function
     
-    createCheckOut();
+    
+    console.log(values);
+    console.log(typeof values);
+    createCheckOut(values);
+   
   };
   return (
     <>
