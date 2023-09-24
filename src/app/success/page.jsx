@@ -1,12 +1,20 @@
 'use client'
 import React from 'react'
 import { useRouter } from 'next/navigation'
-
+import { useSearchParams } from 'next/navigation'
+import axios from 'axios'
 const SuccessPage = () => {
+  const searchParams = useSearchParams();
+  const formDatas = searchParams.get("formdata");
+  const jsonFormData = JSON.parse(formDatas);
+  console.log(jsonFormData);
   const router = useRouter();
-  const handleClick = () =>{
+  const handleClick = async () =>{
+    await axios.post('/api/api_four',{formDatas:jsonFormData})
     router.push('/')
   }
+
+
   return (
     <div>
       <div className='fixed inset-0 bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-40'  id='wrapper'>
