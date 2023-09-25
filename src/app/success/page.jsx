@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSearchParams } from 'next/navigation'
 import axios from 'axios'
@@ -9,10 +9,26 @@ const SuccessPage = () => {
   const jsonFormData = JSON.parse(formDatas);
   console.log(jsonFormData);
   const router = useRouter();
-  const handleClick = async () =>{
-    await axios.post('/api/api_four',{formDatas:jsonFormData})
+  const handleClick = () =>{
     router.push('/')
   }
+
+  useEffect(() => {
+    if (jsonFormData) {
+      const fetchData = async () => {
+        try {
+          await axios.post('/api/api_four', { formDatas: jsonFormData });
+        } catch (error) {
+          // Handle any errors here
+          console.error('Error:', error);
+        }
+      };
+  
+      fetchData(); // Call the async function
+    }
+  }, []);
+  
+
 
 
   return (
