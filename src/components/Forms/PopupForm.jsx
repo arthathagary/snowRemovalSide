@@ -8,7 +8,7 @@ import Link from "next/link";
 const schema = yup.object().shape({
   name: yup.string().required("Name is Mandatory"),
   address1: yup.string().required("Address 1 is Mandatory"),
-  // address2: yup.string().required("Address 2 is Mandatory"),
+  address2: yup.string(),
   phoneNum: yup
   .string() // Change the type to string
   .test("is-valid-phone", "Invalid phone number", (value) => {
@@ -73,7 +73,7 @@ const PopupForm = (props) => {
       </p>
       <label> Enter the Service address if it's different:</label>
       <input
-        // {...register("address2")}
+        {...register("address2")}
         placeholder="Adress line 2"
         className="block w-full rounded-md border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-4"
       />

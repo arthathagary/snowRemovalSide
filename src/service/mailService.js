@@ -13,7 +13,7 @@ export async function sendMail(subject, fromEmail, otpText) {
     from: fromEmail,
     to: process.env.NODEMAILER_EMAIL,
     subject: subject,
-    text: otpText,
+    html: otpText
   };
 
   await new Promise((resolve, reject) => {

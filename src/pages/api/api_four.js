@@ -12,7 +12,94 @@ const handler = async (req, res) => {
         await sendMail(
           "Payment Successfull",
           `${formDatas.email}`,
-          `Name : ${formDatas.name} \n Address : ${formDatas.address1} \n Phone Number : ${formDatas.phoneNum} \n Email : ${formDatas.email}`
+          `<table cellspacing="0" cellpadding="10" border="0" style="border-collapse: collapse;
+          width: 100%;
+          margin-bottom: 20px;">
+                  <tr>
+                      <td ">
+                          <h1>Payment Success</h1>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                          <strong>Name:</strong>
+                      </td>
+                  
+                      <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                          ${formDatas.name}
+                      </td>
+                  </tr>
+        
+                  <tr>
+                      <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                          <strong>Phone Number:</strong>
+                      </td>
+                   
+                      <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                            ${formDatas.phoneNum}
+                      </td>
+                 
+                  </tr>
+                  
+                  <tr>
+                      <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                          <strong>Email Address:</strong>
+                      </td>
+                    
+                      <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                            ${formDatas.email}
+                      </td>
+                
+                  </tr>
+                  
+                  <tr>
+                      <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                          <strong>Address:</strong>
+                      </td>
+                    
+                      <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                            ${formDatas.address1}
+                      </td>
+                 
+                  </tr>
+                  
+                  <tr>
+                  <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                      <strong>Service address:</strong>
+                  </td>
+                    
+                  <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                        ${formDatas.address2 || "Same as above"}
+                  </td>
+            
+              </tr>
+             
+              </table>`
         );
         res.status(200).send("Success");
         break;
