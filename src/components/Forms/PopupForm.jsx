@@ -71,7 +71,7 @@ const PopupForm = (props) => {
       <p className="text-xs font-medium text-red-600 my-2 text-center">
         {errors.address1?.message}
       </p>
-      <label> Enter the Service address if it's different:</label>
+      <label> Enter the Service Address (if different than above):</label>
       <input
         {...register("address2")}
         placeholder="Adress line 2"
