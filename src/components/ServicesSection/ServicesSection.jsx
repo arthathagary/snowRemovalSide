@@ -34,11 +34,11 @@ const ServicesSection = () => {
 
 
 
-<p className='mb-2'>Our very exclusive <span className='font-semibold'>Seasonal</span> clients receive the VIP treatment. We have a limited number of seasonal spots each year to provide the best service. Once we're full, our Seasonal team exclusively focuses on these seasonal clients and we cease taking on additional seasonal clients to ensure a dedicated commitment during the season. Seasonal service is for those who want a worry-free winter. The contract starts on November 1 and ends on March 31, giving you 5 months of snow coverage. </p>
+<p className='mb-2'>Our very exclusive <span className='font-semibold'>Seasonal</span> clients receive the VIP treatment. We have a limited number of seasonal spots each year to provide the best service. Once we're full, our Seasonal team exclusively focuses on these seasonal clients and we cease taking on additional seasonal clients to ensure a dedicated commitment during the season. Seasonal service is for those who want a worry-free winter. The contract starts on November 1<sup>st</sup> and ends on March 31<sup>st</sup>, giving you 5 months of snow coverage. </p>
 
 
 
-<p className='mb-2'><span className='font-bold'>Pay-Per-Visit Services</span>work for those who don't want a long-term deal and cater to sporadic needs. You can call us when you need your snow cleared and our Pay-Per-Visit Team will be happy to help!</p>
+<p className='mb-2'><span className='font-bold'>Pay-Per-Visit Services</span> work for those who don't want a long-term deal and cater to sporadic needs. You can call us when you need your snow cleared and our Pay-Per-Visit Team will be happy to help!</p>
 <p>
 Both options include FREE salt spreading (you provide the salt).</p>
     </motion.div>
@@ -58,7 +58,7 @@ Both options include FREE salt spreading (you provide the salt).</p>
     >
       <h2>OUR GUARANTEE</h2>
       <ul>
-        <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>24/7 Availability:</span> Count on us round the clock, from November 1st to March 31.</span></li>
+        <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>24/7 Availability:</span> Count on us round the clock, from November 1<sup>st</sup> to March 31<sup>st</sup>.</span></li>
         <li className='mb-2 flex items-baseline gap-3 text-gray-700'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Limited Exclusive Spots:</span> Our Seasonal service features fully serviced, flat-rate contracts with a cap on client intake. When we sell out of spots we don't take on more clients so we can ensure hight-quality service for our seasonal clients.</span></li>
         <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Effective Snow Clearance:</span> We clear snow measuring 3 inches or more using plows and high-powered snow blowers, combined with the use of plastic shovels to prevent property damage.</span></li>
         <li className='mb-2 flex items-baseline gap-3'><span><MdStars color='black'/></span><span><span className='font-semibold text-gray-900'>Customized Planning:</span> Your residence is cleared according to your specifications, providing you with a personalized experience.</span></li>
