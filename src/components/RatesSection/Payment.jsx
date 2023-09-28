@@ -22,10 +22,9 @@ const Payment = () => {
 
     const onInputChange = (e) => {
       const inputValue = e.target.value;
-      const parsedValue = parseInt(inputValue);
     
-      if (!isNaN(parsedValue)) {
-        setItem({ ...item, price: parsedValue });
+      if (inputValue === '' || /^\d+$/.test(inputValue)) {
+        setItem({ ...item, price: inputValue });
       } else {
         console.log("error");
       }
@@ -39,11 +38,12 @@ const Payment = () => {
  
 
 
-    const createCheckOutSession = async () => {
+    const createCheckOutSession = async (values) => {
     const stripePromise = getStripe();
     const stripe = await stripePromise;
     const checkoutSession = await axios.post('/api/create-checkout', {
       item,
+      values,
     });
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
@@ -53,10 +53,10 @@ const Payment = () => {
     }
   };
 
-  const handleFormSubmit = (formData) => {
+  const handleFormSubmit = (values) => {
     // Perform form data validation here if needed
     // If the form data is valid, call the createCheckOut function
-    createCheckOutSession();
+    createCheckOutSession(values);
   };
   return (
     <main>

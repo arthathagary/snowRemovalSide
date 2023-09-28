@@ -224,8 +224,7 @@ const handleButtonClick = (e) => {
     // If the form data is valid, call the createCheckOut function
     
     
-    console.log(values);
-    console.log(typeof values);
+    
     createCheckOut(values);
    
   };
