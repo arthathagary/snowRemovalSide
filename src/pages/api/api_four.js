@@ -4,7 +4,7 @@ import { sendMail } from "../../service/mailService";
 const handler = async (req, res) => {
   try {
     const { method } = req;
-    const { formDatas,price} = req.body;
+    const { formDatas,price,customPrice} = req.body;
    
    
     switch (method) {
@@ -113,6 +113,51 @@ const handler = async (req, res) => {
           text-align: left;
           padding: 8px;">
                         ${price}
+                  </td>
+            
+              </tr>
+              <tr>
+                  <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                      <strong>Number Of Driveaway:</strong>
+                  </td>
+                    
+                  <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                        ${customPrice.noOfDriveway}
+                  </td>
+            
+              </tr>
+              <tr>
+                  <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                      <strong>Number Of Sidewalk:</strong>
+                  </td>
+                    
+                  <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                        ${customPrice.noOfSideWalk}
+                  </td>
+            
+              </tr>
+              <tr>
+                  <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                      <strong>Number Of Boulevards:</strong>
+                  </td>
+                    
+                  <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                        ${customPrice.noOfBoulder}
                   </td>
             
               </tr>

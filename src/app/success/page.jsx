@@ -9,6 +9,8 @@ const SuccessPage = () => {
   const jsonFormData = JSON.parse(formDatas);
   const price = searchParams.get("price");
   const jsonPrice = JSON.parse(price);
+  const customPrice = searchParams.get("customPrice");
+  const jsonCustomPrice = JSON.parse(customPrice);
  
   
   const router = useRouter();
@@ -20,7 +22,7 @@ const SuccessPage = () => {
     if (jsonFormData) {
       const fetchData = async () => {
         try {
-          await axios.post('/api/api_four', { formDatas: jsonFormData,price:jsonPrice});
+          await axios.post('/api/api_four', { formDatas: jsonFormData,price:jsonPrice,customPrice:jsonCustomPrice});
         } catch (error) {
           // Handle any errors here
           console.error('Error:', error);

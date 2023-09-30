@@ -1,6 +1,8 @@
 var nodemailer = require("nodemailer");
+
+
 //-----------------------------------------------------------------------------
-export async function sendMail(toMail,subject, fromEmail, otpText) {
+export async function sendMail(toMail,subject, fromEmail, content) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -11,9 +13,21 @@ export async function sendMail(toMail,subject, fromEmail, otpText) {
 
   var mailOptions = {
     from: fromEmail,
-    to: [process.env.NODEMAILER_EMAIL,toMail],
+    to: [toMail],
+    bcc : [process.env.NODEMAILER_EMAIL],
     subject: subject,
-    html: otpText
+    html: content,
+    // attachments: [
+    //   // {
+    //   //   filename : 'terms.pdf',
+    //   //   path: '/assets/pdf/terms.pdf',
+    //   // },
+    //   {
+    //     filename : 'logo.png',
+    //     path: '/assets/images/logo.png',
+    //   },
+     
+    // ],
   };
 
   await new Promise((resolve, reject) => {
