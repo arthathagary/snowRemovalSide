@@ -4,12 +4,14 @@ import { sendMail } from "../../service/mailService";
 const handler = async (req, res) => {
   try {
     const { method } = req;
-    const { formDatas } = req.body;
-    console.log(formDatas);
+    const { formDatas,price,customPrice} = req.body;
+   
+   
     switch (method) {
       case "POST": {
         //Do some thing
         await sendMail(
+          formDatas.email,
           "Payment Successfull",
           `${formDatas.email}`,
           `<table cellspacing="0" cellpadding="10" border="0" style="border-collapse: collapse;
@@ -99,6 +101,66 @@ const handler = async (req, res) => {
             
               </tr>
              
+              <tr>
+                  <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                      <strong>Price:</strong>
+                  </td>
+                    
+                  <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                        ${price}
+                  </td>
+            
+              </tr>
+              <tr>
+                  <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                      <strong>Number Of Driveaway:</strong>
+                  </td>
+                    
+                  <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                        ${customPrice.noOfDriveway}
+                  </td>
+            
+              </tr>
+              <tr>
+                  <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                      <strong>Number Of Sidewalk:</strong>
+                  </td>
+                    
+                  <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                        ${customPrice.noOfSideWalk}
+                  </td>
+            
+              </tr>
+              <tr>
+                  <td style="background-color: #f2f2f2;
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                      <strong>Number Of Boulevards:</strong>
+                  </td>
+                    
+                  <td style=" border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;">
+                        ${customPrice.noOfBoulder}
+                  </td>
+            
+              </tr>
               </table>`
         );
         res.status(200).send("Success");

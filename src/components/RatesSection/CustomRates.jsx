@@ -17,7 +17,10 @@ const CustomRates = (props) => {
   const [customPrice,setCustomPrice] = useState({
     driveway : 0,
     sideWalk : 0,
-    boulder :0
+    boulder :0,
+    noOfDriveway:0,
+    noOfSideWalk:0,
+    noOfBoulder:0
   })
 
 
@@ -103,37 +106,37 @@ const CustomRates = (props) => {
     const drivewayValue = e.target.drivewayValue;
     switch (drivewayValue) {
       case "0":
-        setCustomPrice({...customPrice,driveway:0})
+        setCustomPrice({...customPrice,driveway:0, noOfDriveway:0})
         break;
       case "1":
-        setCustomPrice({...customPrice,driveway:500})
+        setCustomPrice({...customPrice,driveway:500, noOfDriveway:1})
         break;
       case "2":
-        setCustomPrice({...customPrice,driveway:600})
+        setCustomPrice({...customPrice,driveway:600, noOfDriveway:2})
         break;
       case "3":
-        setCustomPrice({...customPrice,driveway:700})
+        setCustomPrice({...customPrice,driveway:700, noOfDriveway:3})
         break;
       case "4":
-        setCustomPrice({...customPrice,driveway:800})
+        setCustomPrice({...customPrice,driveway:800, noOfDriveway:4})
         break;
       case "5":
-        setCustomPrice({...customPrice,driveway:900})
+        setCustomPrice({...customPrice,driveway:900, noOfDriveway:5})
         break;
       case "6":
-        setCustomPrice({...customPrice,driveway:1000})
+        setCustomPrice({...customPrice,driveway:1000, noOfDriveway:6})
         break;
       case "7":
-        setCustomPrice({...customPrice,driveway:1100})
+        setCustomPrice({...customPrice,driveway:1100, noOfDriveway:7})
         break;
       case "8":
-        setCustomPrice({...customPrice,driveway:1200})
+        setCustomPrice({...customPrice,driveway:1200, noOfDriveway:8})
         break;
       case "9":
-        setCustomPrice({...customPrice,driveway:1300})
+        setCustomPrice({...customPrice,driveway:1300, noOfDriveway:9})
         break;
        case "10":
-        setCustomPrice({...customPrice,driveway:1400})
+        setCustomPrice({...customPrice,driveway:1400, noOfDriveway:10})
         break;
       default:
         break;
@@ -144,19 +147,19 @@ const CustomRates = (props) => {
     const sideWalkValue = e.target.sideWalkValue;
     switch (sideWalkValue) {
       case "0":
-        setCustomPrice({...customPrice,sideWalk:0})
+        setCustomPrice({...customPrice,sideWalk:0, noOfSideWalk:0})
         break;
       case "1":
-        setCustomPrice({...customPrice,sideWalk:150})
+        setCustomPrice({...customPrice,sideWalk:150, noOfSideWalk:1})
         break;
       case "2":
-        setCustomPrice({...customPrice,sideWalk:300})
+        setCustomPrice({...customPrice,sideWalk:300, noOfSideWalk:2})
         break;
       case "3":
-        setCustomPrice({...customPrice,sideWalk:450})
+        setCustomPrice({...customPrice,sideWalk:450, noOfSideWalk:3})
         break;
       case "4":
-        setCustomPrice({...customPrice,sideWalk:600})
+        setCustomPrice({...customPrice,sideWalk:600, noOfSideWalk:4})
         break;
       default:
         break;
@@ -167,13 +170,13 @@ const CustomRates = (props) => {
     const boulderValue = e.target.boulderValue;
     switch (boulderValue) {
       case "0":
-        setCustomPrice({...customPrice,boulder:0})
+        setCustomPrice({...customPrice,boulder:0, noOfBoulder:0})
         break;
       case "1":
-        setCustomPrice({...customPrice,boulder:150})
+        setCustomPrice({...customPrice,boulder:150, noOfBoulder:1})
         break;
       case "2":
-        setCustomPrice({...customPrice,boulder:250})
+        setCustomPrice({...customPrice,boulder:250, noOfBoulder:2})
         break;
       default:
         break;
@@ -196,7 +199,7 @@ const total = customPrice.driveway+customPrice.sideWalk+customPrice.boulder;
 
 const handleButtonClick = (e) => {
   setPopup(true); // Set the popup to true
-  setItem({...item,price:total}) // Trigger handleImgClick with an event object containing the id '2'
+  setItem({...item,price:total}) 
 };
 
 
@@ -207,6 +210,7 @@ const handleButtonClick = (e) => {
     const checkoutSession = await axios.post("/api/create-checkout", {
       item,
       values,
+      customPrice
     });
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
@@ -224,8 +228,7 @@ const handleButtonClick = (e) => {
     // If the form data is valid, call the createCheckOut function
     
     
-    console.log(values);
-    console.log(typeof values);
+    
     createCheckOut(values);
    
   };
