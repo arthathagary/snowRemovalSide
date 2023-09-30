@@ -11,13 +11,13 @@ import FaqSection from '@/components/FaqSection/FaqSection';
 const HomePage = () => {
   return (
     <>
-        <NavBar />
+        {/* <NavBar /> */}
         <HeroSection />
         <ServicesSection />
         <RatesSection />
         <TestimonialSection />
         <FaqSection/>
-        <Footer />
+        {/* <Footer /> */}
     </>
   )
 }

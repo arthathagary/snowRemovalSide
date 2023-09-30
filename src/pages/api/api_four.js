@@ -12,7 +12,7 @@ const handler = async (req, res) => {
         //Do some thing
         await sendMail(
           formDatas.email,
-          "Payment Successfull",
+          "Payment Successful",
           `${formDatas.email}`,
           `<table cellspacing="0" cellpadding="10" border="0" style="border-collapse: collapse;
           width: 100%;

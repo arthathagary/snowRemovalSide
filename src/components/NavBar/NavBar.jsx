@@ -37,7 +37,7 @@ const NavBar = () => {
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#services">Services</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#rates">Rates</Link></li>
                 <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/#faq">FAQ</Link></li>
-                <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/contact">Contact Us</Link></li>
+                <li className='text-xl text-white hover:text-[#bfecec] font-medium'><Link href="/contactus">Contact Us</Link></li>
             </ul>
         
         <Link href="/#rates"><button className='group hidden lg:flex bg-[#E6ECEE] py-3 px-6 rounded-3xl text-xl text-[#872B36] font-bold'><span>Book Now!</span></button></Link>
@@ -55,7 +55,7 @@ const NavBar = () => {
                 <li className='py-6 text-4xl text-white'><Link href="/#services">Services</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/#rates">Rates</Link></li>
                 <li className='py-6 text-4xl text-white'><Link href="/#faq">FAQs</Link></li>
-                <li className='py-6 text-4xl text-white'><Link href="/contact">Contact Us</Link></li>
+                <li className='py-6 text-4xl text-white'><Link href="/contactus">Contact Us</Link></li>
             </ul>
         
     </nav>
