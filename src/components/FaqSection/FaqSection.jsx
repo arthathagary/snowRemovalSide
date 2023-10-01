@@ -17,6 +17,7 @@ const FaqSection = () => {
   const ref = useRef(null);
   const isView = useInView(ref,{once:true});
   const controlAnimation = useAnimation();
+  
   useEffect(() => {
     if (isView) {
       controlAnimation.start("visible");
