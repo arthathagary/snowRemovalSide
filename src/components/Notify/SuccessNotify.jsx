@@ -4,29 +4,49 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSearchParams } from 'next/navigation'
 import axios from 'axios'
+import { useRouter } from 'next/navigation';
 
 const SuccessNotify = () => {
+    const router = useRouter();
     const searchParams = useSearchParams();
     const formDatas = searchParams.get("formdata");
     const jsonFormData = JSON.parse(formDatas);
     const price = searchParams.get("price");
     const jsonPrice = JSON.parse(price);
     const customPrice = searchParams.get("customPrice");
-    const jsonCustomPrice = JSON.parse(customPrice);
+    // const jsonCustomPrice = JSON.parse(customPrice);
+    let jsonCustomPrice;
+
     const shouldLog = useRef(true);
 
+
+    const removeQueryParams = () => {
+      const { pathname } = router;
+      router.push({ pathname }, undefined, { shallow: true });
+    };
+
+    try {
+      jsonCustomPrice = JSON.parse(customPrice);
+    } catch (error) {
+      jsonCustomPrice = "Custom Price";
+    }
 
     useEffect(() => {
         if(shouldLog.current){
             shouldLog.current = false;
             const notify = () => toast("Payment Suceess!"); // Define the notify function
             notify(); // Call the notify function when the component mounts
-            console.log("Run inside try");
         if (jsonFormData) {
             const fetchData = async () => {
               try {
-                await axios.post('/api/api_four', { formDatas: jsonFormData,price:jsonPrice,customPrice:jsonCustomPrice});
-                console.log(formDatas);
+                const requestData = { formDatas: jsonFormData, price: jsonPrice };
+                if (jsonCustomPrice !== undefined) {
+                  requestData.customPrice = jsonCustomPrice;
+                }
+                await axios.post('/api/api_four', requestData);
+           
+                // await axios.post('/api/api_four', { formDatas: jsonFormData,price:jsonPrice,customPrice:jsonCustomPrice});
+                // console.log(formDatas);
               } catch (error) {
                 // Handle any errors here
                 console.error('Error:', error);
@@ -34,6 +54,13 @@ const SuccessNotify = () => {
             };
         
             fetchData(); // Call the async function
+
+            const timer = setTimeout(() => {
+              removeQueryParams();
+            }, 6000); // 5000 milliseconds (5 seconds)
+        
+            // Clear the timer if the component unmounts before 5 seconds
+            return () => clearTimeout(timer);
           }
         }
       }, []);

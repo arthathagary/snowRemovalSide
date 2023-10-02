@@ -127,7 +127,7 @@ const handler = async (req, res) => {
                   <td style=" border: 1px solid #dddddd;
           text-align: left;
           padding: 8px;">
-                        ${customPrice.noOfDriveway}
+                        ${customPrice.noOfDriveway == undefined ? "Custom Price": customPrice.noOfDriveway}
                   </td>
             
               </tr>
@@ -142,7 +142,7 @@ const handler = async (req, res) => {
                   <td style=" border: 1px solid #dddddd;
           text-align: left;
           padding: 8px;">
-                        ${customPrice.noOfSideWalk}
+                        ${customPrice.noOfSideWalk == undefined? "Custom Price" : customPrice.noOfSideWalk}
                   </td>
             
               </tr>
@@ -157,7 +157,7 @@ const handler = async (req, res) => {
                   <td style=" border: 1px solid #dddddd;
           text-align: left;
           padding: 8px;">
-                        ${customPrice.noOfBoulder}
+                        ${customPrice.noOfBoulder == undefined ? "Custom Price" : customPrice.noOfBoulder}
                   </td>
             
               </tr>
