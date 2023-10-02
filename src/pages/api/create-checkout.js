@@ -27,8 +27,9 @@ async function CreateCheckout(req, res) {
     line_items: [itemSold],
     mode: "payment",
     // success_url: redirectURL + "?status=success",
-    success_url: redirectURL +"/success?formdata="+JSON.stringify(values)+"&price="+JSON.stringify(item.price)+"&customPrice="+JSON.stringify(customPrice),
-    cancel_url: redirectURL + "/failure",
+    // success_url: redirectURL +"/success?formdata="+JSON.stringify(values)+"&price="+JSON.stringify(item.price)+"&customPrice="+JSON.stringify(customPrice),
+    success_url: redirectURL +"?status=success&formdata="+JSON.stringify(values)+"&price="+JSON.stringify(item.price)+"&customPrice="+JSON.stringify(customPrice),
+    cancel_url: redirectURL + "?status=failure",
     metadata: {},
     automatic_tax: {
       enabled: true,

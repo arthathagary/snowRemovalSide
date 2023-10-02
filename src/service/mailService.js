@@ -17,17 +17,12 @@ export async function sendMail(toMail,subject, fromEmail, content) {
     bcc : [process.env.NODEMAILER_EMAIL],
     subject: subject,
     html: content,
-    // attachments: [
-    //   // {
-    //   //   filename : 'terms.pdf',
-    //   //   path: '/assets/pdf/terms.pdf',
-    //   // },
-    //   {
-    //     filename : 'logo.png',
-    //     path: '/assets/images/logo.png',
-    //   },
-     
-    // ],
+    attachments: [
+      {
+        filename : 'terms_and_conditions.pdf',
+        path: 'http://localhost:3000/assets/pdf/terms_and_conditions.pdf',
+      }
+    ],
   };
 
   await new Promise((resolve, reject) => {

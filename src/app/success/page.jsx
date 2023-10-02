@@ -16,13 +16,16 @@ const SuccessPage = () => {
   const router = useRouter();
   const handleClick = () =>{
     router.push('/')
+    console.log("Click the button");
   }
+
 
   useEffect(() => {
     if (jsonFormData) {
       const fetchData = async () => {
         try {
           await axios.post('/api/api_four', { formDatas: jsonFormData,price:jsonPrice,customPrice:jsonCustomPrice});
+          console.log("Run inside try");
         } catch (error) {
           // Handle any errors here
           console.error('Error:', error);
@@ -42,7 +45,7 @@ const SuccessPage = () => {
             <div className='w-[600px] flex flex-col'>
                
                 <div className='bg-gray-600 p-10 rounded-xl'>
-                    <p className='text-white mb-4'>Your Payment Sucessful</p>
+                    <p className='text-white mb-4'>Your Payment Successful</p>
                     <div className='flex justify-end'>
                       <button className='bg-white px-4 py-2 rounded-md' onClick={handleClick}>Close</button>
                       </div>
