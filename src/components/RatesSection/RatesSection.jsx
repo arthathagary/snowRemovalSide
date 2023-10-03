@@ -100,7 +100,7 @@ const handleButtonClick = (e) => {
     }
   };
   return (
-    <div ref={ref} id='rates' className='w-full lg:px-32 px-8 bg-[#DAF3F4] py-12 -scroll-my-[35rem]'>
+    <div ref={ref} id='rates' className='w-full lg:px-32 px-8 bg-[#DAF3F4] py-12 md:-scroll-my-[35rem] -scroll-my-[1400px]'>
     <h1>Rates</h1>
     <div className=''>
     <motion.main
