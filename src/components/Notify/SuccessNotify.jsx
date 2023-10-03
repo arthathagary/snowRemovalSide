@@ -57,9 +57,9 @@ const SuccessNotify = () => {
 
             const timer = setTimeout(() => {
               removeQueryParams();
-            }, 6000); // 5000 milliseconds (5 seconds)
+            }, 6000); // 6000 milliseconds (6 seconds)
         
-            // Clear the timer if the component unmounts before 5 seconds
+            // Clear the timer if the component unmounts before 6 seconds
             return () => clearTimeout(timer);
           }
         }

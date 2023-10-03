@@ -112,7 +112,7 @@ const handler = async (req, res) => {
                   <td style=" border: 1px solid #dddddd;
           text-align: left;
           padding: 8px;">
-                        ${price}
+                        ${price} CAD (Price Without Tax)
                   </td>
             
               </tr>
