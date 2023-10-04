@@ -3,7 +3,7 @@ var nodemailer = require("nodemailer");
 const redirectURL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/assets/pdf/terms_and_conditions.pdf"
-      : "https://snow-removal-side.vercel.app/assets/pdf/terms_and_conditions.pdf";
+      : "https://www.mrsnowremoval.ca/assets/pdf/terms_and_conditions.pdf";
 //-----------------------------------------------------------------------------
 export async function sendMail(toMail,subject, fromEmail, content) {
   var transporter = nodemailer.createTransport({

@@ -8,7 +8,7 @@ async function CreateCheckout(req, res) {
   const redirectURL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://snow-removal-side.vercel.app/";
+      : "https://www.mrsnowremoval.ca/";
 
   const itemSold = {
     price_data: {
