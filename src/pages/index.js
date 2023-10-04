@@ -1,3 +1,4 @@
+
 import HomePage from '@/app/home/HomePage'
 import Head from 'next/head'
 

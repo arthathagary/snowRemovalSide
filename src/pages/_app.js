@@ -1,4 +1,5 @@
 // pages/_app.js
+
 import NavBar from '@/components/NavBar/NavBar';
 import '../app/globals.css';
 import { Poppins } from 'next/font/google'
