@@ -11,15 +11,15 @@ export async function sendMail(toMail,subject, fromEmail, content) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "uaaagary@gmail.com",
-      pass: "zbmb oybk cwms kkjo",
+      user: process.env.NODEMAILER_EMAIL,
+      pass: process.env.NODEMAILER_PW,
     },
   });
 
   var mailOptions = {
     from: fromEmail,
     to: [toMail],
-    bcc : ["uaaagary@gmail.com"],
+    bcc : [process.env.NODEMAILER_EMAIL],
     subject: subject,
     html: content,
     attachments: [
