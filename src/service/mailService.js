@@ -22,12 +22,12 @@ export async function sendMail(toMail,subject, fromEmail, content) {
     bcc : ["uaaagary@gmail.com"],
     subject: subject,
     html: content,
-    // attachments: [
-    //   {
-    //     filename : 'terms_and_conditions.pdf',
-    //     path: redirectURL,
-    //   }
-    // ],
+    attachments: [
+      {
+        filename : 'terms_and_conditions.pdf',
+        path: redirectURL,
+      }
+    ],
   };
 
   await new Promise((resolve, reject) => {
