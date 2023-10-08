@@ -37,7 +37,6 @@ const PopupForm = (props) => {
 
   const onSubmit = (data) => {
     const values = getValues(); 
-    console.log(values);
     // Call the parent component's onSubmit function
     if (props.onSubmit) {
       handleClick()

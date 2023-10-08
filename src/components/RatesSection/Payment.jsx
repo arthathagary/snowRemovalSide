@@ -26,7 +26,7 @@ const Payment = () => {
       if (inputValue === '' || /^\d+$/.test(inputValue)) {
         setItem({ ...item, price: inputValue });
       } else {
-        console.log("error");
+        // console.log("error");
       }
     };
 

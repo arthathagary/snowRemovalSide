@@ -60,15 +60,13 @@ const RatesSection = () => {
       
         break; 
       default:
-        console.log("Error in click"); 
-        console.log(btnIdInt);
+        break;
   }
 }
 
 const handleButtonClick = (e) => {
   const id = e.target.id;
   const idInInt = parseInt(id)
-  console.log(idInInt);
   setPopup(true); // Set the popup to true
   handleImgClick({ target: { id: idInInt } }); // Trigger handleImgClick with an event object containing the id '2'
 };
@@ -77,11 +75,11 @@ const handleButtonClick = (e) => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
     if (query.get('success')) {
-      console.log('Order placed! You will receive an email confirmation.');
+      // console.log('Order placed! You will receive an email confirmation.');
     }
 
     if (query.get('canceled')) {
-      console.log('Order canceled -- continue to shop around and checkout when you\'re ready.');
+      // console.log('Order canceled -- continue to shop around and checkout when you\'re ready.');
     }
   }, []);
 
@@ -96,7 +94,7 @@ const handleButtonClick = (e) => {
       sessionId: checkoutSession.data.id,
     });
     if (result.error) {
-      console.log(result.error.message);
+      // console.log(result.error.message);
     }
   };
   return (

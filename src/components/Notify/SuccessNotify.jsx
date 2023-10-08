@@ -46,7 +46,7 @@ const SuccessNotify = () => {
                 await axios.post('/api/api_four', requestData);
            
                 // await axios.post('/api/api_four', { formDatas: jsonFormData,price:jsonPrice,customPrice:jsonCustomPrice});
-                // console.log(formDatas);
+                
               } catch (error) {
                 // Handle any errors here
                 console.error('Error:', error);
