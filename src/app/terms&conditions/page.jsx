@@ -74,7 +74,7 @@ from the use of salt during snow removal operations.
 
     <li className='text-gray-500 mb-6'>
     <span className='font-semibold text-gray-600'>Snowfall Threshold:</span> The Company will undertake snow removal services when there is an
-accumulation of 3inches or more of snowfall.
+accumulation of 2 inches or more of snowfall.
     </li>
 
     <li className='text-gray-500 mb-6'>
@@ -91,7 +91,7 @@ subject to availability and may incur additional charges.
 
     <li className='text-gray-500 mb-6'>
     <span className='font-semibold text-gray-600'>No Refunds for Lack of Snow:</span> In the event of a snowless season or snowfall less than
-3inches , payments made for our seasonal package will not be subject to refunds.
+2 inches , payments made for our seasonal package will not be subject to refunds.
     </li>
 
     <li className='text-gray-500 mb-6'>
