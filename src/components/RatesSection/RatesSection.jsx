@@ -94,7 +94,7 @@ const handleButtonClick = (e) => {
       sessionId: checkoutSession.data.id,
     });
     if (result.error) {
-      // console.log(result.error.message);
+      console.log(result.error.message);
     }
   };
   return (

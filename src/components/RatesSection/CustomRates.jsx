@@ -153,7 +153,7 @@ const handleButtonClick = (e) => {
     });
     
     if (result.error) {
-      // console.log(result.error.message);
+      console.log(result.error.message);
     }
   };
 
