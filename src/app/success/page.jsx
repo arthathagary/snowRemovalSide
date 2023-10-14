@@ -16,7 +16,7 @@ const SuccessPage = () => {
   const router = useRouter();
   const handleClick = () =>{
     router.push('/')
-    console.log("Click the button");
+    
   }
 
 
@@ -25,7 +25,7 @@ const SuccessPage = () => {
       const fetchData = async () => {
         try {
           await axios.post('/api/api_four', { formDatas: jsonFormData,price:jsonPrice,customPrice:jsonCustomPrice});
-          console.log("Run inside try");
+          
         } catch (error) {
           // Handle any errors here
           console.error('Error:', error);

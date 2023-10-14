@@ -36,71 +36,7 @@ const CustomRates = (props) => {
 
   
 
-  // const handleMainSelect = (e) => {
-  //   switch (e.target.value) {
-  //     case "0":
-  //       setItem({...item,price:0,numOfDriveaway:0})
-  //     case "1":
-  //       setItem({ ...item, price: 500, numOfDriveaway: 1 });
-  //       break;
-  //     case "2":
-  //       setItem({ ...item, price: 600, numOfDriveaway: 2 });
-  //       break;
-  //     case "3":
-  //       setItem({ ...item, price: 700, numOfDriveaway: 3 });
-  //       break;
-  //     case "4":
-  //       setItem({ ...item, price: 800, numOfDriveaway: 4 });
-  //       break;
-  //     case "5":
-  //       setItem({ ...item, price: 900, numOfDriveaway: 5 });
-  //       break;
-  //     case "6":
-  //       setItem({ ...item, price: 1000, numOfDriveaway: 6 });
-  //       break;
-  //     case "7":
-  //       setItem({ ...item, price: 1100, numOfDriveaway: 7 });
-  //       break;
-  //     case "8":
-  //       setItem({ ...item, price: 1200, numOfDriveaway: 8 });
-  //       break;
-  //     case "9":
-  //       setItem({ ...item, price: 1300, numOfDriveaway: 9 });
-  //       break;
-  //     case "10":
-  //       setItem({ ...item, price: 1400, numOfDriveaway: 10 });
-  //       break;
-  //   }
-  // };
-
-  
-  // const handleSideWalk = (e)=>{
-  //   e.preventDefault();
-  //   let newPrice;
-  //   switch(e.target.value){
-  //     case "0":
-  //       setSideWalkPrice(0)
-  //       setItem({...item,price:item.price+0})
-  //     case "1":
-  //       console.log(e.target.value);
-  //       setSideWalkPrice(150);
-  //       setItem({...item,price:item.price+150})
-  //       break;
-  //     case "2":
-  //       console.log(e.target.value);
-  //       setSideWalkPrice(300);
-  //       setItem({...item,price:item.price+300})
-  //       break;
-  //     case "3":
-  //       setSideWalkPrice(450)
-  //       setItem({...item,price:item.price+450})
-  //       break;
-  //     case "4":
-  //       setSideWalkPrice(600)
-  //       setItem({...item,price:item.price+600})
-  //       break;
-  //   }
-  // }
+ 
 
   const handleDriveway = (e)=>{
     const drivewayValue = e.target.drivewayValue;

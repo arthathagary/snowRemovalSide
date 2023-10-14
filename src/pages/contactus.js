@@ -35,7 +35,7 @@ const contactus = () => {
       <MdEmail size={30}/>
       <div>
       <p>Email Address:</p>
-      <p>contact@mrsnowremoval.com</p>
+      <p>contact@mrsnowremoval.ca</p>
       </div>
       </div>
     </div>
